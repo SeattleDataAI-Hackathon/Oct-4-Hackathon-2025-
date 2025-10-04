@@ -1,0 +1,132 @@
+import sqlite3
+from mcp.server.fastmcp import FastMCP
+import json
+import sys
+import json
+import httpx # Import httpx for HTTP/2 support
+import os 
+import sqlite3 
+# ... other imports ...
+
+
+DB_FILE = "/Users/nirvanadogra/venv/my_data.db"
+AUTHENTICATION_TOKEN = os.environ.get("eyJhbGciOiJFUzI1NiIsImtpZCI6IjQ3TTRNQkIzUFMifQ.eyJpc3MiOiJDMjg5V0NUNlQ1IiwiaWF0IjoxNzU5NjEyMzQ0fQ.Kek0V2bMd-IVwfLuOq-s3Zw9_NQ8u0RmrAADYNJPRO2jxtxZyHpw11lWwtML_V4wJW0D_I6J7JzvhysTciHSSA")
+DEVICE_TOKEN = os.environ.get("2aea5e0dff2a042b4f443b0d077c63c679f1a7791d6bddec0120570c9f040072")
+APNS_URL = f"https://api.development.push.apple.com:443/3/device/{DEVICE_TOKEN}"
+APNS_TOPIC = "com.bbqsauceror.HealthMonitor" # Replace with your app bundle ID
+    
+mcp = FastMCP("SQLite_DB_Agent")
+
+@mcp.tool()
+def run_query(sql_query: str) -> str:
+    """
+    Executes a read-only SQL SELECT query against the internal SQLite database.
+    Returns the results as a JSON string.
+    """
+    print("info"+ sql_query)
+    if not sql_query.lower().strip().startswith('select'):
+        return "Error: Only read-only SELECT queries are allowed."
+
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        conn.row_factory = sqlite3.Row  
+        cursor = conn.cursor()
+
+        cursor.execute(sql_query)
+        results = [dict(row) for row in cursor.fetchall()]
+        return json.dumps(results, indent=2)
+    except sqlite3.Error as e:
+        return f"Database Error: {e}"
+    except Exception as e:
+        return f"Error: {e}"
+    finally:
+        if 'conn' in locals():
+            conn.close()
+
+@mcp.tool()
+def send_to_server(json_data: str, original_query: str):
+    """
+    Sends the database results as a Push Notification payload to the APNs server.
+    """
+    if not AUTHENTICATION_TOKEN or not DEVICE_TOKEN:
+        print("ERROR: APNs tokens (AUTHENTICATION_TOKEN or DEVICE_TOKEN) are not set in environment variables.")
+        return
+
+    # 1. Prepare the custom alert body based on the query result
+    # We'll create a simple string for the 'body' of the notification.
+    
+    # Assuming 'json_data' is a JSON string of database results:
+    try:
+        results = json.loads(json_data)
+        if results:
+            # Example: Create a body from the first row of results
+            first_result = results[0]
+            title = "Database Query Complete ✅"
+            subtitle = f"Query: {original_query[:30]}..."
+            body = f"First result row: {first_result}"
+        else:
+            title = "Database Query Complete ✅"
+            subtitle = "No results found."
+            body = f"Query: {original_query}"
+            
+    except Exception:
+        title = "Query Result Error ⚠️"
+        subtitle = "Failed to parse database results."
+        body = json_data[:100] # Send truncated raw data
+        
+    # 2. Construct the APNs Payload (The 'data' body in your curl command)
+    apns_payload = {
+        "aps": {
+            "alert": {
+                "title": title,
+                "subtitle": subtitle,
+                "body": body
+            }
+        }
+    }
+    
+    # 3. Define the HTTP/2 Headers
+    headers = {
+        "authorization": f"bearer {AUTHENTICATION_TOKEN}",
+        "apns-topic": APNS_TOPIC,
+        "apns-push-type": "alert",
+        "apns-priority": "10",
+        "apns-expiration": "0",
+        "Content-Type": "application/json"
+    }
+
+    print("\n--- Sending Push Notification via APNs ---")
+    try:
+        with httpx.Client(http2=True) as client:
+            response = client.post(
+                APNS_URL, 
+                json=apns_payload, # httpx automatically serializes the dict to JSON
+                headers=headers,
+                timeout=10
+            )
+            
+            response.raise_for_status() 
+            
+            print(f"Successfully sent push notification to APNs. Status Code: {response.status_code}")
+            # APNs success code is typically 200
+            if response.status_code == 200:
+                print("APNs Response: OK")
+            else:
+                print(f"APNs Response Body: {response.text}")
+
+    except httpx.HTTPStatusError as e:
+        print(f"ERROR: APNs request failed with status {e.response.status_code}.")
+        print(f"APNs Error Details: {e.response.text}")
+    except httpx.RequestError as e:
+        print(f"ERROR: Failed to connect to APNs server: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+
+@mcp.resource("schema://sqlite/users")
+def get_users_schema():
+    """Returns the schema for the 'users' table in the database."""
+    return "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE)"
+
+if __name__ == '__main__':
+    mcp.run()
