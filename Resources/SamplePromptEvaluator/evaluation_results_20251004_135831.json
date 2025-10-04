@@ -1,0 +1,1817 @@
+{
+  "metadata": {
+    "processed_at": "2025-10-04T13:54:29.042581",
+    "system_prompt_file": "SustainabilityCoach-SystemPrompt.txt",
+    "model": "gpt-4o",
+    "total_entries": 30,
+    "total_inputs_processed": 95
+  },
+  "results": [
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Young Professional, Female, 28",
+      "input_index": 0,
+      "original_input": "Hey, I'm about to order an Uber to get to my office downtown",
+      "raw_response": "```json\n{\n  \"original_action\": \"Taking an Uber to the office downtown\",\n  \"suggestion\": \"Use public transportation or a bike-sharing service if available in your area.\",\n  \"rationale\": \"Public transportation or biking significantly reduces carbon emissions compared to taking a ride-hailing service. These options are often cost-effective, and biking has the added benefit of providing exercise.\",\n  \"metrics\": {\n    \"original_impact\": \"2.3 kg CO₂ for a 10 km Uber ride\",\n    \"suggested_impact\": \"0.5 kg CO₂ for a 10 km public transit commute, or virtually zero for biking\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Taking an Uber to the office downtown",
+        "suggestion": "Use public transportation or a bike-sharing service if available in your area.",
+        "rationale": "Public transportation or biking significantly reduces carbon emissions compared to taking a ride-hailing service. These options are often cost-effective, and biking has the added benefit of providing exercise.",
+        "metrics": {
+          "original_impact": "2.3 kg CO₂ for a 10 km Uber ride",
+          "suggested_impact": "0.5 kg CO₂ for a 10 km public transit commute, or virtually zero for biking"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Young Professional, Female, 28",
+      "input_index": 1,
+      "original_input": "I need to grab breakfast... thinking about getting an Egg McMuffin at McDonald's drive-through",
+      "raw_response": "```json\n{\n  \"original_action\": \"Getting an Egg McMuffin from McDonald's drive-through for breakfast\",\n  \"suggestion\": \"Walk or bike to McDonald's to pick up your Egg McMuffin instead of using the drive-through.\",\n  \"rationale\": \"Walking or biking avoids the carbon emissions from idling your car in the drive-through line and promotes personal health. This simple change can significantly reduce the environmental impact of your breakfast trip.\",\n  \"metrics\": {\n    \"original_impact\": \"0.5 kg CO₂ for a 5 km round trip in a car (including idling time)\",\n    \"suggested_impact\": \"0 kg CO₂ with walking or biking\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Getting an Egg McMuffin from McDonald's drive-through for breakfast",
+        "suggestion": "Walk or bike to McDonald's to pick up your Egg McMuffin instead of using the drive-through.",
+        "rationale": "Walking or biking avoids the carbon emissions from idling your car in the drive-through line and promotes personal health. This simple change can significantly reduce the environmental impact of your breakfast trip.",
+        "metrics": {
+          "original_impact": "0.5 kg CO₂ for a 5 km round trip in a car (including idling time)",
+          "suggested_impact": "0 kg CO₂ with walking or biking"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Young Professional, Female, 28",
+      "input_index": 2,
+      "original_input": "Running late, gonna take a quick five-minute shower before work",
+      "raw_response": "```json\n{\n  \"original_action\": \"Taking a quick five-minute shower before work\",\n  \"suggestion\": \"Install a low-flow showerhead to reduce water and energy use during your showers.\",\n  \"rationale\": \"A low-flow showerhead can reduce water usage by up to 50%, saving both water and the energy needed to heat it, without requiring you to change your shower habits.\",\n  \"metrics\": {\n    \"original_impact\": \"50 liters of water and 0.5 kg CO₂ for a five-minute shower with a standard showerhead\",\n    \"suggested_impact\": \"25 liters of water and 0.25 kg CO₂ for a five-minute shower with a low-flow showerhead\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Taking a quick five-minute shower before work",
+        "suggestion": "Install a low-flow showerhead to reduce water and energy use during your showers.",
+        "rationale": "A low-flow showerhead can reduce water usage by up to 50%, saving both water and the energy needed to heat it, without requiring you to change your shower habits.",
+        "metrics": {
+          "original_impact": "50 liters of water and 0.5 kg CO₂ for a five-minute shower with a standard showerhead",
+          "suggested_impact": "25 liters of water and 0.25 kg CO₂ for a five-minute shower with a low-flow showerhead"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Middle-aged Parent, Male, 45",
+      "input_index": 0,
+      "original_input": "I'm driving the kids to school this morning, it's about three miles away",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving the kids to school, a three-mile round trip\",\n  \"suggestion\": \"Consider walking or biking to school with the kids if time and weather permit.\",\n  \"rationale\": \"Walking or biking eliminates carbon emissions from the car trip and provides a healthy activity for both you and the kids. For short distances like three miles, this is a practical and sustainable alternative.\",\n  \"metrics\": {\n    \"original_impact\": \"0.7 kg CO₂ for a three-mile round trip in an average car\",\n    \"suggested_impact\": \"0 kg CO₂ if walking or biking\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving the kids to school, a three-mile round trip",
+        "suggestion": "Consider walking or biking to school with the kids if time and weather permit.",
+        "rationale": "Walking or biking eliminates carbon emissions from the car trip and provides a healthy activity for both you and the kids. For short distances like three miles, this is a practical and sustainable alternative.",
+        "metrics": {
+          "original_impact": "0.7 kg CO₂ for a three-mile round trip in an average car",
+          "suggested_impact": "0 kg CO₂ if walking or biking"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Middle-aged Parent, Male, 45",
+      "input_index": 1,
+      "original_input": "Need to water the lawn before it gets too hot today",
+      "raw_response": "```json\n{\n  \"original_action\": \"Watering the lawn during the day before it gets too hot.\",\n  \"suggestion\": \"Water the lawn early in the morning or late in the evening when temperatures are cooler.\",\n  \"rationale\": \"Watering during cooler times reduces evaporation, ensuring more water reaches the roots and less is wasted. This saves water and helps maintain a healthier lawn with less frequent watering.\",\n  \"metrics\": {\n    \"original_impact\": \"200 liters of water, with up to 30% lost to evaporation\",\n    \"suggested_impact\": \"200 liters of water, with less than 10% lost to evaporation\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Watering the lawn during the day before it gets too hot.",
+        "suggestion": "Water the lawn early in the morning or late in the evening when temperatures are cooler.",
+        "rationale": "Watering during cooler times reduces evaporation, ensuring more water reaches the roots and less is wasted. This saves water and helps maintain a healthier lawn with less frequent watering.",
+        "metrics": {
+          "original_impact": "200 liters of water, with up to 30% lost to evaporation",
+          "suggested_impact": "200 liters of water, with less than 10% lost to evaporation"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Middle-aged Parent, Male, 45",
+      "input_index": 2,
+      "original_input": "Throwing away some leftover pizza from last night, nobody's eating it",
+      "raw_response": "```json\n{\n  \"original_action\": \"Throwing away leftover pizza from last night.\",\n  \"suggestion\": \"Store the leftover pizza in an airtight container and reheat it for another meal or snack, or consider composting it if it's truly inedible.\",\n  \"rationale\": \"Food waste contributes to methane emissions in landfills, so consuming leftovers reduces waste and maximizes the resources used to produce the food. If the pizza cannot be eaten, composting diverts it from the landfill and creates nutrient-rich soil instead.\",\n  \"metrics\": {\n    \"original_impact\": \"0.5 kg CO₂ (average carbon footprint of wasted pizza in landfill)\",\n    \"suggested_impact\": \"0 kg CO₂ if eaten or a minor reduction if composted\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Throwing away leftover pizza from last night.",
+        "suggestion": "Store the leftover pizza in an airtight container and reheat it for another meal or snack, or consider composting it if it's truly inedible.",
+        "rationale": "Food waste contributes to methane emissions in landfills, so consuming leftovers reduces waste and maximizes the resources used to produce the food. If the pizza cannot be eaten, composting diverts it from the landfill and creates nutrient-rich soil instead.",
+        "metrics": {
+          "original_impact": "0.5 kg CO₂ (average carbon footprint of wasted pizza in landfill)",
+          "suggested_impact": "0 kg CO₂ if eaten or a minor reduction if composted"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Senior, Female, 67",
+      "input_index": 0,
+      "original_input": "I'm heating up my house to 75 degrees, it's a bit chilly this morning",
+      "raw_response": "```json\n{\n  \"original_action\": \"Heating the house to 75 degrees Fahrenheit on a chilly morning\",\n  \"suggestion\": \"Set the thermostat to 68-70 degrees Fahrenheit and wear a warm sweater or use a blanket for added comfort.\",\n  \"rationale\": \"Lowering the thermostat reduces energy consumption significantly, which decreases carbon emissions and utility costs. Wearing layers is a simple and effective way to stay warm without overusing heating systems.\",\n  \"metrics\": {\n    \"original_impact\": \"20 kg CO₂ for a day of heating at 75 degrees\",\n    \"suggested_impact\": \"14 kg CO₂ for a day of heating at 68-70 degrees\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Heating the house to 75 degrees Fahrenheit on a chilly morning",
+        "suggestion": "Set the thermostat to 68-70 degrees Fahrenheit and wear a warm sweater or use a blanket for added comfort.",
+        "rationale": "Lowering the thermostat reduces energy consumption significantly, which decreases carbon emissions and utility costs. Wearing layers is a simple and effective way to stay warm without overusing heating systems.",
+        "metrics": {
+          "original_impact": "20 kg CO₂ for a day of heating at 75 degrees",
+          "suggested_impact": "14 kg CO₂ for a day of heating at 68-70 degrees"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Senior, Female, 67",
+      "input_index": 1,
+      "original_input": "Planning to print out some recipes I found online, maybe twenty pages or so",
+      "raw_response": "```json\n{\n  \"original_action\": \"Printing out 20 pages of recipes found online\",\n  \"suggestion\": \"Save the recipes digitally on your phone, tablet, or computer instead of printing them.\",\n  \"rationale\": \"Storing recipes digitally avoids paper and ink consumption, reducing waste and resource use. It also allows for easy access and updates without reprinting.\",\n  \"metrics\": {\n    \"original_impact\": \"0.2 kg CO₂ and 20 liters of water for paper production and printing\",\n    \"suggested_impact\": \"0 kg CO₂ and 0 liters of water (digital storage has negligible additional impact)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Printing out 20 pages of recipes found online",
+        "suggestion": "Save the recipes digitally on your phone, tablet, or computer instead of printing them.",
+        "rationale": "Storing recipes digitally avoids paper and ink consumption, reducing waste and resource use. It also allows for easy access and updates without reprinting.",
+        "metrics": {
+          "original_impact": "0.2 kg CO₂ and 20 liters of water for paper production and printing",
+          "suggested_impact": "0 kg CO₂ and 0 liters of water (digital storage has negligible additional impact)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Senior, Female, 67",
+      "input_index": 2,
+      "original_input": "Going to the grocery store to buy some vegetables, driving my car",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving a car to the grocery store to buy vegetables.\",\n  \"suggestion\": \"Consider walking, biking, or using public transport if the grocery store is nearby, or combine multiple errands into one car trip.\",\n  \"rationale\": \"Walking or biking has zero emissions, while public transport reduces per-person emissions significantly compared to driving. If driving is necessary, combining errands minimizes trips and reduces overall fuel consumption and emissions.\",\n  \"metrics\": {\n    \"original_impact\": \"2.3 kg CO₂ for a 10 km round trip by car\",\n    \"suggested_impact\": \"0 kg CO₂ if walking or biking, or 0.5 kg CO₂ using public transport\",\n    \"impact_indicator\": \"high\"\n  },\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving a car to the grocery store to buy vegetables.",
+        "suggestion": "Consider walking, biking, or using public transport if the grocery store is nearby, or combine multiple errands into one car trip.",
+        "rationale": "Walking or biking has zero emissions, while public transport reduces per-person emissions significantly compared to driving. If driving is necessary, combining errands minimizes trips and reduces overall fuel consumption and emissions.",
+        "metrics": {
+          "original_impact": "2.3 kg CO₂ for a 10 km round trip by car",
+          "suggested_impact": "0 kg CO₂ if walking or biking, or 0.5 kg CO₂ using public transport",
+          "impact_indicator": "high"
+        },
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Young Adult, Male, 22",
+      "input_index": 0,
+      "original_input": "Bro, I'm leaving my PlayStation on all day, might play later",
+      "raw_response": "```json\n{\n  \"original_action\": \"Leaving a PlayStation on all day in idle mode.\",\n  \"suggestion\": \"Turn off the PlayStation when not in use and enable Rest Mode if you'll use it later.\",\n  \"rationale\": \"Turning off the PlayStation or using Rest Mode significantly reduces energy consumption compared to leaving it idle, helping to cut unnecessary power usage while still allowing updates and quick startup when you're ready to play.\",\n  \"metrics\": {\n    \"original_impact\": \"2.4 kWh per day in idle mode (approx. 1.2 kg CO₂ depending on grid energy mix)\",\n    \"suggested_impact\": \"0.05 kWh per day in Rest Mode (approx. 0.025 kg CO₂ depending on grid energy mix)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Leaving a PlayStation on all day in idle mode.",
+        "suggestion": "Turn off the PlayStation when not in use and enable Rest Mode if you'll use it later.",
+        "rationale": "Turning off the PlayStation or using Rest Mode significantly reduces energy consumption compared to leaving it idle, helping to cut unnecessary power usage while still allowing updates and quick startup when you're ready to play.",
+        "metrics": {
+          "original_impact": "2.4 kWh per day in idle mode (approx. 1.2 kg CO₂ depending on grid energy mix)",
+          "suggested_impact": "0.05 kWh per day in Rest Mode (approx. 0.025 kg CO₂ depending on grid energy mix)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Young Adult, Male, 22",
+      "input_index": 1,
+      "original_input": "Ordering a new phone case from Amazon, need it shipped fast",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering a new phone case from Amazon with expedited shipping\",\n  \"suggestion\": \"Choose standard shipping or buy a phone case from a local store to avoid the impact of expedited delivery.\",\n  \"rationale\": \"Expedited shipping often relies on air transport, which has a significantly higher carbon footprint than standard shipping. Opting for standard shipping or purchasing locally reduces emissions and supports more sustainable logistics.\",\n  \"metrics\": {\n    \"original_impact\": \"2.5 kg CO₂ for expedited air shipping\",\n    \"suggested_impact\": \"1.0 kg CO₂ for standard ground shipping or negligible for local pickup\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering a new phone case from Amazon with expedited shipping",
+        "suggestion": "Choose standard shipping or buy a phone case from a local store to avoid the impact of expedited delivery.",
+        "rationale": "Expedited shipping often relies on air transport, which has a significantly higher carbon footprint than standard shipping. Opting for standard shipping or purchasing locally reduces emissions and supports more sustainable logistics.",
+        "metrics": {
+          "original_impact": "2.5 kg CO₂ for expedited air shipping",
+          "suggested_impact": "1.0 kg CO₂ for standard ground shipping or negligible for local pickup"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Morning Routine (Home)",
+      "demographic": "Young Adult, Male, 22",
+      "input_index": 2,
+      "original_input": "Making bacon and eggs for breakfast, bacon's from the store",
+      "raw_response": "```json\n{\n  \"original_action\": \"Preparing bacon and eggs for breakfast with store-bought bacon.\",\n  \"suggestion\": \"Consider replacing the store-bought bacon with a plant-based alternative like tempeh or vegan bacon.\",\n  \"rationale\": \"Plant-based bacon alternatives have a significantly lower carbon footprint and resource use compared to traditional pork bacon. This small switch can make your breakfast more sustainable while still being delicious.\",\n  \"metrics\": {\n    \"original_impact\": \"3.5 kg CO₂ per 100g of pork bacon\",\n    \"suggested_impact\": \"0.5 kg CO₂ per 100g of plant-based bacon\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Preparing bacon and eggs for breakfast with store-bought bacon.",
+        "suggestion": "Consider replacing the store-bought bacon with a plant-based alternative like tempeh or vegan bacon.",
+        "rationale": "Plant-based bacon alternatives have a significantly lower carbon footprint and resource use compared to traditional pork bacon. This small switch can make your breakfast more sustainable while still being delicious.",
+        "metrics": {
+          "original_impact": "3.5 kg CO₂ per 100g of pork bacon",
+          "suggested_impact": "0.5 kg CO₂ per 100g of plant-based bacon"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Business Executive, Female, 52",
+      "input_index": 0,
+      "original_input": "I need to fly to Singapore next week for a conference, looking at business class tickets",
+      "raw_response": "```json\n{\n  \"original_action\": \"Flying to Singapore in business class for a conference\",\n  \"suggestion\": \"Book an economy class ticket and purchase a verified carbon offset to reduce your flight's environmental impact.\",\n  \"rationale\": \"Economy class seats use less space and resources on the plane, reducing per-passenger carbon emissions compared to business class. Carbon offsets allow you to support projects that mitigate emissions, making this option more sustainable without sacrificing your travel plans.\",\n  \"metrics\": {\n    \"original_impact\": \"2,500 kg CO₂ (business class, round trip)\",\n    \"suggested_impact\": \"1,650 kg CO₂ (economy class, round trip) plus offset contribution\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Flying to Singapore in business class for a conference",
+        "suggestion": "Book an economy class ticket and purchase a verified carbon offset to reduce your flight's environmental impact.",
+        "rationale": "Economy class seats use less space and resources on the plane, reducing per-passenger carbon emissions compared to business class. Carbon offsets allow you to support projects that mitigate emissions, making this option more sustainable without sacrificing your travel plans.",
+        "metrics": {
+          "original_impact": "2,500 kg CO₂ (business class, round trip)",
+          "suggested_impact": "1,650 kg CO₂ (economy class, round trip) plus offset contribution"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Business Executive, Female, 52",
+      "input_index": 1,
+      "original_input": "Ordering lunch for my team, thinking Chipotle for twelve people with delivery",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering Chipotle for twelve people with delivery\",\n  \"suggestion\": \"Opt for a group catering option with larger shared portions instead of individual meals, and request minimal single-use packaging.\",\n  \"rationale\": \"Group catering reduces packaging waste compared to individual meals, as it consolidates food into larger containers. By requesting minimal single-use packaging, you further decrease waste generation, making the meal more sustainable while still being convenient for the team.\",\n  \"metrics\": {\n    \"original_impact\": \"12 kg CO₂ for food production and approximately 1.5 kg of packaging waste\",\n    \"suggested_impact\": \"11 kg CO₂ for food production and approximately 0.5 kg of packaging waste\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering Chipotle for twelve people with delivery",
+        "suggestion": "Opt for a group catering option with larger shared portions instead of individual meals, and request minimal single-use packaging.",
+        "rationale": "Group catering reduces packaging waste compared to individual meals, as it consolidates food into larger containers. By requesting minimal single-use packaging, you further decrease waste generation, making the meal more sustainable while still being convenient for the team.",
+        "metrics": {
+          "original_impact": "12 kg CO₂ for food production and approximately 1.5 kg of packaging waste",
+          "suggested_impact": "11 kg CO₂ for food production and approximately 0.5 kg of packaging waste"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Business Executive, Female, 52",
+      "input_index": 2,
+      "original_input": "Printing fifty copies of the quarterly report for tomorrow's board meeting",
+      "raw_response": "```json\n{\n  \"original_action\": \"Printing fifty copies of the quarterly report for the board meeting\",\n  \"suggestion\": \"Distribute digital copies of the report via email or a shared platform while printing only a few physical copies for those who explicitly need them.\",\n  \"rationale\": \"Switching to digital distribution significantly reduces paper, ink, and energy use, while still accommodating attendees who require printed copies. This approach minimizes waste and is cost-effective.\",\n  \"metrics\": {\n    \"original_impact\": \"2.5 kg CO₂ and 25 liters water (based on 50 copies, 20 pages each on standard paper)\",\n    \"suggested_impact\": \"0.25 kg CO₂ and 2.5 liters water (for 5 printed copies with digital distribution for the rest)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Printing fifty copies of the quarterly report for the board meeting",
+        "suggestion": "Distribute digital copies of the report via email or a shared platform while printing only a few physical copies for those who explicitly need them.",
+        "rationale": "Switching to digital distribution significantly reduces paper, ink, and energy use, while still accommodating attendees who require printed copies. This approach minimizes waste and is cost-effective.",
+        "metrics": {
+          "original_impact": "2.5 kg CO₂ and 25 liters water (based on 50 copies, 20 pages each on standard paper)",
+          "suggested_impact": "0.25 kg CO₂ and 2.5 liters water (for 5 printed copies with digital distribution for the rest)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Freelancer, Male, 35",
+      "input_index": 0,
+      "original_input": "Working from home today, gonna keep the AC running all afternoon at 68 degrees",
+      "raw_response": "```json\n{\n  \"original_action\": \"Keeping the air conditioner running all afternoon at 68°F while working from home.\",\n  \"suggestion\": \"Raise the thermostat to 75°F and use a fan to stay cool, or work near a shaded area with good ventilation.\",\n  \"rationale\": \"Raising the thermostat reduces the energy demand of the air conditioner while a fan can make you feel up to 4°F cooler. This combination significantly reduces energy use without compromising comfort.\",\n  \"metrics\": {\n    \"original_impact\": \"3.5 kg CO₂ for 6 hours of AC use at 68°F\",\n    \"suggested_impact\": \"1.8 kg CO₂ for 6 hours of AC use at 75°F with a fan (energy-efficient setup)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Keeping the air conditioner running all afternoon at 68°F while working from home.",
+        "suggestion": "Raise the thermostat to 75°F and use a fan to stay cool, or work near a shaded area with good ventilation.",
+        "rationale": "Raising the thermostat reduces the energy demand of the air conditioner while a fan can make you feel up to 4°F cooler. This combination significantly reduces energy use without compromising comfort.",
+        "metrics": {
+          "original_impact": "3.5 kg CO₂ for 6 hours of AC use at 68°F",
+          "suggested_impact": "1.8 kg CO₂ for 6 hours of AC use at 75°F with a fan (energy-efficient setup)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Freelancer, Male, 35",
+      "input_index": 1,
+      "original_input": "Need to buy a new laptop charger, saw one on Amazon Prime",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a new laptop charger on Amazon Prime\",\n  \"suggestion\": \"Check for a second-hand or refurbished laptop charger from local electronics repair shops or online marketplaces like eBay or Facebook Marketplace.\",\n  \"rationale\": \"Opting for a second-hand or refurbished charger reduces electronic waste and the environmental impact of producing a new one. It also often costs less while still meeting your needs.\",\n  \"metrics\": {\n    \"original_impact\": \"2 kg CO₂ for new charger production and shipping\",\n    \"suggested_impact\": \"0.5 kg CO₂ for second-hand charger (minimal impact from reuse and local transport)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a new laptop charger on Amazon Prime",
+        "suggestion": "Check for a second-hand or refurbished laptop charger from local electronics repair shops or online marketplaces like eBay or Facebook Marketplace.",
+        "rationale": "Opting for a second-hand or refurbished charger reduces electronic waste and the environmental impact of producing a new one. It also often costs less while still meeting your needs.",
+        "metrics": {
+          "original_impact": "2 kg CO₂ for new charger production and shipping",
+          "suggested_impact": "0.5 kg CO₂ for second-hand charger (minimal impact from reuse and local transport)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Freelancer, Male, 35",
+      "input_index": 2,
+      "original_input": "Getting coffee at the local café, probably my third cup today",
+      "raw_response": "```json\n{\n  \"original_action\": \"Getting a third coffee of the day at the local café, likely in a disposable cup.\",\n  \"suggestion\": \"Bring a reusable cup for your next coffee and ask the café to fill it.\",\n  \"rationale\": \"Using a reusable cup can significantly reduce single-use waste and lower the environmental footprint of your coffee habit. Many cafés also offer discounts for bringing your own cup, making it both sustainable and cost-effective.\",\n  \"metrics\": {\n    \"original_impact\": \"0.05 kg CO₂ and 0.3 liters of water per disposable cup\",\n    \"suggested_impact\": \"0 kg CO₂ and 0 liters of water for reusable cup reuse\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Getting a third coffee of the day at the local café, likely in a disposable cup.",
+        "suggestion": "Bring a reusable cup for your next coffee and ask the café to fill it.",
+        "rationale": "Using a reusable cup can significantly reduce single-use waste and lower the environmental footprint of your coffee habit. Many cafés also offer discounts for bringing your own cup, making it both sustainable and cost-effective.",
+        "metrics": {
+          "original_impact": "0.05 kg CO₂ and 0.3 liters of water per disposable cup",
+          "suggested_impact": "0 kg CO₂ and 0 liters of water for reusable cup reuse"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Stay-at-home Parent, Female, 38",
+      "input_index": 0,
+      "original_input": "Doing laundry, three loads today with warm water",
+      "raw_response": "```json\n{\n  \"original_action\": \"Doing three loads of laundry with warm water.\",\n  \"suggestion\": \"Wash your laundry using cold water instead of warm water.\",\n  \"rationale\": \"Cold water washing significantly reduces energy usage, as heating water accounts for most of the energy in a laundry cycle. Modern detergents work well in cold water, providing effective cleaning while lowering your carbon footprint and saving on energy costs.\",\n  \"metrics\": {\n    \"original_impact\": \"6.6 kg CO₂ for three loads (assuming 2.2 kg CO₂ per warm wash)\",\n    \"suggested_impact\": \"0.9 kg CO₂ for three loads (assuming 0.3 kg CO₂ per cold wash)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Doing three loads of laundry with warm water.",
+        "suggestion": "Wash your laundry using cold water instead of warm water.",
+        "rationale": "Cold water washing significantly reduces energy usage, as heating water accounts for most of the energy in a laundry cycle. Modern detergents work well in cold water, providing effective cleaning while lowering your carbon footprint and saving on energy costs.",
+        "metrics": {
+          "original_impact": "6.6 kg CO₂ for three loads (assuming 2.2 kg CO₂ per warm wash)",
+          "suggested_impact": "0.9 kg CO₂ for three loads (assuming 0.3 kg CO₂ per cold wash)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Stay-at-home Parent, Female, 38",
+      "input_index": 1,
+      "original_input": "Taking my daughter to dance class, it's fifteen minutes away by car",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving 15 minutes to take your daughter to dance class\",\n  \"suggestion\": \"Consider biking to the dance class if safe routes are available, or carpooling with another family whose child attends the same class.\",\n  \"rationale\": \"Biking eliminates carbon emissions entirely while promoting health, and carpooling reduces per-trip emissions and can save money on fuel. Both options are practical and feasible for a short distance.\",\n  \"metrics\": {\n    \"original_impact\": \"2.3 kg CO₂ for a 15-minute car trip (round trip, assuming 20 km total)\",\n    \"suggested_impact\": \"0 kg CO₂ for biking or 1.15 kg CO₂ for carpooling (halving emissions)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving 15 minutes to take your daughter to dance class",
+        "suggestion": "Consider biking to the dance class if safe routes are available, or carpooling with another family whose child attends the same class.",
+        "rationale": "Biking eliminates carbon emissions entirely while promoting health, and carpooling reduces per-trip emissions and can save money on fuel. Both options are practical and feasible for a short distance.",
+        "metrics": {
+          "original_impact": "2.3 kg CO₂ for a 15-minute car trip (round trip, assuming 20 km total)",
+          "suggested_impact": "0 kg CO₂ for biking or 1.15 kg CO₂ for carpooling (halving emissions)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Stay-at-home Parent, Female, 38",
+      "input_index": 2,
+      "original_input": "Buying diapers in bulk from Costco, the big pack of like 200",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a bulk pack of disposable diapers from Costco (200 units).\",\n  \"suggestion\": \"Consider switching to reusable cloth diapers for at least part of your diapering needs.\",\n  \"rationale\": \"Cloth diapers significantly reduce landfill waste and the resources used in disposable diaper production. They can be washed and reused, making them more sustainable in the long run, and hybrid approaches (using cloth at home and disposables when out) can make the transition easier.\",\n  \"metrics\": {\n    \"original_impact\": \"50 kg CO₂ and 200 diapers contributing to landfill waste per bulk pack\",\n    \"suggested_impact\": \"10-15 kg CO₂ for cloth diaper production and washing over the same period, with no landfill waste\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a bulk pack of disposable diapers from Costco (200 units).",
+        "suggestion": "Consider switching to reusable cloth diapers for at least part of your diapering needs.",
+        "rationale": "Cloth diapers significantly reduce landfill waste and the resources used in disposable diaper production. They can be washed and reused, making them more sustainable in the long run, and hybrid approaches (using cloth at home and disposables when out) can make the transition easier.",
+        "metrics": {
+          "original_impact": "50 kg CO₂ and 200 diapers contributing to landfill waste per bulk pack",
+          "suggested_impact": "10-15 kg CO₂ for cloth diaper production and washing over the same period, with no landfill waste"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Tradesperson, Male, 41",
+      "input_index": 0,
+      "original_input": "Driving my truck to three different job sites today, probably 80 miles total",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving a truck to three job sites over a total of 80 miles\",\n  \"suggestion\": \"Plan the most efficient route to minimize driving distance and, if possible, consolidate tasks at each site to reduce trips.\",\n  \"rationale\": \"Optimizing your route and consolidating tasks can lower fuel consumption and emissions, saving time and money while reducing your carbon footprint.\",\n  \"metrics\": {\n    \"original_impact\": \"28 kg CO₂ for 80 miles (using an average of 0.35 kg CO₂ per mile for a truck)\",\n    \"suggested_impact\": \"22.4 kg CO₂ for 64 miles (if driving is reduced by 20%)\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving a truck to three job sites over a total of 80 miles",
+        "suggestion": "Plan the most efficient route to minimize driving distance and, if possible, consolidate tasks at each site to reduce trips.",
+        "rationale": "Optimizing your route and consolidating tasks can lower fuel consumption and emissions, saving time and money while reducing your carbon footprint.",
+        "metrics": {
+          "original_impact": "28 kg CO₂ for 80 miles (using an average of 0.35 kg CO₂ per mile for a truck)",
+          "suggested_impact": "22.4 kg CO₂ for 64 miles (if driving is reduced by 20%)"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Tradesperson, Male, 41",
+      "input_index": 1,
+      "original_input": "Grabbing lunch from Wendy's, getting a burger combo",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a burger combo meal from Wendy's, likely with disposable packaging.\",\n  \"suggestion\": \"Choose a vegetarian or plant-based option from Wendy's menu and skip the disposable straw or utensils.\",\n  \"rationale\": \"Switching to a plant-based meal reduces the carbon footprint associated with beef production. Avoiding single-use items like straws and utensils further minimizes waste, making this a more sustainable choice without drastically changing your routine.\",\n  \"metrics\": {\n    \"original_impact\": \"3.0 kg CO₂ for beef burger combo with disposable packaging\",\n    \"suggested_impact\": \"1.5 kg CO₂ for plant-based meal with reduced packaging waste\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a burger combo meal from Wendy's, likely with disposable packaging.",
+        "suggestion": "Choose a vegetarian or plant-based option from Wendy's menu and skip the disposable straw or utensils.",
+        "rationale": "Switching to a plant-based meal reduces the carbon footprint associated with beef production. Avoiding single-use items like straws and utensils further minimizes waste, making this a more sustainable choice without drastically changing your routine.",
+        "metrics": {
+          "original_impact": "3.0 kg CO₂ for beef burger combo with disposable packaging",
+          "suggested_impact": "1.5 kg CO₂ for plant-based meal with reduced packaging waste"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Mid-Morning (Work/Errands)",
+      "demographic": "Tradesperson, Male, 41",
+      "input_index": 2,
+      "original_input": "Need to dispose of some old construction materials, gonna take them to the dump",
+      "raw_response": "```json\n{\n  \"original_action\": \"Taking old construction materials to the dump for disposal\",\n  \"suggestion\": \"Contact a local recycling center or building materials exchange to see if they accept construction waste for recycling or reuse.\",\n  \"rationale\": \"Many construction materials, such as wood, concrete, and metal, can be recycled or repurposed, reducing landfill waste and conserving resources. Recycling centers or exchanges often accept these materials and may even offer pick-up services.\",\n  \"metrics\": {\n    \"original_impact\": \"200 kg waste sent to landfill\",\n    \"suggested_impact\": \"50 kg waste to landfill with 150 kg recycled or reused\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Taking old construction materials to the dump for disposal",
+        "suggestion": "Contact a local recycling center or building materials exchange to see if they accept construction waste for recycling or reuse.",
+        "rationale": "Many construction materials, such as wood, concrete, and metal, can be recycled or repurposed, reducing landfill waste and conserving resources. Recycling centers or exchanges often accept these materials and may even offer pick-up services.",
+        "metrics": {
+          "original_impact": "200 kg waste sent to landfill",
+          "suggested_impact": "50 kg waste to landfill with 150 kg recycled or reused"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Lunchtime",
+      "demographic": "College Student, Female, 20",
+      "input_index": 0,
+      "original_input": "Getting sushi delivered through DoorDash to my dorm",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering sushi delivery through DoorDash to a dorm\",\n  \"suggestion\": \"Consider walking or biking to a nearby sushi restaurant and bringing your own reusable container for takeout.\",\n  \"rationale\": \"By picking up your sushi instead of using delivery, you eliminate the carbon emissions associated with the delivery vehicle. Bringing your own container further reduces single-use packaging waste, making the meal more sustainable overall.\",\n  \"metrics\": {\n    \"original_impact\": \"2.5 kg CO₂ for delivery and packaging waste\",\n    \"suggested_impact\": \"0.8 kg CO₂ for restaurant energy use and negligible packaging waste with reusable container\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering sushi delivery through DoorDash to a dorm",
+        "suggestion": "Consider walking or biking to a nearby sushi restaurant and bringing your own reusable container for takeout.",
+        "rationale": "By picking up your sushi instead of using delivery, you eliminate the carbon emissions associated with the delivery vehicle. Bringing your own container further reduces single-use packaging waste, making the meal more sustainable overall.",
+        "metrics": {
+          "original_impact": "2.5 kg CO₂ for delivery and packaging waste",
+          "suggested_impact": "0.8 kg CO₂ for restaurant energy use and negligible packaging waste with reusable container"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Lunchtime",
+      "demographic": "College Student, Female, 20",
+      "input_index": 1,
+      "original_input": "Need to print my essay, it's like 15 pages double-spaced",
+      "raw_response": "```json\n{\n  \"original_action\": \"Printing a 15-page double-spaced essay on paper\",\n  \"suggestion\": \"Print the essay double-sided to save paper and reduce waste.\",\n  \"rationale\": \"Printing double-sided cuts paper usage by 50%, which reduces the environmental impact associated with paper production and waste. This is an easy adjustment most printers can accommodate.\",\n  \"metrics\": {\n    \"original_impact\": \"15 sheets of paper\",\n    \"suggested_impact\": \"7.5 sheets of paper\",\n    \"impact_indicator\": \"high\"\n  },\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Printing a 15-page double-spaced essay on paper",
+        "suggestion": "Print the essay double-sided to save paper and reduce waste.",
+        "rationale": "Printing double-sided cuts paper usage by 50%, which reduces the environmental impact associated with paper production and waste. This is an easy adjustment most printers can accommodate.",
+        "metrics": {
+          "original_impact": "15 sheets of paper",
+          "suggested_impact": "7.5 sheets of paper",
+          "impact_indicator": "high"
+        },
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Lunchtime",
+      "demographic": "College Student, Female, 20",
+      "input_index": 2,
+      "original_input": "Buying a new outfit for the party this weekend, online shopping at H&M",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a new outfit for a party via online shopping at H&M.\",\n  \"suggestion\": \"Consider renting an outfit from a clothing rental service or borrowing from a friend.\",\n  \"rationale\": \"Renting or borrowing reduces the demand for fast fashion, which has significant environmental impacts due to resource use, carbon emissions, and waste generation. It's also an affordable and practical option for one-time events like parties.\",\n  \"metrics\": {\n    \"original_impact\": \"25 kg CO₂ for production and shipping of a new fast fashion outfit\",\n    \"suggested_impact\": \"5 kg CO₂ for dry cleaning and transportation in a rental scenario\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a new outfit for a party via online shopping at H&M.",
+        "suggestion": "Consider renting an outfit from a clothing rental service or borrowing from a friend.",
+        "rationale": "Renting or borrowing reduces the demand for fast fashion, which has significant environmental impacts due to resource use, carbon emissions, and waste generation. It's also an affordable and practical option for one-time events like parties.",
+        "metrics": {
+          "original_impact": "25 kg CO₂ for production and shipping of a new fast fashion outfit",
+          "suggested_impact": "5 kg CO₂ for dry cleaning and transportation in a rental scenario"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Lunchtime",
+      "demographic": "Healthcare Worker, Male, 56",
+      "input_index": 0,
+      "original_input": "Heating up my lunch in the microwave at the hospital, it's in a plastic container",
+      "raw_response": "```json\n{\n  \"original_action\": \"Heating up lunch in the microwave using a plastic container at the hospital.\",\n  \"suggestion\": \"Use a glass or ceramic container for reheating your lunch in the microwave.\",\n  \"rationale\": \"Glass or ceramic containers are safer for microwave use, as some plastics can release harmful chemicals when heated. This choice also reduces reliance on single-use or less durable plastic, contributing to long-term waste reduction.\",\n  \"metrics\": {\n    \"original_impact\": \"Potential release of microplastics and chemical leaching (qualitative impact).\",\n    \"suggested_impact\": \"No chemical leaching or microplastic release (qualitative improvement).\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Heating up lunch in the microwave using a plastic container at the hospital.",
+        "suggestion": "Use a glass or ceramic container for reheating your lunch in the microwave.",
+        "rationale": "Glass or ceramic containers are safer for microwave use, as some plastics can release harmful chemicals when heated. This choice also reduces reliance on single-use or less durable plastic, contributing to long-term waste reduction.",
+        "metrics": {
+          "original_impact": "Potential release of microplastics and chemical leaching (qualitative impact).",
+          "suggested_impact": "No chemical leaching or microplastic release (qualitative improvement)."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Lunchtime",
+      "demographic": "Healthcare Worker, Male, 56",
+      "input_index": 1,
+      "original_input": "Getting a bottled water from the vending machine, forgot my water bottle",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a bottled water from the vending machine\",\n  \"suggestion\": \"Look for a water fountain nearby and use a cup or drink directly if hygienic, or reuse the bottle from the vending machine for the day and refill it instead of buying another.\",\n  \"rationale\": \"Refilling a bottle or using a water fountain reduces the need for additional single-use plastic bottles, conserving resources and lowering waste. It's an easy way to minimize your impact after forgetting your reusable bottle.\",\n  \"metrics\": {\n    \"original_impact\": \"0.2 kg CO₂ for a single-use plastic bottle\",\n    \"suggested_impact\": \"0.05 kg CO₂ for cleaning and using a water fountain or reusing the bottle\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a bottled water from the vending machine",
+        "suggestion": "Look for a water fountain nearby and use a cup or drink directly if hygienic, or reuse the bottle from the vending machine for the day and refill it instead of buying another.",
+        "rationale": "Refilling a bottle or using a water fountain reduces the need for additional single-use plastic bottles, conserving resources and lowering waste. It's an easy way to minimize your impact after forgetting your reusable bottle.",
+        "metrics": {
+          "original_impact": "0.2 kg CO₂ for a single-use plastic bottle",
+          "suggested_impact": "0.05 kg CO₂ for cleaning and using a water fountain or reusing the bottle"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Lunchtime",
+      "demographic": "Healthcare Worker, Male, 56",
+      "input_index": 2,
+      "original_input": "Driving home during my lunch break to check on the dog",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving home during lunch break to check on the dog.\",\n  \"suggestion\": \"Consider using a pet camera to monitor your dog remotely or arranging for a neighbor or pet sitter to check in on the dog.\",\n  \"rationale\": \"Using a pet camera or arranging for someone nearby to check on your dog eliminates the daily car trip, saving fuel and reducing carbon emissions while still ensuring your pet's well-being.\",\n  \"metrics\": {\n    \"original_impact\": \"2.3 kg CO₂ for a 10 km round trip per day (average car emissions).\",\n    \"suggested_impact\": \"0 kg CO₂ with remote monitoring or local help.\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving home during lunch break to check on the dog.",
+        "suggestion": "Consider using a pet camera to monitor your dog remotely or arranging for a neighbor or pet sitter to check in on the dog.",
+        "rationale": "Using a pet camera or arranging for someone nearby to check on your dog eliminates the daily car trip, saving fuel and reducing carbon emissions while still ensuring your pet's well-being.",
+        "metrics": {
+          "original_impact": "2.3 kg CO₂ for a 10 km round trip per day (average car emissions).",
+          "suggested_impact": "0 kg CO₂ with remote monitoring or local help."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Retail Manager, Female, 44",
+      "input_index": 0,
+      "original_input": "Ordering supplies for the store, need them shipped overnight",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering store supplies with overnight shipping\",\n  \"suggestion\": \"Opt for standard shipping instead of overnight delivery whenever possible.\",\n  \"rationale\": \"Overnight shipping typically requires air freight, which has a significantly higher carbon footprint compared to ground transportation used in standard shipping. Standard shipping also tends to consolidate shipments more efficiently, reducing emissions.\",\n  \"metrics\": {\n    \"original_impact\": \"15 kg CO₂ per package (overnight shipping via air freight)\",\n    \"suggested_impact\": \"5 kg CO₂ per package (standard shipping via ground transport)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering store supplies with overnight shipping",
+        "suggestion": "Opt for standard shipping instead of overnight delivery whenever possible.",
+        "rationale": "Overnight shipping typically requires air freight, which has a significantly higher carbon footprint compared to ground transportation used in standard shipping. Standard shipping also tends to consolidate shipments more efficiently, reducing emissions.",
+        "metrics": {
+          "original_impact": "15 kg CO₂ per package (overnight shipping via air freight)",
+          "suggested_impact": "5 kg CO₂ per package (standard shipping via ground transport)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Retail Manager, Female, 44",
+      "input_index": 1,
+      "original_input": "Getting iced coffee from Starbucks in their regular cup",
+      "raw_response": "```json\n{\n  \"original_action\": \"Getting iced coffee from Starbucks in their regular disposable cup.\",\n  \"suggestion\": \"Bring a reusable cup or tumbler for your iced coffee.\",\n  \"rationale\": \"Using a reusable cup reduces single-use plastic or paper waste and can help lower the environmental impact of your coffee habit. Many Starbucks locations even offer a discount for bringing your own cup, making it a more sustainable and cost-effective choice.\",\n  \"metrics\": {\n    \"original_impact\": \"0.05 kg CO₂ and 0.3 liters water for disposable cup\",\n    \"suggested_impact\": \"0 kg CO₂ and 0 liters water for cup reuse\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Getting iced coffee from Starbucks in their regular disposable cup.",
+        "suggestion": "Bring a reusable cup or tumbler for your iced coffee.",
+        "rationale": "Using a reusable cup reduces single-use plastic or paper waste and can help lower the environmental impact of your coffee habit. Many Starbucks locations even offer a discount for bringing your own cup, making it a more sustainable and cost-effective choice.",
+        "metrics": {
+          "original_impact": "0.05 kg CO₂ and 0.3 liters water for disposable cup",
+          "suggested_impact": "0 kg CO₂ and 0 liters water for cup reuse"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Retail Manager, Female, 44",
+      "input_index": 2,
+      "original_input": "Driving to the bank during my break, it's just down the street",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving to the bank during a break, even though it is close by.\",\n  \"suggestion\": \"Consider walking or biking to the bank instead of driving.\",\n  \"rationale\": \"Walking or biking eliminates emissions entirely for such a short trip, improves your health, and saves on fuel costs. For a short distance, this is an easy and practical alternative.\",\n  \"metrics\": {\n    \"original_impact\": \"0.5 kg CO₂ for a 1 km round trip in a car\",\n    \"suggested_impact\": \"0 kg CO₂ for walking or biking\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving to the bank during a break, even though it is close by.",
+        "suggestion": "Consider walking or biking to the bank instead of driving.",
+        "rationale": "Walking or biking eliminates emissions entirely for such a short trip, improves your health, and saves on fuel costs. For a short distance, this is an easy and practical alternative.",
+        "metrics": {
+          "original_impact": "0.5 kg CO₂ for a 1 km round trip in a car",
+          "suggested_impact": "0 kg CO₂ for walking or biking"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Tech Worker, Male, 31",
+      "input_index": 0,
+      "original_input": "Ordering dinner through Uber Eats tonight, working late",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering dinner through Uber Eats while working late.\",\n  \"suggestion\": \"Choose a restaurant that offers sustainable packaging options and opt out of disposable utensils in the app.\",\n  \"rationale\": \"By selecting a restaurant with eco-friendly packaging, you reduce waste, and skipping disposable utensils minimizes unnecessary single-use plastics. These small changes make food delivery more sustainable without altering your convenience.\",\n  \"metrics\": {\n    \"original_impact\": \"0.5 kg CO₂ from delivery emissions and waste from disposable packaging\",\n    \"suggested_impact\": \"0.4 kg CO₂ with reduced packaging waste and no disposable utensils\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering dinner through Uber Eats while working late.",
+        "suggestion": "Choose a restaurant that offers sustainable packaging options and opt out of disposable utensils in the app.",
+        "rationale": "By selecting a restaurant with eco-friendly packaging, you reduce waste, and skipping disposable utensils minimizes unnecessary single-use plastics. These small changes make food delivery more sustainable without altering your convenience.",
+        "metrics": {
+          "original_impact": "0.5 kg CO₂ from delivery emissions and waste from disposable packaging",
+          "suggested_impact": "0.4 kg CO₂ with reduced packaging waste and no disposable utensils"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Tech Worker, Male, 31",
+      "input_index": 1,
+      "original_input": "Buying a new gaming keyboard, saw it on Best Buy's website",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a new gaming keyboard from Best Buy's website\",\n  \"suggestion\": \"Consider purchasing a refurbished or second-hand gaming keyboard from a trusted marketplace or retailer.\",\n  \"rationale\": \"Refurbished or second-hand keyboards are often in excellent condition and significantly reduce the environmental impact by extending the product's lifecycle, avoiding the need for new manufacturing, and reducing electronic waste.\",\n  \"metrics\": {\n    \"original_impact\": \"8 kg CO₂ for production and shipping of a new keyboard\",\n    \"suggested_impact\": \"2 kg CO₂ for shipping and minimal refurbishing of a second-hand keyboard\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a new gaming keyboard from Best Buy's website",
+        "suggestion": "Consider purchasing a refurbished or second-hand gaming keyboard from a trusted marketplace or retailer.",
+        "rationale": "Refurbished or second-hand keyboards are often in excellent condition and significantly reduce the environmental impact by extending the product's lifecycle, avoiding the need for new manufacturing, and reducing electronic waste.",
+        "metrics": {
+          "original_impact": "8 kg CO₂ for production and shipping of a new keyboard",
+          "suggested_impact": "2 kg CO₂ for shipping and minimal refurbishing of a second-hand keyboard"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Tech Worker, Male, 31",
+      "input_index": 2,
+      "original_input": "Running the server fans at full speed to keep the room cool",
+      "raw_response": "```json\n{\n  \"original_action\": \"Running server fans at full speed to keep the room cool\",\n  \"suggestion\": \"Install an energy-efficient cooling system or optimize server fan settings based on temperature monitoring.\",\n  \"rationale\": \"Running server fans at full speed consumes significant energy and may not efficiently cool the room. An energy-efficient cooling system tailored to server requirements or dynamic fan speed control based on real-time temperature can reduce energy use while maintaining optimal cooling.\",\n  \"metrics\": {\n    \"original_impact\": \"Estimated 500 kWh per month for excessive fan usage\",\n    \"suggested_impact\": \"300 kWh per month with optimized cooling strategies\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Running server fans at full speed to keep the room cool",
+        "suggestion": "Install an energy-efficient cooling system or optimize server fan settings based on temperature monitoring.",
+        "rationale": "Running server fans at full speed consumes significant energy and may not efficiently cool the room. An energy-efficient cooling system tailored to server requirements or dynamic fan speed control based on real-time temperature can reduce energy use while maintaining optimal cooling.",
+        "metrics": {
+          "original_impact": "Estimated 500 kWh per month for excessive fan usage",
+          "suggested_impact": "300 kWh per month with optimized cooling strategies"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Teacher, Female, 29",
+      "input_index": 0,
+      "original_input": "Making copies of homework assignments for all my classes, probably 150 sheets",
+      "raw_response": "```json\n{\n  \"original_action\": \"Printing 150 sheets of homework assignments for classes\",\n  \"suggestion\": \"Share digital copies of the homework via email or a learning platform instead of printing physical copies.\",\n  \"rationale\": \"Switching to digital copies eliminates paper use and the associated environmental impacts of production and disposal, while also saving costs and time on printing.\",\n  \"metrics\": {\n    \"original_impact\": \"1.5 kg CO₂ and 15 liters of water for 150 sheets (estimated)\",\n    \"suggested_impact\": \"0 kg CO₂ and 0 liters of water for digital sharing\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Printing 150 sheets of homework assignments for classes",
+        "suggestion": "Share digital copies of the homework via email or a learning platform instead of printing physical copies.",
+        "rationale": "Switching to digital copies eliminates paper use and the associated environmental impacts of production and disposal, while also saving costs and time on printing.",
+        "metrics": {
+          "original_impact": "1.5 kg CO₂ and 15 liters of water for 150 sheets (estimated)",
+          "suggested_impact": "0 kg CO₂ and 0 liters of water for digital sharing"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Teacher, Female, 29",
+      "input_index": 1,
+      "original_input": "Driving to Target after school to get classroom supplies",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving to Target after school to purchase classroom supplies.\",\n  \"suggestion\": \"Combine your trip to Target with another errand, or consider ordering the supplies online with consolidated shipping if feasible.\",\n  \"rationale\": \"Consolidating trips or opting for online orders with grouped deliveries reduces the carbon emissions associated with separate car trips, making your shopping more efficient and sustainable.\",\n  \"metrics\": {\n    \"original_impact\": \"5 kg CO₂ for a 20 km round trip drive\",\n    \"suggested_impact\": \"2.5 kg CO₂ if trip is combined or 3 kg CO₂ with consolidated shipping emissions\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving to Target after school to purchase classroom supplies.",
+        "suggestion": "Combine your trip to Target with another errand, or consider ordering the supplies online with consolidated shipping if feasible.",
+        "rationale": "Consolidating trips or opting for online orders with grouped deliveries reduces the carbon emissions associated with separate car trips, making your shopping more efficient and sustainable.",
+        "metrics": {
+          "original_impact": "5 kg CO₂ for a 20 km round trip drive",
+          "suggested_impact": "2.5 kg CO₂ if trip is combined or 3 kg CO₂ with consolidated shipping emissions"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Teacher, Female, 29",
+      "input_index": 2,
+      "original_input": "Getting Starbucks on the way home, treating myself",
+      "raw_response": "```json\n{\n  \"original_action\": \"Getting Starbucks on the way home and using a disposable cup\",\n  \"suggestion\": \"Bring your own reusable cup when you visit Starbucks for your treat.\",\n  \"rationale\": \"Using a reusable cup significantly reduces single-use waste and aligns with Starbucks' initiatives to encourage sustainable practices. It's an easy habit to adopt and adds no extra cost to your purchase.\",\n  \"metrics\": {\n    \"original_impact\": \"0.05 kg CO₂ and 0.3 liters water for disposable cup\",\n    \"suggested_impact\": \"0 kg CO₂ and 0 liters water for cup reuse\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Getting Starbucks on the way home and using a disposable cup",
+        "suggestion": "Bring your own reusable cup when you visit Starbucks for your treat.",
+        "rationale": "Using a reusable cup significantly reduces single-use waste and aligns with Starbucks' initiatives to encourage sustainable practices. It's an easy habit to adopt and adds no extra cost to your purchase.",
+        "metrics": {
+          "original_impact": "0.05 kg CO₂ and 0.3 liters water for disposable cup",
+          "suggested_impact": "0 kg CO₂ and 0 liters water for cup reuse"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Consultant, Male, 48",
+      "input_index": 0,
+      "original_input": "Flying to Chicago for client meetings tomorrow, looking at morning flights",
+      "raw_response": "```json\n{\n  \"original_action\": \"Flying to Chicago for client meetings on a morning flight\",\n  \"suggestion\": \"Choose a direct flight in economy class and consider purchasing a carbon offset for the trip.\",\n  \"rationale\": \"Direct flights eliminate the additional emissions associated with layovers, and economy class has a lower carbon footprint per passenger compared to business or first class. Carbon offsets can further mitigate the environmental impact of your flight.\",\n  \"metrics\": {\n    \"original_impact\": \"700 kg CO₂ for a typical one-way domestic flight in business class with a layover\",\n    \"suggested_impact\": \"400 kg CO₂ for a direct flight in economy class plus offset contribution\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Flying to Chicago for client meetings on a morning flight",
+        "suggestion": "Choose a direct flight in economy class and consider purchasing a carbon offset for the trip.",
+        "rationale": "Direct flights eliminate the additional emissions associated with layovers, and economy class has a lower carbon footprint per passenger compared to business or first class. Carbon offsets can further mitigate the environmental impact of your flight.",
+        "metrics": {
+          "original_impact": "700 kg CO₂ for a typical one-way domestic flight in business class with a layover",
+          "suggested_impact": "400 kg CO₂ for a direct flight in economy class plus offset contribution"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Consultant, Male, 48",
+      "input_index": 1,
+      "original_input": "Renting a car at the airport for two days",
+      "raw_response": "```json\n{\n  \"original_action\": \"Renting a car at the airport for a two-day trip\",\n  \"suggestion\": \"Consider using public transportation, rideshares, or renting an electric vehicle (EV) instead of a conventional car.\",\n  \"rationale\": \"Public transportation and rideshares reduce emissions by avoiding individual vehicle use. If renting a car is necessary, an electric vehicle significantly lowers carbon emissions, especially for short trips, and many airports now offer EV rentals.\",\n  \"metrics\": {\n    \"original_impact\": \"100 kg CO₂ for a 200 km trip in a gasoline car\",\n    \"suggested_impact\": \"0-50 kg CO₂ (0 kg for public transport, ~50 kg for an EV depending on electricity source)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Renting a car at the airport for a two-day trip",
+        "suggestion": "Consider using public transportation, rideshares, or renting an electric vehicle (EV) instead of a conventional car.",
+        "rationale": "Public transportation and rideshares reduce emissions by avoiding individual vehicle use. If renting a car is necessary, an electric vehicle significantly lowers carbon emissions, especially for short trips, and many airports now offer EV rentals.",
+        "metrics": {
+          "original_impact": "100 kg CO₂ for a 200 km trip in a gasoline car",
+          "suggested_impact": "0-50 kg CO₂ (0 kg for public transport, ~50 kg for an EV depending on electricity source)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Afternoon (Work/Shopping)",
+      "demographic": "Consultant, Male, 48",
+      "input_index": 2,
+      "original_input": "Booking a hotel downtown, need a place with good amenities",
+      "raw_response": "```json\n{\n  \"original_action\": \"Booking a hotel downtown with good amenities\",\n  \"suggestion\": \"Choose a hotel with eco-certifications such as LEED or Green Key and prioritize one that includes sustainable practices like energy-efficient lighting, water-saving measures, and waste reduction programs.\",\n  \"rationale\": \"Eco-certified hotels often have lower environmental footprints due to their commitment to sustainability, without sacrificing comfort or amenities. By choosing such a hotel, you support businesses that actively work to reduce energy use, conserve water, and minimize waste.\",\n  \"metrics\": {\n    \"original_impact\": \"Approximately 30 kg CO₂ per night (average downtown hotel stay)\",\n    \"suggested_impact\": \"Approximately 20-25 kg CO₂ per night (eco-certified hotel stay)\",\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Booking a hotel downtown with good amenities",
+        "suggestion": "Choose a hotel with eco-certifications such as LEED or Green Key and prioritize one that includes sustainable practices like energy-efficient lighting, water-saving measures, and waste reduction programs.",
+        "rationale": "Eco-certified hotels often have lower environmental footprints due to their commitment to sustainability, without sacrificing comfort or amenities. By choosing such a hotel, you support businesses that actively work to reduce energy use, conserve water, and minimize waste.",
+        "metrics": {
+          "original_impact": "Approximately 30 kg CO₂ per night (average downtown hotel stay)",
+          "suggested_impact": "Approximately 20-25 kg CO₂ per night (eco-certified hotel stay)"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Young Couple, Female, 26",
+      "input_index": 0,
+      "original_input": "Ordering pizza delivery for date night, getting two large pizzas",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering two large pizzas for delivery on date night\",\n  \"suggestion\": \"Order from a local pizzeria and opt for pick-up instead of delivery, if feasible.\",\n  \"rationale\": \"Picking up the pizza reduces emissions from delivery vehicles, and supporting a local pizzeria can minimize the environmental impact of transportation in the supply chain compared to larger chains. This is a simple and cost-effective adjustment that supports sustainability and local businesses.\",\n  \"metrics\": {\n    \"original_impact\": \"1.5 kg CO₂ for delivery emissions plus packaging waste\",\n    \"suggested_impact\": \"1.0 kg CO₂ for personal vehicle or walking emissions, with potential to reduce packaging waste\",\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering two large pizzas for delivery on date night",
+        "suggestion": "Order from a local pizzeria and opt for pick-up instead of delivery, if feasible.",
+        "rationale": "Picking up the pizza reduces emissions from delivery vehicles, and supporting a local pizzeria can minimize the environmental impact of transportation in the supply chain compared to larger chains. This is a simple and cost-effective adjustment that supports sustainability and local businesses.",
+        "metrics": {
+          "original_impact": "1.5 kg CO₂ for delivery emissions plus packaging waste",
+          "suggested_impact": "1.0 kg CO₂ for personal vehicle or walking emissions, with potential to reduce packaging waste"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Young Couple, Female, 26",
+      "input_index": 1,
+      "original_input": "Watching Netflix, we'll probably binge for like four hours tonight",
+      "raw_response": "```json\n{\n  \"original_action\": \"Watching Netflix for four hours\",\n  \"suggestion\": \"Turn off unused lights and devices in the room while watching Netflix.\",\n  \"rationale\": \"Streaming itself has a relatively low environmental impact, but reducing energy use from lighting and idle electronics can minimize unnecessary electricity consumption during the activity.\",\n  \"metrics\": {\n    \"original_impact\": \"0.2 kg CO₂ for streaming electricity usage\",\n    \"suggested_impact\": \"0.15 kg CO₂ with reduced energy consumption from lights and idle devices\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Watching Netflix for four hours",
+        "suggestion": "Turn off unused lights and devices in the room while watching Netflix.",
+        "rationale": "Streaming itself has a relatively low environmental impact, but reducing energy use from lighting and idle electronics can minimize unnecessary electricity consumption during the activity.",
+        "metrics": {
+          "original_impact": "0.2 kg CO₂ for streaming electricity usage",
+          "suggested_impact": "0.15 kg CO₂ with reduced energy consumption from lights and idle devices"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Young Couple, Female, 26",
+      "input_index": 2,
+      "original_input": "Doing a load of laundry before bed, just throwing everything in",
+      "raw_response": "```json\n{\n  \"original_action\": \"Doing a load of laundry with mixed items without sorting.\",\n  \"suggestion\": \"Sort your laundry into categories (e.g., lights, darks, delicates) and use cold water for the wash cycle.\",\n  \"rationale\": \"Sorting laundry prevents damage to clothes, extending their lifespan, while using cold water significantly reduces energy consumption compared to hot or warm water. This small change improves sustainability and saves on energy costs.\",\n  \"metrics\": {\n    \"original_impact\": \"1.2 kg CO₂ per load with warm water\",\n    \"suggested_impact\": \"0.4 kg CO₂ per load with cold water\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Doing a load of laundry with mixed items without sorting.",
+        "suggestion": "Sort your laundry into categories (e.g., lights, darks, delicates) and use cold water for the wash cycle.",
+        "rationale": "Sorting laundry prevents damage to clothes, extending their lifespan, while using cold water significantly reduces energy consumption compared to hot or warm water. This small change improves sustainability and saves on energy costs.",
+        "metrics": {
+          "original_impact": "1.2 kg CO₂ per load with warm water",
+          "suggested_impact": "0.4 kg CO₂ per load with cold water"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Parent, Male, 39",
+      "input_index": 0,
+      "original_input": "Driving to pick up takeout Thai food for dinner, about ten minutes away",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving to pick up takeout Thai food for dinner, about ten minutes away\",\n  \"suggestion\": \"Consider walking or biking to pick up your takeout if it's safe and feasible, or combine the trip with other errands to reduce the overall driving distance.\",\n  \"rationale\": \"Walking or biking eliminates carbon emissions entirely and adds a bit of physical activity to your day. If walking or biking isn't an option, combining the trip with other errands reduces the environmental impact by sharing the emissions across multiple purposes.\",\n  \"metrics\": {\n    \"original_impact\": \"1.4 kg CO₂ for a 20-minute round trip (10 minutes each way)\",\n    \"suggested_impact\": \"0 kg CO₂ if walking or biking, or reduced emissions if combining trips\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving to pick up takeout Thai food for dinner, about ten minutes away",
+        "suggestion": "Consider walking or biking to pick up your takeout if it's safe and feasible, or combine the trip with other errands to reduce the overall driving distance.",
+        "rationale": "Walking or biking eliminates carbon emissions entirely and adds a bit of physical activity to your day. If walking or biking isn't an option, combining the trip with other errands reduces the environmental impact by sharing the emissions across multiple purposes.",
+        "metrics": {
+          "original_impact": "1.4 kg CO₂ for a 20-minute round trip (10 minutes each way)",
+          "suggested_impact": "0 kg CO₂ if walking or biking, or reduced emissions if combining trips"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Parent, Male, 39",
+      "input_index": 1,
+      "original_input": "Running the dishwasher, it's only half full but I need those dishes clean",
+      "raw_response": "```json\n{\n  \"original_action\": \"Running the dishwasher half full to clean needed dishes.\",\n  \"suggestion\": \"Hand wash the few dishes you need and wait to run the dishwasher until it is full.\",\n  \"rationale\": \"Running a half-full dishwasher uses the same amount of water and energy as a full load, while hand washing just the necessary items conserves resources. Waiting to run a full load maximizes the efficiency of the dishwasher.\",\n  \"metrics\": {\n    \"original_impact\": \"1.2 kWh energy and 12 liters water per half-empty load\",\n    \"suggested_impact\": \"0.2 kWh energy and 3 liters water for hand washing a few dishes\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Running the dishwasher half full to clean needed dishes.",
+        "suggestion": "Hand wash the few dishes you need and wait to run the dishwasher until it is full.",
+        "rationale": "Running a half-full dishwasher uses the same amount of water and energy as a full load, while hand washing just the necessary items conserves resources. Waiting to run a full load maximizes the efficiency of the dishwasher.",
+        "metrics": {
+          "original_impact": "1.2 kWh energy and 12 liters water per half-empty load",
+          "suggested_impact": "0.2 kWh energy and 3 liters water for hand washing a few dishes"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Parent, Male, 39",
+      "input_index": 2,
+      "original_input": "Buying a new toy for my son's birthday on Amazon, need it before Friday",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a new toy on Amazon with expedited shipping for a birthday gift.\",\n  \"suggestion\": \"Check for a local toy store or secondhand store near you to purchase the toy and pick it up in person.\",\n  \"rationale\": \"Shopping locally reduces the carbon emissions associated with long-distance shipping and packaging waste. Additionally, secondhand toys are often in excellent condition and prevent waste, while supporting local businesses provides community benefits.\",\n  \"metrics\": {\n    \"original_impact\": \"5 kg CO₂ for expedited shipping and packaging\",\n    \"suggested_impact\": \"1 kg CO₂ if purchased locally (accounting for a short car trip or walk/bike)\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a new toy on Amazon with expedited shipping for a birthday gift.",
+        "suggestion": "Check for a local toy store or secondhand store near you to purchase the toy and pick it up in person.",
+        "rationale": "Shopping locally reduces the carbon emissions associated with long-distance shipping and packaging waste. Additionally, secondhand toys are often in excellent condition and prevent waste, while supporting local businesses provides community benefits.",
+        "metrics": {
+          "original_impact": "5 kg CO₂ for expedited shipping and packaging",
+          "suggested_impact": "1 kg CO₂ if purchased locally (accounting for a short car trip or walk/bike)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Retiree, Female, 71",
+      "input_index": 0,
+      "original_input": "Turning on the heating for the evening, setting it to 74 degrees",
+      "raw_response": "```json\n{\n  \"original_action\": \"Turning on the heating for the evening and setting it to 74°F.\",\n  \"suggestion\": \"Lower the thermostat to 68°F and use a blanket or warm clothing for additional comfort.\",\n  \"rationale\": \"Heating accounts for a significant portion of household energy use, and lowering the thermostat by just a few degrees can reduce energy consumption significantly. Using a blanket or warm clothing is an easy and cost-free way to stay comfortable while saving energy and lowering emissions.\",\n  \"metrics\": {\n    \"original_impact\": \"5.5 kg CO₂ for 4 hours at 74°F (depending on heating system and home insulation)\",\n    \"suggested_impact\": \"4.1 kg CO₂ for 4 hours at 68°F (same assumptions)\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Turning on the heating for the evening and setting it to 74°F.",
+        "suggestion": "Lower the thermostat to 68°F and use a blanket or warm clothing for additional comfort.",
+        "rationale": "Heating accounts for a significant portion of household energy use, and lowering the thermostat by just a few degrees can reduce energy consumption significantly. Using a blanket or warm clothing is an easy and cost-free way to stay comfortable while saving energy and lowering emissions.",
+        "metrics": {
+          "original_impact": "5.5 kg CO₂ for 4 hours at 74°F (depending on heating system and home insulation)",
+          "suggested_impact": "4.1 kg CO₂ for 4 hours at 68°F (same assumptions)"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Retiree, Female, 71",
+      "input_index": 1,
+      "original_input": "Making pot roast for dinner in the oven, takes about three hours",
+      "raw_response": "```json\n{\n  \"original_action\": \"Cooking a pot roast in the oven for three hours\",\n  \"suggestion\": \"Use a slow cooker to make the pot roast instead of the oven.\",\n  \"rationale\": \"A slow cooker uses significantly less energy than an oven over a long cooking period, reducing electricity consumption while still achieving tender and flavorful results.\",\n  \"metrics\": {\n    \"original_impact\": \"2.7 kg CO₂ (assuming 2 kWh electricity for oven)\",\n    \"suggested_impact\": \"0.6 kg CO₂ (assuming 0.45 kWh electricity for slow cooker)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Cooking a pot roast in the oven for three hours",
+        "suggestion": "Use a slow cooker to make the pot roast instead of the oven.",
+        "rationale": "A slow cooker uses significantly less energy than an oven over a long cooking period, reducing electricity consumption while still achieving tender and flavorful results.",
+        "metrics": {
+          "original_impact": "2.7 kg CO₂ (assuming 2 kWh electricity for oven)",
+          "suggested_impact": "0.6 kg CO₂ (assuming 0.45 kWh electricity for slow cooker)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Retiree, Female, 71",
+      "input_index": 2,
+      "original_input": "Watching the news, TV will be on most of the evening",
+      "raw_response": "```json\n{\n  \"original_action\": \"Watching TV for most of the evening.\",\n  \"suggestion\": \"Switch to streaming your chosen news or entertainment on a tablet or laptop, which uses significantly less energy than a TV.\",\n  \"rationale\": \"Tablets and laptops are more energy-efficient compared to TVs, especially larger ones. This small change can reduce your electricity use and carbon footprint while still allowing you to enjoy your evening entertainment.\",\n  \"metrics\": {\n    \"original_impact\": \"0.3-0.6 kWh electricity use for 4 hours of TV (0.12-0.24 kg CO₂ in typical grid energy)\",\n    \"suggested_impact\": \"0.04-0.1 kWh electricity use for 4 hours of streaming on a tablet or laptop (0.016-0.04 kg CO₂ in typical grid energy)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Watching TV for most of the evening.",
+        "suggestion": "Switch to streaming your chosen news or entertainment on a tablet or laptop, which uses significantly less energy than a TV.",
+        "rationale": "Tablets and laptops are more energy-efficient compared to TVs, especially larger ones. This small change can reduce your electricity use and carbon footprint while still allowing you to enjoy your evening entertainment.",
+        "metrics": {
+          "original_impact": "0.3-0.6 kWh electricity use for 4 hours of TV (0.12-0.24 kg CO₂ in typical grid energy)",
+          "suggested_impact": "0.04-0.1 kWh electricity use for 4 hours of streaming on a tablet or laptop (0.016-0.04 kg CO₂ in typical grid energy)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Fitness Enthusiast, Male, 33",
+      "input_index": 0,
+      "original_input": "Buying protein powder online, getting the 10-pound container",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying protein powder online in a 10-pound container.\",\n  \"suggestion\": \"Opt for a plant-based protein powder in a recyclable or compostable package, if available.\",\n  \"rationale\": \"Plant-based protein powders generally have a lower carbon and water footprint than animal-based ones. Choosing eco-friendly packaging reduces plastic waste, and many brands now offer sustainable options.\",\n  \"metrics\": {\n    \"original_impact\": \"20 kg CO₂ for whey protein production and packaging (approximate for 10 pounds).\",\n    \"suggested_impact\": \"10 kg CO₂ for plant-based protein with sustainable packaging (approximate for 10 pounds).\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying protein powder online in a 10-pound container.",
+        "suggestion": "Opt for a plant-based protein powder in a recyclable or compostable package, if available.",
+        "rationale": "Plant-based protein powders generally have a lower carbon and water footprint than animal-based ones. Choosing eco-friendly packaging reduces plastic waste, and many brands now offer sustainable options.",
+        "metrics": {
+          "original_impact": "20 kg CO₂ for whey protein production and packaging (approximate for 10 pounds).",
+          "suggested_impact": "10 kg CO₂ for plant-based protein with sustainable packaging (approximate for 10 pounds)."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Fitness Enthusiast, Male, 33",
+      "input_index": 1,
+      "original_input": "Driving to the gym, it's about twenty minutes away",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving to the gym located 20 minutes away\",\n  \"suggestion\": \"Consider biking to the gym if safe and feasible, or explore a gym closer to home that you could walk to.\",\n  \"rationale\": \"Biking eliminates car emissions entirely and provides an additional warm-up before your workout. Alternatively, walking to a nearby gym achieves the same goal while reducing carbon emissions and fuel consumption.\",\n  \"metrics\": {\n    \"original_impact\": \"2.3 kg CO₂ for a 20 km round trip drive\",\n    \"suggested_impact\": \"0 kg CO₂ if biking or walking\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving to the gym located 20 minutes away",
+        "suggestion": "Consider biking to the gym if safe and feasible, or explore a gym closer to home that you could walk to.",
+        "rationale": "Biking eliminates car emissions entirely and provides an additional warm-up before your workout. Alternatively, walking to a nearby gym achieves the same goal while reducing carbon emissions and fuel consumption.",
+        "metrics": {
+          "original_impact": "2.3 kg CO₂ for a 20 km round trip drive",
+          "suggested_impact": "0 kg CO₂ if biking or walking"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Evening (Home/Leisure)",
+      "demographic": "Fitness Enthusiast, Male, 33",
+      "input_index": 2,
+      "original_input": "Taking a long hot shower after my workout, helps my muscles",
+      "raw_response": "```json\n{\n  \"original_action\": \"Taking a long hot shower after a workout to soothe muscles.\",\n  \"suggestion\": \"Take a shorter warm shower (around 5 minutes) and use a reusable heat pack or heating pad for muscle relief afterward.\",\n  \"rationale\": \"Shorter showers significantly reduce water and energy use, while a reusable heat pack provides targeted muscle relief without additional water or energy. This is both sustainable and effective for your recovery routine.\",\n  \"metrics\": {\n    \"original_impact\": \"100 liters of water and 1.8 kg CO₂ for a 15-minute hot shower\",\n    \"suggested_impact\": \"33 liters of water and 0.6 kg CO₂ for a 5-minute warm shower\",\n    \"impact_indicator\": \"high\"\n  },\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Taking a long hot shower after a workout to soothe muscles.",
+        "suggestion": "Take a shorter warm shower (around 5 minutes) and use a reusable heat pack or heating pad for muscle relief afterward.",
+        "rationale": "Shorter showers significantly reduce water and energy use, while a reusable heat pack provides targeted muscle relief without additional water or energy. This is both sustainable and effective for your recovery routine.",
+        "metrics": {
+          "original_impact": "100 liters of water and 1.8 kg CO₂ for a 15-minute hot shower",
+          "suggested_impact": "33 liters of water and 0.6 kg CO₂ for a 5-minute warm shower",
+          "impact_indicator": "high"
+        },
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Night Routine",
+      "demographic": "Graduate Student, Female, 24",
+      "input_index": 0,
+      "original_input": "Pulling an all-nighter to finish my thesis, keeping all the lights on and drinking lots of coffee",
+      "raw_response": "```json\n{\n  \"original_action\": \"Pulling an all-nighter with all lights on and drinking lots of coffee to finish a thesis.\",\n  \"suggestion\": \"Use task lighting or LED desk lamps instead of keeping all room lights on, and consider making coffee at home to reduce waste from disposable cups.\",\n  \"rationale\": \"Switching to task lighting or LED lamps reduces electricity use, and brewing coffee at home minimizes waste from single-use coffee cups and lids, while still supporting your productivity during the all-nighter.\",\n  \"metrics\": {\n    \"original_impact\": \"2.5 kWh of electricity and 0.3 kg CO₂ from disposable coffee cups (estimated for 8 hours and 3 cups of coffee).\",\n    \"suggested_impact\": \"1 kWh of electricity and 0.05 kg CO₂ from reusable mugs (estimated).\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Pulling an all-nighter with all lights on and drinking lots of coffee to finish a thesis.",
+        "suggestion": "Use task lighting or LED desk lamps instead of keeping all room lights on, and consider making coffee at home to reduce waste from disposable cups.",
+        "rationale": "Switching to task lighting or LED lamps reduces electricity use, and brewing coffee at home minimizes waste from single-use coffee cups and lids, while still supporting your productivity during the all-nighter.",
+        "metrics": {
+          "original_impact": "2.5 kWh of electricity and 0.3 kg CO₂ from disposable coffee cups (estimated for 8 hours and 3 cups of coffee).",
+          "suggested_impact": "1 kWh of electricity and 0.05 kg CO₂ from reusable mugs (estimated)."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Night Routine",
+      "demographic": "Graduate Student, Female, 24",
+      "input_index": 1,
+      "original_input": "Ordering late-night snacks from 7-Eleven through delivery app",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering late-night snacks from 7-Eleven through a delivery app\",\n  \"suggestion\": \"Walk or bike to the nearest convenience store to pick up your snacks instead of using delivery.\",\n  \"rationale\": \"By skipping delivery, you eliminate the carbon emissions associated with the delivery vehicle and reduce packaging waste often used for app orders. Walking or biking is also healthier for you and has no associated emissions.\",\n  \"metrics\": {\n    \"original_impact\": \"0.8 kg CO₂ for an average delivery trip\",\n    \"suggested_impact\": \"0 kg CO₂ from walking or biking\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering late-night snacks from 7-Eleven through a delivery app",
+        "suggestion": "Walk or bike to the nearest convenience store to pick up your snacks instead of using delivery.",
+        "rationale": "By skipping delivery, you eliminate the carbon emissions associated with the delivery vehicle and reduce packaging waste often used for app orders. Walking or biking is also healthier for you and has no associated emissions.",
+        "metrics": {
+          "original_impact": "0.8 kg CO₂ for an average delivery trip",
+          "suggested_impact": "0 kg CO₂ from walking or biking"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Night Routine",
+      "demographic": "Graduate Student, Female, 24",
+      "input_index": 2,
+      "original_input": "Running the heater because it's cold in my apartment, probably all night",
+      "raw_response": "```json\n{\n  \"original_action\": \"Running the heater all night to stay warm in a cold apartment.\",\n  \"suggestion\": \"Use a programmable thermostat to lower the temperature slightly while sleeping and layer up with warm blankets or clothing.\",\n  \"rationale\": \"Lowering the thermostat by just a few degrees at night can significantly reduce energy consumption, while layering up ensures you stay warm and comfortable. This approach reduces your carbon footprint and saves on heating costs.\",\n  \"metrics\": {\n    \"original_impact\": \"10 kg CO₂ for running a heater all night (8 hours, depending on type and efficiency)\",\n    \"suggested_impact\": \"6-7 kg CO₂ with reduced thermostat setting and additional insulation like blankets\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Running the heater all night to stay warm in a cold apartment.",
+        "suggestion": "Use a programmable thermostat to lower the temperature slightly while sleeping and layer up with warm blankets or clothing.",
+        "rationale": "Lowering the thermostat by just a few degrees at night can significantly reduce energy consumption, while layering up ensures you stay warm and comfortable. This approach reduces your carbon footprint and saves on heating costs.",
+        "metrics": {
+          "original_impact": "10 kg CO₂ for running a heater all night (8 hours, depending on type and efficiency)",
+          "suggested_impact": "6-7 kg CO₂ with reduced thermostat setting and additional insulation like blankets"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Night Routine",
+      "demographic": "Working Parent, Male, 42",
+      "input_index": 0,
+      "original_input": "Leaving the porch light on all night for security",
+      "raw_response": "```json\n{\n  \"original_action\": \"Leaving the porch light on all night for security.\",\n  \"suggestion\": \"Install a motion-sensor light that only turns on when movement is detected.\",\n  \"rationale\": \"Motion-sensor lights provide the same level of security by illuminating only when needed, reducing energy consumption significantly and extending the bulb's lifespan.\",\n  \"metrics\": {\n    \"original_impact\": \"1.2 kWh per night (~0.5 kg CO₂ per night, assuming incandescent bulb)\",\n    \"suggested_impact\": \"0.1 kWh per night (~0.04 kg CO₂ per night, assuming LED motion-sensor bulb with limited activation)\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Leaving the porch light on all night for security.",
+        "suggestion": "Install a motion-sensor light that only turns on when movement is detected.",
+        "rationale": "Motion-sensor lights provide the same level of security by illuminating only when needed, reducing energy consumption significantly and extending the bulb's lifespan.",
+        "metrics": {
+          "original_impact": "1.2 kWh per night (~0.5 kg CO₂ per night, assuming incandescent bulb)",
+          "suggested_impact": "0.1 kWh per night (~0.04 kg CO₂ per night, assuming LED motion-sensor bulb with limited activation)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Night Routine",
+      "demographic": "Working Parent, Male, 42",
+      "input_index": 1,
+      "original_input": "Running the washing machine before bed, need clean clothes for tomorrow",
+      "raw_response": "```json\n{\n  \"original_action\": \"Running the washing machine at night for clean clothes needed the next day.\",\n  \"suggestion\": \"Run the washing machine on a cold water cycle and ensure it's a full load.\",\n  \"rationale\": \"Cold water cycles use significantly less energy compared to hot water cycles, and running a full load maximizes the efficiency of water and energy use per garment. This way, you still get clean clothes while reducing energy consumption and associated emissions.\",\n  \"metrics\": {\n    \"original_impact\": \"0.7 kg CO₂ for a standard warm water cycle (assuming 1 kWh of energy use)\",\n    \"suggested_impact\": \"0.2 kg CO₂ for a cold water cycle (assuming 0.3 kWh of energy use)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Running the washing machine at night for clean clothes needed the next day.",
+        "suggestion": "Run the washing machine on a cold water cycle and ensure it's a full load.",
+        "rationale": "Cold water cycles use significantly less energy compared to hot water cycles, and running a full load maximizes the efficiency of water and energy use per garment. This way, you still get clean clothes while reducing energy consumption and associated emissions.",
+        "metrics": {
+          "original_impact": "0.7 kg CO₂ for a standard warm water cycle (assuming 1 kWh of energy use)",
+          "suggested_impact": "0.2 kg CO₂ for a cold water cycle (assuming 0.3 kWh of energy use)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Night Routine",
+      "demographic": "Working Parent, Male, 42",
+      "input_index": 2,
+      "original_input": "Setting the thermostat to 72 overnight so we're comfortable",
+      "raw_response": "```json\n{\n  \"original_action\": \"Setting the thermostat to 72°F overnight for comfort.\",\n  \"suggestion\": \"Lower the thermostat to 68°F overnight and use an extra blanket or warmer sleepwear for comfort.\",\n  \"rationale\": \"Lowering the thermostat by just a few degrees significantly reduces energy consumption and carbon emissions while maintaining comfort with simple adjustments like extra bedding.\",\n  \"metrics\": {\n    \"original_impact\": \"Approximately 10 kWh of energy use for an 8-hour period, equivalent to 6.5 kg CO₂ (depending on energy source).\",\n    \"suggested_impact\": \"Approximately 7 kWh of energy use, equivalent to 4.6 kg CO₂ (depending on energy source).\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Setting the thermostat to 72°F overnight for comfort.",
+        "suggestion": "Lower the thermostat to 68°F overnight and use an extra blanket or warmer sleepwear for comfort.",
+        "rationale": "Lowering the thermostat by just a few degrees significantly reduces energy consumption and carbon emissions while maintaining comfort with simple adjustments like extra bedding.",
+        "metrics": {
+          "original_impact": "Approximately 10 kWh of energy use for an 8-hour period, equivalent to 6.5 kg CO₂ (depending on energy source).",
+          "suggested_impact": "Approximately 7 kWh of energy use, equivalent to 4.6 kg CO₂ (depending on energy source)."
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Family, Female, 36",
+      "input_index": 0,
+      "original_input": "Planning a road trip to the beach this weekend, about 200 miles each way",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving 200 miles each way for a beach trip this weekend in a personal vehicle.\",\n  \"suggestion\": \"Rent a hybrid or electric vehicle for the trip if available and affordable.\",\n  \"rationale\": \"Hybrid or electric vehicles significantly reduce fuel consumption and emissions compared to traditional gas-powered cars, especially over long distances. Renting one for this trip ensures lower environmental impact without requiring permanent changes to your vehicle choice.\",\n  \"metrics\": {\n    \"original_impact\": \"88 kg CO₂ for a gas-powered car (400 miles round trip)\",\n    \"suggested_impact\": \"30 kg CO₂ for a hybrid or 0 kg CO₂ for an EV (electric vehicle powered by clean energy)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving 200 miles each way for a beach trip this weekend in a personal vehicle.",
+        "suggestion": "Rent a hybrid or electric vehicle for the trip if available and affordable.",
+        "rationale": "Hybrid or electric vehicles significantly reduce fuel consumption and emissions compared to traditional gas-powered cars, especially over long distances. Renting one for this trip ensures lower environmental impact without requiring permanent changes to your vehicle choice.",
+        "metrics": {
+          "original_impact": "88 kg CO₂ for a gas-powered car (400 miles round trip)",
+          "suggested_impact": "30 kg CO₂ for a hybrid or 0 kg CO₂ for an EV (electric vehicle powered by clean energy)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Family, Female, 36",
+      "input_index": 1,
+      "original_input": "Buying groceries for the week at Whole Foods, filling up the cart",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying groceries for the week at Whole Foods, filling up the cart\",\n  \"suggestion\": \"Prioritize buying seasonal, locally sourced produce and reduce reliance on highly packaged or imported items.\",\n  \"rationale\": \"Locally sourced and seasonal foods have a lower carbon footprint due to reduced transportation and storage needs. Minimizing packaged goods reduces waste and favors fresh, sustainable choices.\",\n  \"metrics\": {\n    \"original_impact\": \"Approximately 50 kg CO₂ for a mixed grocery cart with imported and packaged items\",\n    \"suggested_impact\": \"35 kg CO₂ for a cart emphasizing local, seasonal, and minimally packaged items\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying groceries for the week at Whole Foods, filling up the cart",
+        "suggestion": "Prioritize buying seasonal, locally sourced produce and reduce reliance on highly packaged or imported items.",
+        "rationale": "Locally sourced and seasonal foods have a lower carbon footprint due to reduced transportation and storage needs. Minimizing packaged goods reduces waste and favors fresh, sustainable choices.",
+        "metrics": {
+          "original_impact": "Approximately 50 kg CO₂ for a mixed grocery cart with imported and packaged items",
+          "suggested_impact": "35 kg CO₂ for a cart emphasizing local, seasonal, and minimally packaged items"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Family, Female, 36",
+      "input_index": 2,
+      "original_input": "Grilling burgers and steaks for the family barbecue on Saturday",
+      "raw_response": "```json\n{\n  \"original_action\": \"Grilling burgers and steaks for a family barbecue\",\n  \"suggestion\": \"Include plant-based burger patties or grilled vegetables alongside the meat options.\",\n  \"rationale\": \"Plant-based alternatives and vegetables have a significantly lower carbon footprint compared to beef, and adding them to the menu can reduce overall emissions while offering variety for everyone.\",\n  \"metrics\": {\n    \"original_impact\": \"25 kg CO₂ for 8 servings of beef (burgers and steaks)\",\n    \"suggested_impact\": \"15 kg CO₂ with 4 servings of beef and 4 servings of plant-based alternatives or vegetables\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Grilling burgers and steaks for a family barbecue",
+        "suggestion": "Include plant-based burger patties or grilled vegetables alongside the meat options.",
+        "rationale": "Plant-based alternatives and vegetables have a significantly lower carbon footprint compared to beef, and adding them to the menu can reduce overall emissions while offering variety for everyone.",
+        "metrics": {
+          "original_impact": "25 kg CO₂ for 8 servings of beef (burgers and steaks)",
+          "suggested_impact": "15 kg CO₂ with 4 servings of beef and 4 servings of plant-based alternatives or vegetables"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Hobbyist, Male, 58",
+      "input_index": 0,
+      "original_input": "Buying new power tools online, they're on sale at Home Depot",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying new power tools online during a sale at Home Depot\",\n  \"suggestion\": \"Purchase refurbished power tools or rent them if they are for occasional use.\",\n  \"rationale\": \"Refurbished tools reduce demand for new manufacturing, lowering resource use and waste. Renting tools is cost-effective and eliminates ownership waste for infrequent use.\",\n  \"metrics\": {\n    \"original_impact\": \"50 kg CO₂ (estimated manufacturing and shipping for new tools)\",\n    \"suggested_impact\": \"25 kg CO₂ for refurbished tools or near-zero for tool rental\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying new power tools online during a sale at Home Depot",
+        "suggestion": "Purchase refurbished power tools or rent them if they are for occasional use.",
+        "rationale": "Refurbished tools reduce demand for new manufacturing, lowering resource use and waste. Renting tools is cost-effective and eliminates ownership waste for infrequent use.",
+        "metrics": {
+          "original_impact": "50 kg CO₂ (estimated manufacturing and shipping for new tools)",
+          "suggested_impact": "25 kg CO₂ for refurbished tools or near-zero for tool rental"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Hobbyist, Male, 58",
+      "input_index": 1,
+      "original_input": "Working on my car in the garage with all the lights on this weekend",
+      "raw_response": "```json\n{\n  \"original_action\": \"Working on a car in the garage with all the lights on.\",\n  \"suggestion\": \"Use energy-efficient LED bulbs and turn off unnecessary lights when not needed.\",\n  \"rationale\": \"LED bulbs consume significantly less energy compared to traditional incandescent or CFL bulbs, and turning off extra lights reduces electricity use, lowering your carbon footprint without impacting your work.\",\n  \"metrics\": {\n    \"original_impact\": \"1.5 kg CO₂ for 8 hours of incandescent lighting (assuming 5 lights at 60W each).\",\n    \"suggested_impact\": \"0.3 kg CO₂ for 8 hours of LED lighting (assuming 5 lights at 10W each).\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Working on a car in the garage with all the lights on.",
+        "suggestion": "Use energy-efficient LED bulbs and turn off unnecessary lights when not needed.",
+        "rationale": "LED bulbs consume significantly less energy compared to traditional incandescent or CFL bulbs, and turning off extra lights reduces electricity use, lowering your carbon footprint without impacting your work.",
+        "metrics": {
+          "original_impact": "1.5 kg CO₂ for 8 hours of incandescent lighting (assuming 5 lights at 60W each).",
+          "suggested_impact": "0.3 kg CO₂ for 8 hours of LED lighting (assuming 5 lights at 10W each)."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Hobbyist, Male, 58",
+      "input_index": 2,
+      "original_input": "Planning to repaint my deck, need to buy several gallons of stain",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying several gallons of deck stain for repainting a deck\",\n  \"suggestion\": \"Choose a water-based, low-VOC (volatile organic compounds) or no-VOC deck stain instead of a traditional oil-based stain.\",\n  \"rationale\": \"Low-VOC or no-VOC stains significantly reduce the release of harmful chemicals into the air, improving indoor and outdoor air quality. Water-based stains are also easier to clean up with water, reducing the need for harsh cleaning chemicals.\",\n  \"metrics\": {\n    \"original_impact\": \"High VOC emissions from oil-based stain, approximately 100-150 grams VOCs per liter\",\n    \"suggested_impact\": \"Low VOC emissions, approximately 5-50 grams VOCs per liter with low-VOC stain\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying several gallons of deck stain for repainting a deck",
+        "suggestion": "Choose a water-based, low-VOC (volatile organic compounds) or no-VOC deck stain instead of a traditional oil-based stain.",
+        "rationale": "Low-VOC or no-VOC stains significantly reduce the release of harmful chemicals into the air, improving indoor and outdoor air quality. Water-based stains are also easier to clean up with water, reducing the need for harsh cleaning chemicals.",
+        "metrics": {
+          "original_impact": "High VOC emissions from oil-based stain, approximately 100-150 grams VOCs per liter",
+          "suggested_impact": "Low VOC emissions, approximately 5-50 grams VOCs per liter with low-VOC stain"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Social Butterfly, Female, 25",
+      "input_index": 0,
+      "original_input": "Getting my nails done at the salon, then maybe shopping at the mall",
+      "raw_response": "```json\n{\n  \"original_action\": \"Getting nails done at the salon and shopping at the mall.\",\n  \"suggestion\": \"Opt for a non-toxic, eco-friendly nail polish brand at the salon and bring a reusable shopping bag to the mall.\",\n  \"rationale\": \"Non-toxic nail polishes reduce exposure to harmful chemicals for both you and the environment, while reusable shopping bags minimize plastic waste during your mall visit.\",\n  \"metrics\": {\n    \"original_impact\": \"Qualitative estimate: Chemical exposure and potential microplastic pollution from conventional nail polish; additional plastic waste from store bags.\",\n    \"suggested_impact\": \"Reduced chemical exposure and no additional plastic waste from reusable bag use.\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"qualitative_only\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Getting nails done at the salon and shopping at the mall.",
+        "suggestion": "Opt for a non-toxic, eco-friendly nail polish brand at the salon and bring a reusable shopping bag to the mall.",
+        "rationale": "Non-toxic nail polishes reduce exposure to harmful chemicals for both you and the environment, while reusable shopping bags minimize plastic waste during your mall visit.",
+        "metrics": {
+          "original_impact": "Qualitative estimate: Chemical exposure and potential microplastic pollution from conventional nail polish; additional plastic waste from store bags.",
+          "suggested_impact": "Reduced chemical exposure and no additional plastic waste from reusable bag use."
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "qualitative_only"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Social Butterfly, Female, 25",
+      "input_index": 1,
+      "original_input": "Meeting friends for brunch downtown, we're all driving separately",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving separately to meet friends for brunch downtown\",\n  \"suggestion\": \"Coordinate a carpool with your friends or use public transit if available.\",\n  \"rationale\": \"Carpooling reduces the number of vehicles on the road, cutting emissions and saving fuel costs. If public transit is an option, it further minimizes your carbon footprint while being affordable and convenient.\",\n  \"metrics\": {\n    \"original_impact\": \"10 kg CO₂ for 4 cars traveling 10 km round trip each\",\n    \"suggested_impact\": \"2.5 kg CO₂ for 1 carpool vehicle traveling the same distance or as low as 0.5 kg CO₂ per person by public transit\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving separately to meet friends for brunch downtown",
+        "suggestion": "Coordinate a carpool with your friends or use public transit if available.",
+        "rationale": "Carpooling reduces the number of vehicles on the road, cutting emissions and saving fuel costs. If public transit is an option, it further minimizes your carbon footprint while being affordable and convenient.",
+        "metrics": {
+          "original_impact": "10 kg CO₂ for 4 cars traveling 10 km round trip each",
+          "suggested_impact": "2.5 kg CO₂ for 1 carpool vehicle traveling the same distance or as low as 0.5 kg CO₂ per person by public transit"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Social Butterfly, Female, 25",
+      "input_index": 2,
+      "original_input": "Buying a new dress for tonight, need something cute",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a new dress for a single event\",\n  \"suggestion\": \"Consider borrowing a dress from a friend or renting one from a clothing rental service.\",\n  \"rationale\": \"Borrowing or renting reduces the environmental impact associated with producing and transporting a new garment. It also avoids adding to textile waste, while still allowing you to wear something stylish and unique for your event.\",\n  \"metrics\": {\n    \"original_impact\": \"10 kg CO₂ for production and transport of a new dress\",\n    \"suggested_impact\": \"1 kg CO₂ or less for transport and cleaning of a rented or borrowed dress\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a new dress for a single event",
+        "suggestion": "Consider borrowing a dress from a friend or renting one from a clothing rental service.",
+        "rationale": "Borrowing or renting reduces the environmental impact associated with producing and transporting a new garment. It also avoids adding to textile waste, while still allowing you to wear something stylish and unique for your event.",
+        "metrics": {
+          "original_impact": "10 kg CO₂ for production and transport of a new dress",
+          "suggested_impact": "1 kg CO₂ or less for transport and cleaning of a rented or borrowed dress"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Outdoor Enthusiast, Male, 47",
+      "input_index": 0,
+      "original_input": "Buying camping gear from REI online, getting a new tent and sleeping bags",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying a new tent and sleeping bags from REI online.\",\n  \"suggestion\": \"Consider purchasing gently used camping gear from REI's Used Gear section or a local outdoor gear shop.\",\n  \"rationale\": \"Opting for secondhand camping gear significantly reduces the environmental impact by extending the life cycle of products and avoiding the emissions and resources associated with manufacturing new items. Many used items are in excellent condition and cost less, making this option both sustainable and affordable.\",\n  \"metrics\": {\n    \"original_impact\": \"Approximately 50 kg CO₂ for manufacturing and shipping new gear.\",\n    \"suggested_impact\": \"10-15 kg CO₂ for shipping used gear (no manufacturing impact).\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying a new tent and sleeping bags from REI online.",
+        "suggestion": "Consider purchasing gently used camping gear from REI's Used Gear section or a local outdoor gear shop.",
+        "rationale": "Opting for secondhand camping gear significantly reduces the environmental impact by extending the life cycle of products and avoiding the emissions and resources associated with manufacturing new items. Many used items are in excellent condition and cost less, making this option both sustainable and affordable.",
+        "metrics": {
+          "original_impact": "Approximately 50 kg CO₂ for manufacturing and shipping new gear.",
+          "suggested_impact": "10-15 kg CO₂ for shipping used gear (no manufacturing impact)."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Outdoor Enthusiast, Male, 47",
+      "input_index": 1,
+      "original_input": "Driving up to the mountains this weekend with the family, SUV loaded up",
+      "raw_response": "```json\n{\n  \"original_action\": \"Driving an SUV to the mountains with the family for a weekend trip.\",\n  \"suggestion\": \"Ensure the SUV is fully loaded with passengers and gear, and drive efficiently by maintaining steady speeds and properly inflating your tires.\",\n  \"rationale\": \"Since you're already optimizing the trip by traveling with your family in one vehicle, driving efficiently and maintaining your SUV can reduce fuel consumption and emissions by up to 15%. This is a practical way to make your trip more sustainable without changing your plans.\",\n  \"metrics\": {\n    \"original_impact\": \"150 kg CO₂ for a 300 km round trip (SUV averaging 10 L/100 km)\",\n    \"suggested_impact\": \"127.5 kg CO₂ with efficient driving (15% reduction)\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Driving an SUV to the mountains with the family for a weekend trip.",
+        "suggestion": "Ensure the SUV is fully loaded with passengers and gear, and drive efficiently by maintaining steady speeds and properly inflating your tires.",
+        "rationale": "Since you're already optimizing the trip by traveling with your family in one vehicle, driving efficiently and maintaining your SUV can reduce fuel consumption and emissions by up to 15%. This is a practical way to make your trip more sustainable without changing your plans.",
+        "metrics": {
+          "original_impact": "150 kg CO₂ for a 300 km round trip (SUV averaging 10 L/100 km)",
+          "suggested_impact": "127.5 kg CO₂ with efficient driving (15% reduction)"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Weekend Activities",
+      "demographic": "Outdoor Enthusiast, Male, 47",
+      "input_index": 2,
+      "original_input": "Stocking up on bottled water for the camping trip, getting a case of 24",
+      "raw_response": "```json\n{\n  \"original_action\": \"Purchasing a case of 24 bottled water for a camping trip.\",\n  \"suggestion\": \"Bring a large reusable water container or water bladder and refill it from campsite water sources or use a portable water filter.\",\n  \"rationale\": \"Using a reusable water container significantly reduces plastic waste and the carbon footprint associated with single-use bottled water production and disposal. Many campsites provide water access, and portable filters ensure safe drinking water even in remote areas.\",\n  \"metrics\": {\n    \"original_impact\": \"6.72 kg CO₂ for 24 single-use plastic bottles (0.28 kg CO₂ per bottle) and approximately 24 bottles of waste.\",\n    \"suggested_impact\": \"0.5 kg CO₂ for reusable container manufacturing (amortized over multiple uses) and zero plastic waste.\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Purchasing a case of 24 bottled water for a camping trip.",
+        "suggestion": "Bring a large reusable water container or water bladder and refill it from campsite water sources or use a portable water filter.",
+        "rationale": "Using a reusable water container significantly reduces plastic waste and the carbon footprint associated with single-use bottled water production and disposal. Many campsites provide water access, and portable filters ensure safe drinking water even in remote areas.",
+        "metrics": {
+          "original_impact": "6.72 kg CO₂ for 24 single-use plastic bottles (0.28 kg CO₂ per bottle) and approximately 24 bottles of waste.",
+          "suggested_impact": "0.5 kg CO₂ for reusable container manufacturing (amortized over multiple uses) and zero plastic waste."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Business Trip",
+      "input_index": 0,
+      "original_input": "Booking a rental car for my week-long business trip in LA",
+      "raw_response": "```json\n{\n  \"original_action\": \"Renting a car for a week-long business trip in Los Angeles\",\n  \"suggestion\": \"Opt for a hybrid or fully electric rental car instead of a standard gasoline vehicle.\",\n  \"rationale\": \"Switching to a hybrid or electric car significantly reduces fuel consumption and emissions, which is especially impactful during a week-long rental. Many rental agencies in LA offer these options, and charging stations are widely available in the area.\",\n  \"metrics\": {\n    \"original_impact\": \"140 kg CO₂ (assuming 700 miles at 0.2 kg CO₂/mile for a standard gasoline car)\",\n    \"suggested_impact\": \"70 kg CO₂ for a hybrid or near 0 kg CO₂ for a fully electric car (charging emissions depend on the electricity source)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Renting a car for a week-long business trip in Los Angeles",
+        "suggestion": "Opt for a hybrid or fully electric rental car instead of a standard gasoline vehicle.",
+        "rationale": "Switching to a hybrid or electric car significantly reduces fuel consumption and emissions, which is especially impactful during a week-long rental. Many rental agencies in LA offer these options, and charging stations are widely available in the area.",
+        "metrics": {
+          "original_impact": "140 kg CO₂ (assuming 700 miles at 0.2 kg CO₂/mile for a standard gasoline car)",
+          "suggested_impact": "70 kg CO₂ for a hybrid or near 0 kg CO₂ for a fully electric car (charging emissions depend on the electricity source)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Business Trip",
+      "input_index": 1,
+      "original_input": "Need to expense five dinners at restaurants while I'm traveling",
+      "raw_response": "```json\n{\n  \"original_action\": \"Eating five dinners at restaurants while traveling.\",\n  \"suggestion\": \"Opt for locally-owned restaurants that use seasonal, plant-based, or sustainably sourced ingredients for at least some of your meals.\",\n  \"rationale\": \"Choosing local and seasonally based options supports the local economy, reduces the carbon footprint associated with food transportation, and minimizes the environmental impact of resource-intensive ingredients like beef. Many restaurants now highlight sustainable practices, making this an accessible and enjoyable option.\",\n  \"metrics\": {\n    \"original_impact\": \"12.5 kg CO₂ (assuming 2.5 kg CO₂ per typical restaurant meal with mixed ingredients)\",\n    \"suggested_impact\": \"10 kg CO₂ (assuming lower-impact meals for 2 out of 5 dinners)\",\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Eating five dinners at restaurants while traveling.",
+        "suggestion": "Opt for locally-owned restaurants that use seasonal, plant-based, or sustainably sourced ingredients for at least some of your meals.",
+        "rationale": "Choosing local and seasonally based options supports the local economy, reduces the carbon footprint associated with food transportation, and minimizes the environmental impact of resource-intensive ingredients like beef. Many restaurants now highlight sustainable practices, making this an accessible and enjoyable option.",
+        "metrics": {
+          "original_impact": "12.5 kg CO₂ (assuming 2.5 kg CO₂ per typical restaurant meal with mixed ingredients)",
+          "suggested_impact": "10 kg CO₂ (assuming lower-impact meals for 2 out of 5 dinners)"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Business Trip",
+      "input_index": 2,
+      "original_input": "Getting hotel laundry service, have like ten items to clean",
+      "raw_response": "```json\n{\n  \"original_action\": \"Using hotel laundry service for ten items of clothing\",\n  \"suggestion\": \"Wash your clothes in the hotel sink or bathtub using biodegradable detergent and hang them to dry.\",\n  \"rationale\": \"Hotel laundry services often use large machines that run even for small loads, leading to higher energy and water usage per item. Hand-washing with biodegradable detergent minimizes resource use and avoids the environmental impact of harsh commercial detergents.\",\n  \"metrics\": {\n    \"original_impact\": \"50 liters water and 1.5 kg CO₂ for hotel laundry service\",\n    \"suggested_impact\": \"10 liters water and negligible CO₂ for hand-washing\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Using hotel laundry service for ten items of clothing",
+        "suggestion": "Wash your clothes in the hotel sink or bathtub using biodegradable detergent and hang them to dry.",
+        "rationale": "Hotel laundry services often use large machines that run even for small loads, leading to higher energy and water usage per item. Hand-washing with biodegradable detergent minimizes resource use and avoids the environmental impact of harsh commercial detergents.",
+        "metrics": {
+          "original_impact": "50 liters water and 1.5 kg CO₂ for hotel laundry service",
+          "suggested_impact": "10 liters water and negligible CO₂ for hand-washing"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Home Improvement",
+      "input_index": 0,
+      "original_input": "Replacing all the windows in my house with new ones",
+      "raw_response": "```json\n{\n  \"original_action\": \"Replacing all the windows in the house with new ones.\",\n  \"suggestion\": \"Evaluate the condition of your current windows and consider repairing or retrofitting them with energy-efficient upgrades, such as adding storm windows or sealing gaps, instead of full replacement.\",\n  \"rationale\": \"Retrofitting existing windows can significantly reduce energy loss at a lower environmental cost compared to manufacturing and transporting new windows. This approach minimizes waste, uses fewer resources, and is often more cost-effective while still improving energy efficiency.\",\n  \"metrics\": {\n    \"original_impact\": \"1,200 kg CO₂ for manufacturing and transporting new windows (for a typical house with 15 windows).\",\n    \"suggested_impact\": \"300 kg CO₂ for retrofitting or repairing existing windows.\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Replacing all the windows in the house with new ones.",
+        "suggestion": "Evaluate the condition of your current windows and consider repairing or retrofitting them with energy-efficient upgrades, such as adding storm windows or sealing gaps, instead of full replacement.",
+        "rationale": "Retrofitting existing windows can significantly reduce energy loss at a lower environmental cost compared to manufacturing and transporting new windows. This approach minimizes waste, uses fewer resources, and is often more cost-effective while still improving energy efficiency.",
+        "metrics": {
+          "original_impact": "1,200 kg CO₂ for manufacturing and transporting new windows (for a typical house with 15 windows).",
+          "suggested_impact": "300 kg CO₂ for retrofitting or repairing existing windows."
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Home Improvement",
+      "input_index": 1,
+      "original_input": "Buying a new refrigerator, the old one still works but it's like 15 years old",
+      "raw_response": "```json\n{\n  \"original_action\": \"Replacing a 15-year-old working refrigerator with a new one.\",\n  \"suggestion\": \"Keep using the old refrigerator until it breaks or becomes inefficient, and in the meantime, monitor its energy use with a plug-in electricity usage monitor to assess if replacement is truly beneficial.\",\n  \"rationale\": \"Although newer refrigerators are more energy-efficient, the environmental cost of manufacturing and disposing of the old refrigerator can outweigh the benefits unless it is highly inefficient. Monitoring energy usage will help determine if replacing it now is justified or if waiting is more sustainable.\",\n  \"metrics\": {\n    \"original_impact\": \"200 kg CO₂ for manufacturing the new fridge plus 450 kWh/year (old fridge energy use)\",\n    \"suggested_impact\": \"0 kg CO₂ for manufacturing plus 450 kWh/year (current energy use while monitoring)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Replacing a 15-year-old working refrigerator with a new one.",
+        "suggestion": "Keep using the old refrigerator until it breaks or becomes inefficient, and in the meantime, monitor its energy use with a plug-in electricity usage monitor to assess if replacement is truly beneficial.",
+        "rationale": "Although newer refrigerators are more energy-efficient, the environmental cost of manufacturing and disposing of the old refrigerator can outweigh the benefits unless it is highly inefficient. Monitoring energy usage will help determine if replacing it now is justified or if waiting is more sustainable.",
+        "metrics": {
+          "original_impact": "200 kg CO₂ for manufacturing the new fridge plus 450 kWh/year (old fridge energy use)",
+          "suggested_impact": "0 kg CO₂ for manufacturing plus 450 kWh/year (current energy use while monitoring)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Home Improvement",
+      "input_index": 2,
+      "original_input": "Installing all new LED lighting throughout the house",
+      "raw_response": "```json\n{\n  \"original_action\": \"Installing all new LED lighting throughout the house\",\n  \"suggestion\": \"Install LED lights only in high-use areas first, and replace other bulbs as they burn out to minimize waste.\",\n  \"rationale\": \"While switching to LED lighting is highly sustainable due to its energy efficiency, replacing functioning bulbs prematurely generates unnecessary waste. Prioritizing high-use areas maximizes energy savings while reducing material waste.\",\n  \"metrics\": {\n    \"original_impact\": \"Approximately 80% reduction in energy use compared to incandescent bulbs, but potential waste generation from discarding functional bulbs.\",\n    \"suggested_impact\": \"Same 80% energy reduction over time, but with minimized waste.\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Installing all new LED lighting throughout the house",
+        "suggestion": "Install LED lights only in high-use areas first, and replace other bulbs as they burn out to minimize waste.",
+        "rationale": "While switching to LED lighting is highly sustainable due to its energy efficiency, replacing functioning bulbs prematurely generates unnecessary waste. Prioritizing high-use areas maximizes energy savings while reducing material waste.",
+        "metrics": {
+          "original_impact": "Approximately 80% reduction in energy use compared to incandescent bulbs, but potential waste generation from discarding functional bulbs.",
+          "suggested_impact": "Same 80% energy reduction over time, but with minimized waste."
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Holiday Planning",
+      "input_index": 0,
+      "original_input": "Ordering gifts online for the whole family, need them wrapped and shipped",
+      "raw_response": "```json\n{\n  \"original_action\": \"Ordering gifts online with wrapping and shipping for the whole family\",\n  \"suggestion\": \"Opt for eco-friendly wrapping options offered by the retailer or request no wrapping and use sustainable wrapping materials at home.\",\n  \"rationale\": \"Many retailers use non-recyclable wrapping materials, which add waste. Eco-friendly wrapping or wrapping at home with recyclable or reusable materials significantly reduces environmental impact while maintaining the joy of gift-giving.\",\n  \"metrics\": {\n    \"original_impact\": \"5 kg CO₂ and significant non-recyclable waste for wrapping and shipping (estimated for 5 gifts)\",\n    \"suggested_impact\": \"4 kg CO₂ with recyclable or no wrapping, and reduced waste\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Ordering gifts online with wrapping and shipping for the whole family",
+        "suggestion": "Opt for eco-friendly wrapping options offered by the retailer or request no wrapping and use sustainable wrapping materials at home.",
+        "rationale": "Many retailers use non-recyclable wrapping materials, which add waste. Eco-friendly wrapping or wrapping at home with recyclable or reusable materials significantly reduces environmental impact while maintaining the joy of gift-giving.",
+        "metrics": {
+          "original_impact": "5 kg CO₂ and significant non-recyclable waste for wrapping and shipping (estimated for 5 gifts)",
+          "suggested_impact": "4 kg CO₂ with recyclable or no wrapping, and reduced waste"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Holiday Planning",
+      "input_index": 1,
+      "original_input": "Flying to see family for Thanksgiving, bringing my spouse and two kids",
+      "raw_response": "```json\n{\n  \"original_action\": \"Flying with family (2 adults, 2 kids) to visit family for Thanksgiving\",\n  \"suggestion\": \"Consider taking a train if it's a feasible option for your route, or book direct flights in economy class to minimize emissions.\",\n  \"rationale\": \"Trains emit significantly less carbon per passenger compared to flights, making them a more sustainable option, especially for domestic trips. If flying is necessary, direct flights in economy class reduce emissions by avoiding layovers and maximizing passenger capacity per flight.\",\n  \"metrics\": {\n    \"original_impact\": \"3,600 kg CO₂ (900 kg CO₂ per person for a domestic round trip flight)\",\n    \"suggested_impact\": \"720 kg CO₂ (180 kg CO₂ per person by train for a similar route) or 3,200 kg CO₂ (direct flight in economy class with slight efficiency gains)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Flying with family (2 adults, 2 kids) to visit family for Thanksgiving",
+        "suggestion": "Consider taking a train if it's a feasible option for your route, or book direct flights in economy class to minimize emissions.",
+        "rationale": "Trains emit significantly less carbon per passenger compared to flights, making them a more sustainable option, especially for domestic trips. If flying is necessary, direct flights in economy class reduce emissions by avoiding layovers and maximizing passenger capacity per flight.",
+        "metrics": {
+          "original_impact": "3,600 kg CO₂ (900 kg CO₂ per person for a domestic round trip flight)",
+          "suggested_impact": "720 kg CO₂ (180 kg CO₂ per person by train for a similar route) or 3,200 kg CO₂ (direct flight in economy class with slight efficiency gains)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Holiday Planning",
+      "input_index": 2,
+      "original_input": "Cooking a big turkey dinner for 15 people",
+      "raw_response": "```json\n{\n  \"original_action\": \"Cooking a big turkey dinner for 15 people\",\n  \"suggestion\": \"Consider reducing the amount of turkey slightly and complementing the meal with more plant-based side dishes like roasted vegetables, grains, or legumes.\",\n  \"rationale\": \"Turkey production has a notable carbon and water footprint, and reducing the quantity while adding plant-based dishes can significantly lower the environmental impact. This also provides more diverse options for guests, which is often appreciated in large gatherings.\",\n  \"metrics\": {\n    \"original_impact\": \"60 kg CO₂ for an average 7 kg turkey (approximately 8.5 kg CO₂ per kg of turkey production)\",\n    \"suggested_impact\": \"45 kg CO₂ for a 5 kg turkey plus ~5 kg of plant-based sides (approximately 9 kg CO₂ for plant-based additions)\",\n    \"impact_indicator\": \"medium\"\n  },\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Cooking a big turkey dinner for 15 people",
+        "suggestion": "Consider reducing the amount of turkey slightly and complementing the meal with more plant-based side dishes like roasted vegetables, grains, or legumes.",
+        "rationale": "Turkey production has a notable carbon and water footprint, and reducing the quantity while adding plant-based dishes can significantly lower the environmental impact. This also provides more diverse options for guests, which is often appreciated in large gatherings.",
+        "metrics": {
+          "original_impact": "60 kg CO₂ for an average 7 kg turkey (approximately 8.5 kg CO₂ per kg of turkey production)",
+          "suggested_impact": "45 kg CO₂ for a 5 kg turkey plus ~5 kg of plant-based sides (approximately 9 kg CO₂ for plant-based additions)",
+          "impact_indicator": "medium"
+        },
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Moving/Relocating",
+      "input_index": 0,
+      "original_input": "Renting a moving truck to move across the state",
+      "raw_response": "```json\n{\n  \"original_action\": \"Renting a moving truck to move across the state\",\n  \"suggestion\": \"Choose the smallest truck that fits your belongings efficiently and pack strategically to maximize space usage.\",\n  \"rationale\": \"Using a smaller truck reduces fuel consumption and emissions. Packing efficiently ensures fewer trips are needed, lowering the overall environmental impact.\",\n  \"metrics\": {\n    \"original_impact\": \"Approximately 150 kg CO₂ for a mid-sized truck over 200 miles\",\n    \"suggested_impact\": \"Approximately 100 kg CO₂ for a smaller truck over the same distance\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Renting a moving truck to move across the state",
+        "suggestion": "Choose the smallest truck that fits your belongings efficiently and pack strategically to maximize space usage.",
+        "rationale": "Using a smaller truck reduces fuel consumption and emissions. Packing efficiently ensures fewer trips are needed, lowering the overall environmental impact.",
+        "metrics": {
+          "original_impact": "Approximately 150 kg CO₂ for a mid-sized truck over 200 miles",
+          "suggested_impact": "Approximately 100 kg CO₂ for a smaller truck over the same distance"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Moving/Relocating",
+      "input_index": 1,
+      "original_input": "Buying new furniture from IKEA, getting it delivered",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying new furniture from IKEA and opting for home delivery\",\n  \"suggestion\": \"Consider purchasing second-hand furniture locally through platforms like Facebook Marketplace or thrift stores.\",\n  \"rationale\": \"Second-hand furniture reduces the demand for new materials, lowers manufacturing emissions, and often avoids the carbon footprint of long-distance delivery. It can also be more cost-effective while still providing high-quality options.\",\n  \"metrics\": {\n    \"original_impact\": \"50-100 kg CO₂ (production and delivery of new IKEA furniture)\",\n    \"suggested_impact\": \"10-20 kg CO₂ (minimal emissions for local transportation of second-hand furniture)\",\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying new furniture from IKEA and opting for home delivery",
+        "suggestion": "Consider purchasing second-hand furniture locally through platforms like Facebook Marketplace or thrift stores.",
+        "rationale": "Second-hand furniture reduces the demand for new materials, lowers manufacturing emissions, and often avoids the carbon footprint of long-distance delivery. It can also be more cost-effective while still providing high-quality options.",
+        "metrics": {
+          "original_impact": "50-100 kg CO₂ (production and delivery of new IKEA furniture)",
+          "suggested_impact": "10-20 kg CO₂ (minimal emissions for local transportation of second-hand furniture)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Special Situations",
+      "demographic": "Moving/Relocating",
+      "input_index": 2,
+      "original_input": "Setting up utilities at the new place, need everything turned on",
+      "raw_response": "```json\n{\n  \"original_action\": \"Setting up all utilities (electricity, water, gas, internet) at a new residence without specific sustainability considerations.\",\n  \"suggestion\": \"Opt for a green energy plan from your utility provider and install energy-efficient LED bulbs throughout your new home.\",\n  \"rationale\": \"Switching to a green energy plan ensures your electricity comes from renewable sources, significantly reducing your carbon footprint. Energy-efficient LED bulbs consume up to 75% less energy than traditional incandescent bulbs, lowering both energy use and costs.\",\n  \"metrics\": {\n    \"original_impact\": \"4,000 kg CO₂ annually from standard energy mix for a typical household\",\n    \"suggested_impact\": \"400 kg CO₂ annually from renewable energy and reduced electricity consumption\",\n    \"unit\": \"kg CO₂/year\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Setting up all utilities (electricity, water, gas, internet) at a new residence without specific sustainability considerations.",
+        "suggestion": "Opt for a green energy plan from your utility provider and install energy-efficient LED bulbs throughout your new home.",
+        "rationale": "Switching to a green energy plan ensures your electricity comes from renewable sources, significantly reducing your carbon footprint. Energy-efficient LED bulbs consume up to 75% less energy than traditional incandescent bulbs, lowering both energy use and costs.",
+        "metrics": {
+          "original_impact": "4,000 kg CO₂ annually from standard energy mix for a typical household",
+          "suggested_impact": "400 kg CO₂ annually from renewable energy and reduced electricity consumption",
+          "unit": "kg CO₂/year"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Unclear Inputs",
+      "input_index": 0,
+      "original_input": "I'm doing something with my car tomorrow",
+      "raw_response": "```json\n{\n  \"original_action\": \"Unspecified activity involving a car tomorrow\",\n  \"suggestion\": \"Could you clarify what you plan to do with your car tomorrow? For example, are you commuting, running errands, or going on a trip? This will help me recommend a more sustainable alternative.\",\n  \"rationale\": \"Without specific details about how the car will be used, it's challenging to identify opportunities for reducing environmental impact or suggesting improvements.\",\n  \"metrics\": {\n    \"original_impact\": \"Unable to estimate\",\n    \"suggested_impact\": \"Unable to estimate\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"needs_clarification\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Unspecified activity involving a car tomorrow",
+        "suggestion": "Could you clarify what you plan to do with your car tomorrow? For example, are you commuting, running errands, or going on a trip? This will help me recommend a more sustainable alternative.",
+        "rationale": "Without specific details about how the car will be used, it's challenging to identify opportunities for reducing environmental impact or suggesting improvements.",
+        "metrics": {
+          "original_impact": "Unable to estimate",
+          "suggested_impact": "Unable to estimate"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "needs_clarification"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Unclear Inputs",
+      "input_index": 1,
+      "original_input": "Need to buy stuff online",
+      "raw_response": "```json\n{\n  \"original_action\": \"Shopping online for products\",\n  \"suggestion\": \"Combine your purchases into a single order and choose slower, consolidated shipping options if available.\",\n  \"rationale\": \"Consolidating purchases reduces the number of individual shipments, which lowers packaging waste and delivery emissions. Opting for slower shipping allows for more efficient logistics, further reducing the carbon footprint.\",\n  \"metrics\": {\n    \"original_impact\": \"5 kg CO₂ per separate shipment (average estimate)\",\n    \"suggested_impact\": \"3 kg CO₂ for a consolidated shipment (average estimate, depending on order size and shipping method)\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Shopping online for products",
+        "suggestion": "Combine your purchases into a single order and choose slower, consolidated shipping options if available.",
+        "rationale": "Consolidating purchases reduces the number of individual shipments, which lowers packaging waste and delivery emissions. Opting for slower shipping allows for more efficient logistics, further reducing the carbon footprint.",
+        "metrics": {
+          "original_impact": "5 kg CO₂ per separate shipment (average estimate)",
+          "suggested_impact": "3 kg CO₂ for a consolidated shipment (average estimate, depending on order size and shipping method)"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Unclear Inputs",
+      "input_index": 2,
+      "original_input": "Going somewhere this weekend",
+      "raw_response": "```json\n{\n  \"original_action\": \"Unspecified travel plans for the weekend\",\n  \"suggestion\": \"Could you share more details about your travel plans? For example, the mode of transportation, destination, or purpose of the trip, so I can suggest a more sustainable option.\",\n  \"rationale\": \"Without specific details about your travel plans, it's difficult to assess the potential environmental impact or propose a suitable alternative.\",\n  \"metrics\": {\n    \"original_impact\": \"Unable to estimate\",\n    \"suggested_impact\": \"Unable to estimate\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"needs_clarification\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Unspecified travel plans for the weekend",
+        "suggestion": "Could you share more details about your travel plans? For example, the mode of transportation, destination, or purpose of the trip, so I can suggest a more sustainable option.",
+        "rationale": "Without specific details about your travel plans, it's difficult to assess the potential environmental impact or propose a suitable alternative.",
+        "metrics": {
+          "original_impact": "Unable to estimate",
+          "suggested_impact": "Unable to estimate"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "needs_clarification"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Unclear Inputs",
+      "input_index": 3,
+      "original_input": "Planning to cook tonight",
+      "raw_response": "```json\n{\n  \"original_action\": \"Cooking dinner at home\",\n  \"suggestion\": \"Choose a plant-based recipe or use locally sourced ingredients for your meal.\",\n  \"rationale\": \"Plant-based meals generally have a lower carbon footprint compared to meat-based meals, and locally sourced ingredients reduce transportation emissions and support local producers.\",\n  \"metrics\": {\n    \"original_impact\": \"5-10 kg CO₂ for an average meat-based meal (depending on ingredients)\",\n    \"suggested_impact\": \"2-4 kg CO₂ for a plant-based meal with local produce\"\n  },\n  \"impact_indicator\": \"medium\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Cooking dinner at home",
+        "suggestion": "Choose a plant-based recipe or use locally sourced ingredients for your meal.",
+        "rationale": "Plant-based meals generally have a lower carbon footprint compared to meat-based meals, and locally sourced ingredients reduce transportation emissions and support local producers.",
+        "metrics": {
+          "original_impact": "5-10 kg CO₂ for an average meat-based meal (depending on ingredients)",
+          "suggested_impact": "2-4 kg CO₂ for a plant-based meal with local produce"
+        },
+        "impact_indicator": "medium",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 0,
+      "original_input": "I'm biking to work today like I do every day",
+      "raw_response": "```json\n{\n  \"original_action\": \"Biking to work every day\",\n  \"suggestion\": \"That's fantastic! Consider maintaining your bike regularly with eco-friendly lubricants to ensure it remains efficient and sustainable over time.\",\n  \"rationale\": \"Biking is already one of the most sustainable commuting options, as it has virtually zero carbon emissions. Regular maintenance improves the bike's longevity and performance, while eco-friendly products reduce the environmental impact of upkeep.\",\n  \"metrics\": {\n    \"original_impact\": \"0 kg CO₂ for daily biking\",\n    \"suggested_impact\": \"0 kg CO₂ (same, with minor improvement in maintenance sustainability)\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"already_sustainable\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Biking to work every day",
+        "suggestion": "That's fantastic! Consider maintaining your bike regularly with eco-friendly lubricants to ensure it remains efficient and sustainable over time.",
+        "rationale": "Biking is already one of the most sustainable commuting options, as it has virtually zero carbon emissions. Regular maintenance improves the bike's longevity and performance, while eco-friendly products reduce the environmental impact of upkeep.",
+        "metrics": {
+          "original_impact": "0 kg CO₂ for daily biking",
+          "suggested_impact": "0 kg CO₂ (same, with minor improvement in maintenance sustainability)"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "already_sustainable"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 1,
+      "original_input": "Taking the subway downtown with my reusable water bottle and coffee cup",
+      "raw_response": "```json\n{\n  \"original_action\": \"Taking the subway downtown with a reusable water bottle and coffee cup.\",\n  \"suggestion\": \"You're already making sustainable choices! Consider packing a reusable shopping bag in case you make any purchases downtown.\",\n  \"rationale\": \"Your use of public transit and reusable items significantly reduces emissions and waste. Adding a reusable shopping bag prevents the need for single-use plastic or paper bags, further minimizing your environmental impact.\",\n  \"metrics\": {\n    \"original_impact\": \"0.6 kg CO₂ for subway trip (round trip)\",\n    \"suggested_impact\": \"0.6 kg CO₂ (same for transit, minor reduction in waste)\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"already_sustainable\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Taking the subway downtown with a reusable water bottle and coffee cup.",
+        "suggestion": "You're already making sustainable choices! Consider packing a reusable shopping bag in case you make any purchases downtown.",
+        "rationale": "Your use of public transit and reusable items significantly reduces emissions and waste. Adding a reusable shopping bag prevents the need for single-use plastic or paper bags, further minimizing your environmental impact.",
+        "metrics": {
+          "original_impact": "0.6 kg CO₂ for subway trip (round trip)",
+          "suggested_impact": "0.6 kg CO₂ (same for transit, minor reduction in waste)"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "already_sustainable"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 2,
+      "original_input": "Buying vegetables from the local farmer's market, bringing my own bags",
+      "raw_response": "```json\n{\n  \"original_action\": \"Buying vegetables from the local farmer's market and using reusable bags.\",\n  \"suggestion\": \"This is already a sustainable choice! If possible, try to prioritize seasonal and organic produce to further reduce your environmental footprint.\",\n  \"rationale\": \"Buying local and bringing your own bags are excellent practices that reduce transportation emissions and plastic waste. Choosing seasonal and organic produce can further reduce the environmental impact by avoiding energy-intensive farming and storage practices.\",\n  \"metrics\": {\n    \"original_impact\": \"Low (varies, typically < 0.5 kg CO₂ for local, plastic-free purchases)\",\n    \"suggested_impact\": \"Similar CO₂ footprint, with potential for lower pesticide and fertilizer impact\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"already_sustainable\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Buying vegetables from the local farmer's market and using reusable bags.",
+        "suggestion": "This is already a sustainable choice! If possible, try to prioritize seasonal and organic produce to further reduce your environmental footprint.",
+        "rationale": "Buying local and bringing your own bags are excellent practices that reduce transportation emissions and plastic waste. Choosing seasonal and organic produce can further reduce the environmental impact by avoiding energy-intensive farming and storage practices.",
+        "metrics": {
+          "original_impact": "Low (varies, typically < 0.5 kg CO₂ for local, plastic-free purchases)",
+          "suggested_impact": "Similar CO₂ footprint, with potential for lower pesticide and fertilizer impact"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "already_sustainable"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 3,
+      "original_input": "Hanging my laundry outside to dry instead of using the dryer",
+      "raw_response": "```json\n{\n  \"original_action\": \"Hanging laundry outside to dry instead of using a dryer\",\n  \"suggestion\": \"You're already making an excellent sustainable choice! For added impact, try washing clothes in cold water to reduce energy use further.\",\n  \"rationale\": \"Drying laundry outside eliminates the significant energy consumption and carbon emissions associated with electric dryers. Washing in cold water complements this by reducing energy use during the washing cycle, as heating water is a major contributor to electricity usage.\",\n  \"metrics\": {\n    \"original_impact\": \"0 kg CO₂ for line drying compared to ~2.5 kg CO₂ per dryer load\",\n    \"suggested_impact\": \"0 kg CO₂ for drying and up to 0.5 kg CO₂ saved per load by using cold water\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"already_sustainable\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Hanging laundry outside to dry instead of using a dryer",
+        "suggestion": "You're already making an excellent sustainable choice! For added impact, try washing clothes in cold water to reduce energy use further.",
+        "rationale": "Drying laundry outside eliminates the significant energy consumption and carbon emissions associated with electric dryers. Washing in cold water complements this by reducing energy use during the washing cycle, as heating water is a major contributor to electricity usage.",
+        "metrics": {
+          "original_impact": "0 kg CO₂ for line drying compared to ~2.5 kg CO₂ per dryer load",
+          "suggested_impact": "0 kg CO₂ for drying and up to 0.5 kg CO₂ saved per load by using cold water"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "already_sustainable"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 4,
+      "original_input": "Working from home today to avoid the commute",
+      "raw_response": "```json\n{\n  \"original_action\": \"Working from home to avoid commuting\",\n  \"suggestion\": \"Great choice! To further enhance sustainability, reduce energy use by unplugging unnecessary devices and using natural light where possible.\",\n  \"rationale\": \"Working from home significantly reduces carbon emissions by avoiding commuting. Minimizing energy use at home ensures that your overall environmental impact remains low.\",\n  \"metrics\": {\n    \"original_impact\": \"0 kg CO₂ for commuting\",\n    \"suggested_impact\": \"0 kg CO₂ for commuting, with marginal reduction in home energy use\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"already_sustainable\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Working from home to avoid commuting",
+        "suggestion": "Great choice! To further enhance sustainability, reduce energy use by unplugging unnecessary devices and using natural light where possible.",
+        "rationale": "Working from home significantly reduces carbon emissions by avoiding commuting. Minimizing energy use at home ensures that your overall environmental impact remains low.",
+        "metrics": {
+          "original_impact": "0 kg CO₂ for commuting",
+          "suggested_impact": "0 kg CO₂ for commuting, with marginal reduction in home energy use"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "already_sustainable"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 5,
+      "original_input": "Eating leftovers from last night for lunch",
+      "raw_response": "```json\n{\n  \"original_action\": \"Eating leftovers from last night for lunch\",\n  \"suggestion\": \"Great choice! To make it even more sustainable, consider composting any food scraps from your meal if you aren’t already doing so.\",\n  \"rationale\": \"Eating leftovers minimizes food waste and reduces the need for additional cooking, which saves energy and resources. Composting scraps further reduces landfill waste and creates valuable organic material for soil health.\",\n  \"metrics\": {\n    \"original_impact\": \"Negligible carbon footprint since no new food is being prepared\",\n    \"suggested_impact\": \"Negligible carbon footprint plus reduction in landfill waste\"\n  },\n  \"impact_indicator\": \"low\",\n  \"evaluation_status\": \"already_sustainable\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Eating leftovers from last night for lunch",
+        "suggestion": "Great choice! To make it even more sustainable, consider composting any food scraps from your meal if you aren’t already doing so.",
+        "rationale": "Eating leftovers minimizes food waste and reduces the need for additional cooking, which saves energy and resources. Composting scraps further reduces landfill waste and creates valuable organic material for soil health.",
+        "metrics": {
+          "original_impact": "Negligible carbon footprint since no new food is being prepared",
+          "suggested_impact": "Negligible carbon footprint plus reduction in landfill waste"
+        },
+        "impact_indicator": "low",
+        "evaluation_status": "already_sustainable"
+      },
+      "processing_status": "success"
+    },
+    {
+      "category": "Edge Cases (Testing Unclear/Already Sustainable)",
+      "demographic": "Already Sustainable Actions",
+      "input_index": 6,
+      "original_input": "Fixing my broken phone instead of buying a new one",
+      "raw_response": "```json\n{\n  \"original_action\": \"Fixing a broken phone instead of buying a new one\",\n  \"suggestion\": \"Proceed with the repair and consider using a certified repair service or DIY repair kit if feasible.\",\n  \"rationale\": \"Repairing your phone significantly reduces electronic waste and saves the resources and energy required to manufacture a new device. Using a certified repair service ensures quality and extends the lifespan of your device, while DIY kits can be cost-effective.\",\n  \"metrics\": {\n    \"original_impact\": \"70-80 kg CO₂ for manufacturing a new phone\",\n    \"suggested_impact\": \"5-10 kg CO₂ for repair (including parts and transport)\"\n  },\n  \"impact_indicator\": \"high\",\n  \"evaluation_status\": \"clear\"\n}\n```",
+      "parsed_json": {
+        "original_action": "Fixing a broken phone instead of buying a new one",
+        "suggestion": "Proceed with the repair and consider using a certified repair service or DIY repair kit if feasible.",
+        "rationale": "Repairing your phone significantly reduces electronic waste and saves the resources and energy required to manufacture a new device. Using a certified repair service ensures quality and extends the lifespan of your device, while DIY kits can be cost-effective.",
+        "metrics": {
+          "original_impact": "70-80 kg CO₂ for manufacturing a new phone",
+          "suggested_impact": "5-10 kg CO₂ for repair (including parts and transport)"
+        },
+        "impact_indicator": "high",
+        "evaluation_status": "clear"
+      },
+      "processing_status": "success"
+    }
+  ]
+}
