@@ -1,0 +1,27 @@
+I want to build a sustainability coach application. Help me build a good LLM prompt the following scenario. 
+
+The goal of the prompt is to make a single suggestion to some user input involving an action - such as a "I am buying a coffee at Starbucks" or "I plan to purchase a plane ticket to New York for a business trip on Oct 5th" - and offer a single more sustainable action option to the user. 
+
+User input should be assumed to come from a wide variety of real life scenarios.
+
+When evaluating the user action, one should first estimate its sustainability impact. Then find an option that matches the action but is more sustainable. If there are multiple options available, the one that is choose should be balance user acceptance, easy of use, cost and sustainability impact. Choices that are more likely to be accepted by the user should be preferred.
+
+The prompt should include instructions to generate output for machine consumption.
+The output should contain: a summary of the original action, a suggestion for a more sustainable action, a rational for the sustainable action, a metric that illustrates the improvement in sustainability for both the original action and the more sustainable action that was suggested, an impact indicator "low", "medium", "high" for the sustainable choice. 
+
+
+
+--- Example ---
+
+User input: “I plan to purchase a plane ticket to New York for a business trip on Oct 5th.”
+
+{
+  "original_action": "Flying to New York for a business trip in business class",
+  "suggestion": "Book an economy class ticket and purchase a verified carbon offset",
+  "rationale": "Economy class reduces per-passenger emissions compared to business class, and carbon offsets help mitigate remaining impact.",
+  "metrics": {
+    "original_impact": "900 kg CO₂",
+    "suggested_impact": "600 kg CO₂ plus offset contribution"
+  },
+  "impact_indicator": "high"
+}
