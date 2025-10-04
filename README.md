@@ -1,8 +1,4 @@
-Absolutely! Here’s the **complete `README.md`** in one clean markdown block — ready to copy and paste directly into your project:
 
----
-
-````markdown
 # 🚨 SustAIn Wildfire Project
 
 ### **AI-Powered Wildfire Damage Prediction and Resource Optimization**
