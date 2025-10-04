@@ -1,0 +1,209 @@
+# BeyondBabyBlues Medical Group Dataset
+
+## Company Overview
+BeyondBabyBlues is a dedicated medical group providing comprehensive support to pregnant women and their families. Our mission is to ensure that every mother receives the care and guidance she needs throughout her pregnancy journey. We offer a range of services designed to meet the physical, emotional, and educational needs of expectant mothers.
+
+## Services Offered
+1. **Prenatal Care**: Regular check-ups and monitoring of the mother's health and baby's development.
+2. **Nutrition Counseling**: Personalized dietary plans to ensure mothers receive essential nutrients.
+3. **Mental Health Support**: Access to counseling and support groups for emotional well-being.
+4. **Childbirth Classes**: Educational programs to prepare parents for labor and delivery.
+5. **Postpartum Care**: Support and resources for mothers after childbirth, including lactation consulting.
+6. **Emergency Support**: 24/7 helpline for urgent medical concerns related to pregnancy.
+7. **Family Planning**: Guidance on family planning and reproductive health.
+
+## Employees
+### Medical Staff
+- **Dr. Emily Johnson** - Obstetrician
+- **Dr. Mark Taylor** - Gynecologist
+- **Nurse Sarah Williams** - Prenatal Care Nurse
+- **Nurse Jonathan Brown** - Postpartum Care Nurse
+- **Counselor Maria Lopez** - Mental Health Counselor
+
+### Postpartum Depression & Mental Health Specialists
+- **Dr. Rachel Chen, MD, PhD** - Board-Certified Psychiatrist & Perinatal Mental Health Specialist
+  - Specialization: Postpartum Depression, Anxiety Disorders, Perinatal Mental Health
+  - Experience: Board-Certified Psychiatrist with 12 years experience in maternal mental health
+  - Contact: dr.chen@BeyondBabyBlues.com | Direct Line: (123) 456-7891
+  - Availability: Mon-Fri 9 AM-6 PM, Emergency consultations available 24/7
+  - Languages: English, Mandarin, Spanish
+
+- **Dr. Priya Sharma, MD** - Reproductive Psychiatrist & Women's Mental Health Expert
+  - Specialization: Postpartum Psychosis, Bipolar Disorder, Medication Management
+  - Experience: Reproductive Psychiatrist with 15 years experience in women's mental health
+  - Contact: dr.sharma@BeyondBabyBlues.com | Direct Line: (123) 456-7892
+  - Availability: Tue-Sat 8 AM-5 PM, Crisis intervention available
+  - Languages: English, Hindi, Punjabi
+
+- **Dr. Michael Rodriguez, MD** - Perinatal Psychiatrist & Trauma Specialist
+  - Specialization: Birth Trauma, PTSD, Complex Mental Health Cases
+  - Experience: Perinatal Psychiatrist certified in Trauma-Informed Care
+  - Contact: dr.rodriguez@BeyondBabyBlues.com | Direct Line: (123) 456-7893
+  - Availability: Mon-Thu 10 AM-7 PM, Weekend emergency coverage
+  - Languages: English, Spanish
+
+- **Dr. Jennifer Thompson, MD** - Maternal-Fetal Medicine & High-Risk Pregnancy Specialist
+  - Specialization: High-risk pregnancies, Postpartum complications, Medical comorbidities
+  - Experience: Maternal-Fetal Medicine specialist with 18 years experience
+  - Contact: dr.thompson@BeyondBabyBlues.com | Direct Line: (123) 456-7894
+  - Availability: Mon-Fri 7 AM-4 PM, On-call weekends
+  - Languages: English, French
+
+### Licensed Clinical Therapists & Counselors
+- **Dr. Amanda Foster, LCSW, PMH-C** - Licensed Clinical Social Worker
+  - Specialization: Postpartum Depression, Support Groups, Family Therapy  
+  - Experience: Licensed Clinical Social Worker with 8 years in perinatal mental health
+  - Contact: amanda.foster@BeyondBabyBlues.com | Direct Line: (123) 456-7895
+
+- **Sarah Mitchell, LPC, PMH-C** - Licensed Professional Counselor
+  - Specialization: Anxiety Disorders, Postpartum OCD, Cognitive Behavioral Therapy
+  - Experience: Licensed Professional Counselor with CBT certification
+  - Contact: sarah.mitchell@BeyondBabyBlues.com | Direct Line: (123) 456-7896
+
+- **Dr. Robert Kim, PhD** - Clinical Psychologist
+  - Specialization: Psychological testing, Severe mental health disorders, Research
+  - Experience: Clinical Psychologist with 14 years in women's mental health
+  - Contact: dr.kim@BeyondBabyBlues.com | Direct Line: (123) 456-7897
+
+### Crisis Intervention Team
+- **Dr. Lisa Park, MD** - Crisis Psychiatrist & Emergency Mental Health Specialist
+  - Specialization: Crisis Intervention, Emergency Psychiatry, 24/7 Support
+  - Experience: Available 24/7 for emergency situations and crisis intervention
+  - Contact: crisis@BeyondBabyBlues.com | Emergency Line: (123) 456-7999
+  - Availability: 24/7 Emergency availability, immediate crisis response
+  - Languages: English, Korean
+
+### Human-in-the-Loop Consultation Process
+When AI systems identify the need for human specialist intervention, the following process is followed:
+
+1. **Immediate Triage**: AI system categorizes urgency level (Crisis, Urgent, Routine)
+2. **Specialist Assignment**: Based on symptoms and needs, appropriate specialist is assigned
+3. **Secure EMR Transfer**: Patient health records are securely transferred via HIPAA-compliant system
+4. **Consultation Scheduling**: Immediate (crisis), same-day (urgent), or within 48 hours (routine)
+5. **Follow-up Care**: Integrated care plan between AI monitoring and human specialist
+
+### Electronic Medical Record (EMR) System - HIPAA Compliant
+**System Name**: BeyondBabyBlues Secure Health Portal (BBSHP)
+- **Certification**: HIPAA-compliant, HITECH Act compliant, SOC 2 Type II certified
+- **Security Features**: 
+  - End-to-end encryption (AES-256)
+  - Multi-factor authentication
+  - Audit trails for all access
+  - Automatic session timeouts
+  - Role-based access controls
+
+**EMR Transfer Process for Human Consultations**:
+1. **Patient Consent**: Digital consent obtained for specialist consultation
+2. **Data Encryption**: All records encrypted before transfer
+3. **Secure Portal**: Records accessible only to assigned specialist via secure portal
+4. **Access Logging**: All EMR access logged with timestamp and provider ID
+5. **Data Retention**: Records retained per HIPAA guidelines (minimum 6 years)
+6. **Patient Access**: Patients can access their own records via patient portal
+
+**EMR Contact Information**:
+- **EMR Support**: emr-support@BeyondBabyBlues.com
+- **Privacy Officer**: privacy@BeyondBabyBlues.com
+- **Technical Support**: (123) 456-7890 ext. 101
+- **Patient Portal**: portal.BeyondBabyBlues.com
+
+### Crisis Intervention Team
+- **Dr. Lisa Park, MD** - Crisis Psychiatrist (Available 24/7)
+  - Contact: crisis@BeyondBabyBlues.com | Emergency: (123) 456-7999
+- **Crisis Counselor Jennifer Walsh, LCSW** - Available 24/7
+  - Contact: crisis-counselor@BeyondBabyBlues.com
+
+### Administrative Staff
+- **Alice Smith** - Office Manager
+- **Tom Davis** - Receptionist
+- **Lisa White** - Billing Specialist
+
+### Leadership Team
+- **Megha N.** - CEO  
+  Profile: Megha has over 15 years of experience in healthcare management. She is passionate about maternal health and has been instrumental in establishing BeyondBabyBlues as a trusted name in maternity care.
+
+- **Sai Shruthi** - CTO  
+  Profile: Sai Shruthi brings a wealth of knowledge in health technology and software development. She leads the technological advancements at BeyondBabyBlues, ensuring the organization remains at the forefront of medical innovation.
+
+- **Deepak Kamboj** - COO  
+  Profile: Deepak is responsible for the day-to-day operations at BeyondBabyBlues. With a background in operations management, he focuses on improving efficiency and service quality.
+
+- **Tejasri Addanki** - CFO  
+  Profile: Tejasri oversees the financial health of BeyondBabyBlues. With expertise in healthcare finance, she ensures that resources are allocated effectively to support our mission.
+
+## Specialist Referral & Human-in-the-Loop Support Services
+
+### How to Request Human Specialist Consultation:
+1. **Through AI Assistant**: Request "Connect me with a human specialist" during chat
+2. **Direct Contact**: Email specialist@BeyondBabyBlues.com or call (123) 456-7890
+3. **Emergency**: Call crisis line (123) 456-7999 for immediate intervention
+4. **Patient Portal**: Submit consultation request through secure patient portal
+
+### Appointment Scheduling:
+- **Crisis Consultations**: Immediate (within 15 minutes)
+- **Urgent Consultations**: Same day or within 24 hours
+- **Routine Consultations**: Within 48-72 hours
+- **Follow-up Appointments**: Scheduled based on treatment plan
+
+### Insurance and Payment:
+- Most major insurance plans accepted
+- Sliding scale fees available for uninsured patients
+- Employee Assistance Programs (EAP) accepted
+- Payment plans available for extended treatment
+
+### Telemedicine Options:
+- Video consultations available for all specialists
+- Secure messaging through patient portal
+- Remote monitoring for high-risk patients
+- Mobile app available: "BeyondBabyBlues Connect"
+
+## Contact Information
+- **Website**: www.BeyondBabyBlues.com
+- **Phone**: (123) 456-7890
+- **Email**: support@BeyondBabyBlues.com
+- **Specialist Consultation**: specialist@BeyondBabyBlues.com
+- **Crisis Support**: crisis@BeyondBabyBlues.com | (123) 456-7999
+- **EMR Support**: emr-support@BeyondBabyBlues.com
+- **Privacy Officer**: privacy@BeyondBabyBlues.com
+- **Location**: 123 Maternity Lane, Bothell, WA 12345
+- **LinkedIn**: [BeyondBabyBlues LinkedIn](https://www.linkedin.com/company/BeyondBabyBlues)
+
+## Working Hours
+- **Monday to Friday**: 9:00 AM - 5:00 PM
+- **Saturday**: 10:00 AM - 2:00 PM
+- **Sunday**: Closed
+
+## Holidays
+- New Year's Day
+- Independence Day
+- Thanksgiving Day
+- Christmas Day
+
+Timezone: Pacific Standard Time (PST)
+
+Holidays:
+- Follows Holidays of United States and India
+
+## Mission Statement
+At BeyondBabyBlues, our mission is to provide compassionate, comprehensive care to pregnant women and their families. We believe in empowering mothers with knowledge, support, and resources essential for a healthy pregnancy and a happy family.
+
+## Long-Term Goals
+1. Establish BeyondBabyBlues as a leading maternity support group both regionally and nationally by 2030.
+2. Develop partnerships with hospitals and clinics to enhance referral networks.
+3. Expand service offerings to include telehealth options for remote consultations and support.
+4. Create a comprehensive online resource hub for expectant mothers and families.
+
+## Short-Term Goals
+1. Increase community awareness of BeyondBabyBlues's services through outreach programs by 25% within the next year.
+2. Implement a monthly workshop series covering various topics related to pregnancy and postpartum care.
+3. Launch a social media campaign to engage with expectant mothers and collect feedback on services.
+
+## Outreach Strategies for Medical Emergencies
+### 1. Emergency Helpline
+- Establish a dedicated 24/7 emergency helpline specifically for pregnant women to report urgent concerns, such as severe abdominal pain or bleeding.
+
+### 2. Community Workshops
+- Conduct monthly community workshops on recognizing pregnancy-related emergencies, such as preterm labor signs and hypertensive disorders.
+
+### 3. Collaboration with Local Hospitals
+- Partner with local hospitals to create a seamless referral system for pregnant women requiring immediate medical attention.
+

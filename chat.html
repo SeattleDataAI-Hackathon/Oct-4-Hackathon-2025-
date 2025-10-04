@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeyondBabyBlues - Chatbot using RAG and FAISS</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+
+:root {
+  --chatbot-header-bg-color: #c2185b; /* Custom header background color */
+  --bot-bg-color: #971e4e;
+  --bot-text-color: #fff;
+  --user-bg-color: #f5f6f7;
+  --user-text-color: #000;
+  --user-time-text-color: #ccc;
+  --chatbot-custom-button-color: #be3c70; /* Custom button color */
+  --chatbot-custom-button-hover-color: #f14489; /* Custom button hover color */
+  --chatbot-custom-button-bgcolor: #f5f5f5; 
+  --font-size-standard: 1em; /* Standard font size for headings in message bubble */
+  --font-family-standard: europa,Trebuchet,Helvetica,"Helvetica Neue","Trebuchet MS",Verdana,sans-serif; /* Standard font family */
+}
+
+    .modal-dialog {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 450px;
+      height: 650px;
+      margin: 0;
+      display: flex;
+    }
+    .chat-wrapper {
+      width: 400px;
+      border: 1px solid #ccc;
+    }
+    .chat-box {
+      padding: 10px;
+      font-family: var(--font-family-standard);
+      
+    }
+    .modal-header {
+      background-color: var(--chatbot-header-bg-color);
+      color: #fff; /* Header text color */
+    }
+    .message {
+      padding: 5px;
+      margin: 5px 0;
+    }
+    .user { text-align: right; }
+    .assistant { text-align: left; }
+    .custom-button {
+      color: var(--chatbot-custom-button-color); /* Text color */
+      border-color: var(--chatbot-custom-button-color); /* Border color */
+      font-size: 13px; /* Small font size */
+      font-weight: 600; /* Bold font weight */
+      background-color: var(--chatbot-custom-button-bgcolor);
+    }
+    .custom-button:hover {
+      background-color: var(--chatbot-custom-button-hover-color); /* Background color on hover */
+      border-color: var(--chatbot-custom-button-hover-color); /* Border color */
+      color: #fff; /* Text color on hover */
+      font-weight: 600; /* Bold font weight */
+    }
+    .custom-button:active {
+      opacity: 0.75;
+      background-color: var(--chatbot-custom-button-hover-color); /* Background color on hover */
+      border-color: var(--chatbot-custom-button-hover-color); /* Border color */
+      color: #fff; /* Text color on hover */
+      font-weight: 600; /* Bold font weight */
+    }
+    .rounded-circle {
+      border-radius: 50%;
+    }
+    .input-group {
+      border-radius: 30px; /* Group border radius */
+      overflow: hidden; /* Ensure inner elements respect border radius */
+      border: 1px solid #ccc;
+    }
+    .input-group input {
+      border: none; /* Remove default border */
+      box-shadow: none; /* Remove box shadow */
+      border-radius: 0; /* No radius to maintain consistency */
+    }
+    .input-group input:focus {
+      outline: none; /* Remove focus outline */
+    }
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1050; /* Higher than modal */
+      background-color: var(--chatbot-header-bg-color);
+      width: 50px;
+      height: 50px;
+      color: #fff;
+  }
+
+  .chat-button:hover {
+    background-color: var(--chatbot-header-bg-color);
+      width: 50px;
+      height: 50px;
+      color: #fff;
+     opacity: 0.8;
+  }
+
+    .message-bubble a, .message-bubble a:visited, .message-bubble a:hover, .message-bubble a:active {
+    color: #fff; /* Blue color for links */
+    text-decoration: underline; /* Remove underline */
+    }
+
+    .message-bubble h1, .message-bubble h2, .message-bubble h3, .message-bubble h4, .message-bubble h5, .message-bubble h6 {
+        font-size: var(--font-size-standard);
+}
+
+    .modal-header .btn-close {
+    color: #fff !important; /* White color for close button */
+    }
+
+    .hero-banner {
+      background-color: var(--chatbot-custom-button-color);
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-banner .content {
+      flex: 1;
+      text-align: left;
+    }
+    .hero-banner .image {
+      flex: 1;
+      text-align: right;
+    }
+    .hero-banner img {
+      max-width: 100%;
+      height: auto;
+      animation: moveUp 2s ease-in-out;
+    }
+    @keyframes moveUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .card-icon {
+      font-size: 50px;
+      color: var(--chatbot-custom-button-color);
+    }
+    .card-title{
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <div class="container">
+  <div class="row">
+    <div class="col py-5 my-5">
+    
+    <h1>Welcome to BeyondBabyBlues</h1>
+    <p>Specialized support for postpartum depression and mental health challenges. Our AI assistant connects you with human specialists when needed for comprehensive care.</p>
+  </div>
+  <div class="col">
+  <div class="image">
+    <img src="bg-hero.svg" alt="BeyondBabyBlues" style="max-width: 100%; height: auto;" />
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Section with 4 Cards -->
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-3 d-flex">
+      <div class="card text-center flex-fill">
+        <div class="card-body">
+          <i class="fas fa-brain card-icon"></i>
+          <h5 class="card-title">Postpartum Depression Support</h5>
+          <p class="card-text">AI-powered support with human specialist escalation for postpartum depression and mood disorders.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 d-flex">
+      <div class="card text-center flex-fill">
+        <div class="card-body">
+          <i class="fas fa-hands-helping card-icon"></i>
+          <h5 class="card-title">Human-in-the-Loop Care</h5>
+          <p class="card-text">Seamless transition to human specialists for complex mental health situations requiring professional judgment.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 d-flex">
+      <div class="card text-center flex-fill">
+        <div class="card-body">
+          <i class="fas fa-phone card-icon"></i>
+          <h5 class="card-title">Crisis Intervention</h5>
+          <p class="card-text">Immediate connection to crisis specialists and 24/7 support for urgent mental health situations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 d-flex">
+      <div class="card text-center flex-fill">
+        <div class="card-body">
+          <i class="fas fa-user-nurse card-icon"></i>
+          <h5 class="card-title">Licensed Therapist Network</h5>
+          <p class="card-text">Access to licensed mental health professionals specializing in postpartum depression and maternal wellness.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="container my-5 py-5" style="background-color: #f8f9fa;">
+  <div class="row">
+    <div class="col-lg-6">
+      <h2 class="mb-4" style="color: var(--chatbot-custom-button-color);">Understanding Postpartum Depression</h2>
+      <p class="lead">Postpartum depression affects up to 20% of new mothers and can occur anytime during the first year after childbirth. It's more than just "baby blues" - it's a serious medical condition that requires proper support and treatment.</p>
+      <ul class="list-unstyled">
+        <li><i class="fas fa-check-circle" style="color: var(--chatbot-custom-button-color);"></i> <strong>You're not alone:</strong> Millions of mothers experience postpartum depression</li>
+        <li><i class="fas fa-check-circle" style="color: var(--chatbot-custom-button-color);"></i> <strong>It's treatable:</strong> With proper support and care, recovery is possible</li>
+        <li><i class="fas fa-check-circle" style="color: var(--chatbot-custom-button-color);"></i> <strong>Seeking help is strength:</strong> Taking care of your mental health benefits you and your baby</li>
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <h3 class="mb-3">Common Signs & Symptoms</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li><i class="fas fa-dot-circle text-muted"></i> Persistent sadness or emptiness</li>
+            <li><i class="fas fa-dot-circle text-muted"></i> Loss of interest in activities</li>
+            <li><i class="fas fa-dot-circle text-muted"></i> Extreme fatigue</li>
+            <li><i class="fas fa-dot-circle text-muted"></i> Difficulty bonding with baby</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li><i class="fas fa-dot-circle text-muted"></i> Anxiety or panic attacks</li>
+            <li><i class="fas fa-dot-circle text-muted"></i> Sleep disturbances</li>
+            <li><i class="fas fa-dot-circle text-muted"></i> Feelings of guilt or worthlessness</li>
+            <li><i class="fas fa-dot-circle text-muted"></i> Difficulty concentrating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h2 style="color: var(--chatbot-custom-button-color);">How Our AI-Human Partnership Works</h2>
+    <p class="lead">Our unique approach combines AI efficiency with human expertise for comprehensive care</p>
+  </div>
+  <div class="row">
+    <div class="col-md-4 text-center mb-4">
+      <div class="mb-3">
+        <i class="fas fa-comments" style="font-size: 60px; color: var(--chatbot-custom-button-color);"></i>
+      </div>
+      <h4>1. Start with AI Support</h4>
+      <p>Share your concerns with our compassionate AI assistant. Get immediate support, resources, and initial guidance available 24/7.</p>
+    </div>
+    <div class="col-md-4 text-center mb-4">
+      <div class="mb-3">
+        <i class="fas fa-user-md" style="font-size: 60px; color: var(--chatbot-custom-button-color);"></i>
+      </div>
+      <h4>2. Human Specialist Review</h4>
+      <p>When needed, our AI seamlessly connects you with licensed mental health professionals who specialize in postpartum depression.</p>
+    </div>
+    <div class="col-md-4 text-center mb-4">
+      <div class="mb-3">
+        <i class="fas fa-heart" style="font-size: 60px; color: var(--chatbot-custom-button-color);"></i>
+      </div>
+      <h4>3. Ongoing Personalized Care</h4>
+      <p>Receive continuous support through our integrated approach, combining AI monitoring with human check-ins and personalized treatment plans.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="container-fluid py-5" style="background: linear-gradient(135deg, var(--chatbot-custom-button-color), var(--chatbot-custom-button-hover-color));">
+  <div class="container">
+    <div class="row text-center text-white">
+      <div class="col-md-3 mb-4">
+        <h2 class="display-4 fw-bold">24/7</h2>
+        <p class="lead">AI Support Available</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h2 class="display-4 fw-bold">95%</h2>
+        <p class="lead">User Satisfaction Rate</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h2 class="display-4 fw-bold">15min</h2>
+        <p class="lead">Average Response Time</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h2 class="display-4 fw-bold">100+</h2>
+        <p class="lead">Licensed Specialists</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Emergency Resources Section -->
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger text-center">
+        <h4><i class="fas fa-exclamation-triangle"></i> Crisis Support Available</h4>
+        <p class="mb-3">If you're experiencing thoughts of self-harm or suicide, please reach out immediately:</p>
+        <div class="row">
+          <div class="col-md-4">
+            <strong>National Suicide Prevention Lifeline</strong><br>
+            <a href="tel:988" class="btn btn-outline-danger btn-sm mt-2">Call 988</a>
+          </div>
+          <div class="col-md-4">
+            <strong>Crisis Text Line</strong><br>
+            <span class="small">Text HOME to 741741</span>
+          </div>
+          <div class="col-md-4">
+            <strong>Emergency Services</strong><br>
+            <a href="tel:911" class="btn btn-outline-danger btn-sm mt-2">Call 911</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="container my-5 py-5" style="background-color: #f8f9fa;">
+  <div class="text-center mb-5">
+    <h2 style="color: var(--chatbot-custom-button-color);">What Mothers Are Saying</h2>
+    <p class="lead">Real experiences from mothers who found support through BeyondBabyBlues</p>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center">
+          <i class="fas fa-quote-left fa-2x mb-3" style="color: var(--chatbot-custom-button-color);"></i>
+          <p class="card-text">"The AI assistant understood my concerns immediately and connected me with a therapist who specialized in postpartum depression. I'm so grateful for this service."</p>
+          <footer class="blockquote-footer mt-3">Sarah M., <cite title="Source Title">New Mom</cite></footer>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center">
+          <i class="fas fa-quote-left fa-2x mb-3" style="color: var(--chatbot-custom-button-color);"></i>
+          <p class="card-text">"Having 24/7 support made all the difference. When I was struggling at 3 AM, the AI was there to help, and when I needed more, a human specialist was available."</p>
+          <footer class="blockquote-footer mt-3">Jessica L., <cite title="Source Title">Mother of Two</cite></footer>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center">
+          <i class="fas fa-quote-left fa-2x mb-3" style="color: var(--chatbot-custom-button-color);"></i>
+          <p class="card-text">"I was hesitant to seek help, but the AI made it feel safe and non-judgmental. The transition to human care was seamless when I was ready."</p>
+          <footer class="blockquote-footer mt-3">Maria R., <cite title="Source Title">First-time Mom</cite></footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h2 style="color: var(--chatbot-custom-button-color);">Frequently Asked Questions</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              How does the AI-human partnership work?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our AI assistant provides immediate support and identifies when human expertise is needed. When complex situations arise, you're seamlessly connected with licensed mental health professionals who specialize in postpartum depression.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Is my information confidential?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we follow strict HIPAA guidelines to protect your privacy. All conversations are confidential and secure. Information is only shared with human specialists when you consent or in emergency situations.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              What if I need immediate help?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our AI is trained to recognize crisis situations and will immediately connect you with crisis specialists. We also provide direct access to emergency resources like the 988 Suicide Prevention Lifeline.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+              How much does the service cost?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Initial AI support and crisis intervention are always free. Human specialist consultations may be covered by insurance, and we work with various providers to ensure accessible care for all mothers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="container-fluid py-5" style="background-color: var(--chatbot-custom-button-color);">
+  <div class="container text-center text-white">
+    <h2 class="mb-4">Ready to Get the Support You Deserve?</h2>
+    <p class="lead mb-4">Start your journey to better mental health with our compassionate AI assistant, backed by human expertise when you need it most.</p>
+    <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#chatModal" style="color: var(--chatbot-custom-button-color); font-weight: bold;">
+      <i class="fas fa-comments me-2"></i>Start Chat Now
+    </button>
+  </div>
+</div>
+
+<!-- Chat Button -->
+<button id="chat-button" class="btn rounded-circle chat-button" data-bs-toggle="modal" data-bs-target="#chatModal">
+  <i class="fa-solid fa-comments"></i>
+</button>
+
+<!-- Chat Modal -->
+<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="chatModalLabel">PostPartum Depression Assistant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <div class="chat-box" id="chat-box"></div>
+      </div>
+      <div class="modal-footer">
+        <div class="input-group">
+          <input type="text" id="message-input" class="form-control" placeholder="Type your message..." />
+          <button id="send-button" class="btn rounded-pill custom-button">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+      // Function to check if the LLM response indicates need for specialist consultation
+      function checkIfSpecialistNeeded(responseContent) {
+        const specialistKeywords = [
+          'connect you with our human specialist',
+          'mental health professional',
+          'licensed therapist',
+          'crisis specialist',
+          'I\'d like to connect you',
+          'let me connect you',
+          'I\'m connecting you',
+          'specialist consultation',
+          'human consultation',
+          'professional evaluation',
+          'Dr. Rachel Chen',
+          'Dr. Priya Sharma',
+          'Dr. Michael Rodriguez',
+          'Dr. Jennifer Thompson',
+          'Dr. Amanda Foster',
+          'Sarah Mitchell',
+          'Dr. Robert Kim',
+          'Dr. Lisa Park'
+        ];
+        
+        return specialistKeywords.some(keyword => 
+          responseContent.toLowerCase().includes(keyword.toLowerCase())
+        );
+      }
+      
+      // Function to get appropriate doctor buttons based on response content
+      function getDoctorButtons(responseContent) {
+        const content = responseContent.toLowerCase();
+        let buttons = [];
+        
+        // Crisis/Emergency situations
+        if (content.includes('crisis') || content.includes('self-harm') || content.includes('suicide') || content.includes('emergency')) {
+          buttons = ['🚨 Dr. Lisa Park - Crisis Emergency (24/7)'];
+        }
+        // Depression/Mood related
+        else if (content.includes('depression') || content.includes('mood') || content.includes('sad')) {
+          buttons = [
+            '🧠 Dr. Rachel Chen - Depression & Anxiety',
+            '💊 Dr. Priya Sharma - Medications & Bipolar'
+          ];
+        }
+        // Anxiety related
+        else if (content.includes('anxiety') || content.includes('panic') || content.includes('worry')) {
+          buttons = [
+            '🧠 Dr. Rachel Chen - Depression & Anxiety',
+            '😰 Sarah Mitchell - Anxiety & OCD Therapy'
+          ];
+        }
+        // Trauma/PTSD
+        else if (content.includes('trauma') || content.includes('ptsd') || content.includes('birth trauma')) {
+          buttons = ['🩺 Dr. Michael Rodriguez - Trauma & PTSD'];
+        }
+        // Medication related
+        else if (content.includes('medication') || content.includes('medicine') || content.includes('drug')) {
+          buttons = ['💊 Dr. Priya Sharma - Medications & Bipolar'];
+        }
+        // High-risk pregnancy
+        else if (content.includes('high-risk') || content.includes('complication') || content.includes('medical')) {
+          buttons = ['🤱 Dr. Jennifer Thompson - High-Risk Pregnancy'];
+        }
+        // Family/relationship issues
+        else if (content.includes('family') || content.includes('relationship') || content.includes('support group')) {
+          buttons = ['👥 Dr. Amanda Foster - Family Therapy'];
+        }
+        // Psychological testing
+        else if (content.includes('testing') || content.includes('assessment') || content.includes('evaluation')) {
+          buttons = ['🧪 Dr. Robert Kim - Psychological Testing'];
+        }
+        // General specialist consultation
+        else {
+          buttons = [
+            '🧠 Dr. Rachel Chen - Depression & Anxiety',
+            '💊 Dr. Priya Sharma - Medications & Bipolar',
+            '🩺 Dr. Michael Rodriguez - Trauma & PTSD',
+            '🤱 Dr. Jennifer Thompson - High-Risk Pregnancy'
+          ];
+        }
+        
+        // Always add general options
+        buttons.push('📞 Call General Consultation Line');
+        buttons.push('💬 Tell me more about specialists');
+        
+        return buttons;
+      }
+      
+      // Function to get specific doctor buttons based on API response
+      function getSpecificDoctorButtons(consultationType, recommendedSpecialist) {
+        let buttons = [];
+        
+        // Add the specific recommended specialist first
+        if (recommendedSpecialist !== 'general') {
+          buttons.push(recommendedSpecialist);
+        }
+        
+        // Add additional relevant specialists based on consultation type
+        switch (consultationType) {
+          case 'crisis':
+            buttons = ['🚨 Dr. Lisa Park - Crisis Emergency (24/7)'];
+            break;
+          case 'depression':
+            if (!buttons.length) buttons.push('🧠 Dr. Rachel Chen - Depression & Anxiety');
+            buttons.push('💊 Dr. Priya Sharma - Medications & Bipolar');
+            break;
+          case 'anxiety':
+            if (!buttons.length) buttons.push('😰 Sarah Mitchell - Anxiety & OCD Therapy');
+            buttons.push('🧠 Dr. Rachel Chen - Depression & Anxiety');
+            break;
+          case 'trauma':
+            if (!buttons.length) buttons.push('🩺 Dr. Michael Rodriguez - Trauma & PTSD');
+            break;
+          case 'medication':
+            if (!buttons.length) buttons.push('💊 Dr. Priya Sharma - Medications & Bipolar');
+            break;
+          case 'high_risk':
+            if (!buttons.length) buttons.push('🤱 Dr. Jennifer Thompson - High-Risk Pregnancy');
+            break;
+          case 'family':
+            if (!buttons.length) buttons.push('👥 Dr. Amanda Foster - Family Therapy');
+            break;
+          default:
+            // General consultation - show most common specialists
+            buttons = [
+              '🧠 Dr. Rachel Chen - Depression & Anxiety',
+              '💊 Dr. Priya Sharma - Medications & Bipolar',
+              '🩺 Dr. Michael Rodriguez - Trauma & PTSD'
+            ];
+        }
+        
+        // Always add general options
+        buttons.push('📞 Call General Consultation Line');
+        buttons.push('💬 Tell me more about specialists');
+        
+        return buttons;
+      }
+
+    $(document).ready(function() {
+      console.log("Initializing chat...");
+
+      // Initial history state with pre-defined assistant messages
+      let history = [
+        {
+          role: 'assistant',
+          content: "Hi! I'm your PostPartum Support Assistant. I'm here to help with mental health support and can connect you with specialists when needed. How are you feeling?",
+          time: getCurrentTime(),
+          buttons: [],
+          links: [],
+        },
+        {
+          role: 'assistant',
+          content: 'I can provide immediate support and connect you with human specialists when needed. Please describe your feelings or concerns, and I\'ll provide appropriate support.',
+          time: getCurrentTime(),
+                 buttons: [
+                      'I\'m feeling sad or depressed',
+                      'I\'m experiencing anxiety or worry',
+                      'I\'m having trouble sleeping',
+                      'I\'m feeling overwhelmed as a new mom',
+                      'I\'m having thoughts that scare me',
+                      'I need someone to talk to right now',
+                    ],
+          links: [],
+        }
+      ];
+  
+      // Load history from localStorage if available
+      const storedHistory = JSON.parse(localStorage.getItem('chatHistory'));
+      if (storedHistory) {
+        history = storedHistory;
+      }
+
+      // Set expiration time for localStorage
+      const expirationTime = 24 * 60 * 60 * 1000; // 1 day in milliseconds
+      const lastStoredTime = localStorage.getItem('chatHistoryTime');
+      if (lastStoredTime && (Date.now() - lastStoredTime > expirationTime)) {
+        localStorage.removeItem('chatHistory');
+        localStorage.removeItem('chatHistoryTime');
+        history = []; // Reset history if expired
+      }
+
+      let loading = false;
+
+      function getCurrentTime() {
+        return new Date().toLocaleString('en-US', {
+          day: '2-digit',
+          month: 'short',
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true,
+        });
+      }
+
+      function removeParagraphAndDivTags(content) {
+        return content.replace(/<\/?(p|div)[^>]*>/g, '');
+      }
+  
+      // Function to update the chat box
+      function updateChatBox() {
+        console.log("Updating chat box...");
+        $('#chat-box').empty(); // Clear the chat box
+
+        history.forEach(msg => {
+          const isAssistant = msg.role === 'assistant';
+          const icon = isAssistant ? 'fa-robot' : 'fa-user';
+          const bgColor = isAssistant ? 'var(--bot-bg-color)' : 'var(--user-bg-color)';
+          const textColor = isAssistant ? 'var(--bot-text-color)' : 'var(--user-text-color)';
+          const direction = isAssistant ? 'left' : 'right';
+          const senderName = isAssistant ? 'AI Assistant' : 'You';
+          const timeColor = isAssistant ? 'var(--bot-bg-color)' : 'var(--user-time-text-color)';
+
+          let messageHtml = `
+            <div class="d-flex justify-content-between">
+              ${isAssistant ? `<p class="small mb-1" style="color: ${bgColor};">${senderName}</p>` : ''}
+              <p class="small mb-1" style="color: ${timeColor};">${msg.time}</p>
+              ${!isAssistant ? `<p class="small mb-1 pe-2">${senderName}</p>` : ''}
+            </div>
+            <div class="d-flex flex-row justify-content-${direction === 'left' ? 'start' : 'end'} mb-4" style="align-items: flex-start;">
+              ${direction === 'left' ? `<i class="fa-solid ${icon} rounded-circle" style="width: 30px; height: 30px; padding: 5px; color: ${textColor}; background-color: ${bgColor}; margin-right: 10px;"></i>` : ''}
+              <div class="message-bubble small p-2 rounded-3" style="background-color: ${bgColor}; color: ${textColor};">${removeParagraphAndDivTags(msg.content)}</div>
+              ${direction === 'right' ? `<i class="fa-solid ${icon} rounded-circle" style="width: 30px; height: 30px; padding: 5px; color: ${textColor}; background-color: ${bgColor}; margin-left: 10px;"></i>` : ''}
+            </div>
+          `;
+
+          $('#chat-box').append(messageHtml);
+
+          // Render buttons if available
+          if (msg.buttons && msg.buttons.length > 0) {
+            let buttonsHtml = `<div class="mb-3"><div class="row g-2">`;
+            msg.buttons.forEach(button => {
+              buttonsHtml += `<div class="col-auto text-center">
+                                <button class="btn rounded-pill custom-button message-button" data-label="${button}">${button}</button>
+                              </div>`;
+            });
+            buttonsHtml += `</div></div>`;
+            $('#chat-box').append(buttonsHtml);
+          }
+        });
+
+        // Auto-scroll to the bottom
+        $('#modal-body').scrollTop($('#modal-body')[0].scrollHeight);
+      }
+
+      // Initial chat box render
+      updateChatBox();
+  
+      // Function to handle sending the message
+      function handleClick(messageContent) {
+        const msg = messageContent || $('#message-input').val();
+        if (msg === '' || loading) {
+          console.log("Message is empty or loading in progress. Ignoring input.");
+          return; // Ignore if no message or already loading
+        }
+
+        console.log("User message:", msg);
+        // Add user's message to history
+        history.push({ 
+          role: 'user', 
+          content: msg, 
+          time: getCurrentTime(), 
+          buttons: [], 
+          links: [] 
+        });
+        
+        // Update local storage
+        localStorage.setItem('chatHistory', JSON.stringify(history));
+        localStorage.setItem('chatHistoryTime', Date.now());
+
+        updateChatBox();
+        $('#message-input').val(''); // Clear the input field
+        loading = true;
+
+        // Simulate loading indicator
+        history.push({ role: 'assistant', content: 'Loading...', time: '', buttons: [], links: [] });
+        updateChatBox();
+
+        // Make the API call using jQuery
+        $.ajax({
+          url: 'http://localhost:5000/query',
+          method: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify({ query: msg, history: history }),
+          success: function(response) {
+            console.log("Response received:", response);
+            history.pop(); // Remove the loading message
+            
+            // Use structured consultation information from API (prioritize agent decision)
+            let needsSpecialist = response.consultation_needed;
+            if (needsSpecialist === undefined) {
+              // Fallback for backwards compatibility
+              needsSpecialist = checkIfSpecialistNeeded(response.content);
+            }
+            
+            let dynamicButtons = response.buttons || [];
+            
+            // Add doctor buttons if specialist consultation is recommended
+            if (needsSpecialist) {
+              if (response.consultation_type && response.recommended_specialist) {
+                // Use specific specialist recommendation from ReAct Agent
+                dynamicButtons = getSpecificDoctorButtons(response.consultation_type, response.recommended_specialist);
+              } else {
+                // Fall back to content-based detection
+                dynamicButtons = getDoctorButtons(response.content);
+              }
+            }
+            
+            history.push({
+              role: 'assistant',
+              content: response.content,
+              time: getCurrentTime(),
+              buttons: dynamicButtons,
+              links: response.links || []
+            });
+            loading = false;
+
+            // Update local storage after getting response
+            localStorage.setItem('chatHistory', JSON.stringify(history));
+            localStorage.setItem('chatHistoryTime', Date.now());
+
+            updateChatBox();
+          },
+          error: function() {
+            console.error("Error occurred during API call.");
+            history.pop(); // Remove the loading message
+            history.push({
+              role: 'assistant',
+              content: "I'm sorry, but I encountered an error. Please try again later.",
+              time: getCurrentTime(),
+              buttons: [],
+              links: []
+            });
+            loading = false;
+
+            // Update local storage after getting error
+            localStorage.setItem('chatHistory', JSON.stringify(history));
+            localStorage.setItem('chatHistoryTime', Date.now());
+
+            updateChatBox();
+          }
+        });
+      }
+  
+      // Click event for the send button
+      $('#send-button').on('click', function() {
+        console.log("Send button clicked.");
+        handleClick();
+      });
+  
+      // Enter key press event for the input field
+      $('#message-input').on('keypress', function(e) {
+        if (e.which == 13) { // Enter key pressed
+          console.log("Enter key pressed.");
+          handleClick();
+        }
+      });
+  
+      // Handle button clicks for predefined responses
+      $(document).on('click', '.message-button', function() {
+        const label = $(this).data('label');
+        console.log("Predefined button clicked:", label);
+        
+        // Check if it's a doctor button
+        if (label.includes('Dr.') || label.includes('Sarah Mitchell')) {
+          handleDoctorClick(label);
+        }
+        // Check if it's a general consultation button
+        else if (label.includes('Call General Consultation') || label.includes('Tell me more about specialists')) {
+          handleGeneralConsultationClick(label);
+        } else {
+          handleClick(label);
+        }
+      });
+      
+      // Handle doctor button clicks with special response
+      function handleDoctorClick(doctorLabel) {
+        console.log("Doctor button clicked:", doctorLabel);
+        
+        // Add user's selection to history
+        history.push({ 
+          role: 'user', 
+          content: `I want to consult with ${doctorLabel}`, 
+          time: getCurrentTime(), 
+          buttons: [], 
+          links: [] 
+        });
+        
+        // Parse doctor information
+        let doctorInfo = getDoctorInfo(doctorLabel);
+        
+        // Add assistant's response with doctor details
+        history.push({
+          role: 'assistant',
+          content: `I'll connect you with ${doctorInfo.name}. ${doctorInfo.description}<br><br>
+                   <strong>Contact:</strong> ${doctorInfo.email}<br>
+                   <strong>Phone:</strong> ${doctorInfo.phone}<br>
+                   <strong>Specialization:</strong> ${doctorInfo.specialization}<br><br>
+                   Your health records will be securely transferred via our HIPAA-compliant system. Would you like me to schedule a consultation?`,
+          time: getCurrentTime(),
+          buttons: [
+            'Yes, schedule consultation now',
+            'Send me their contact information',
+            'I need a different specialist',
+            'Tell me about EMR process'
+          ],
+          links: []
+        });
+        
+        // Update local storage and chat box
+        localStorage.setItem('chatHistory', JSON.stringify(history));
+        localStorage.setItem('chatHistoryTime', Date.now());
+        updateChatBox();
+      }
+      
+      // Get doctor information based on button label
+      function getDoctorInfo(label) {
+        const doctors = {
+          '🧠 Dr. Rachel Chen - Depression & Anxiety': {
+            name: 'Dr. Rachel Chen, MD, PhD',
+            specialization: 'Postpartum Depression, Anxiety Disorders, Perinatal Mental Health',
+            email: 'dr.chen@BeyondBabyBlues.com',
+            phone: '(123) 456-7891',
+            description: 'Board-Certified Psychiatrist with 12 years experience in maternal mental health.'
+          },
+          '💊 Dr. Priya Sharma - Medications & Bipolar': {
+            name: 'Dr. Priya Sharma, MD',
+            specialization: 'Postpartum Psychosis, Bipolar Disorder, Medication Management',
+            email: 'dr.sharma@BeyondBabyBlues.com',
+            phone: '(123) 456-7892',
+            description: 'Reproductive Psychiatrist with 15 years experience in women\'s mental health.'
+          },
+          '🩺 Dr. Michael Rodriguez - Trauma & PTSD': {
+            name: 'Dr. Michael Rodriguez, MD',
+            specialization: 'Birth Trauma, PTSD, Complex Mental Health Cases',
+            email: 'dr.rodriguez@BeyondBabyBlues.com',
+            phone: '(123) 456-7893',
+            description: 'Perinatal Psychiatrist certified in Trauma-Informed Care.'
+          },
+          '🤱 Dr. Jennifer Thompson - High-Risk Pregnancy': {
+            name: 'Dr. Jennifer Thompson, MD',
+            specialization: 'High-risk pregnancies, Postpartum complications, Medical comorbidities',
+            email: 'dr.thompson@BeyondBabyBlues.com',
+            phone: '(123) 456-7894',
+            description: 'Maternal-Fetal Medicine specialist with 18 years experience.'
+          },
+          '👥 Dr. Amanda Foster - Family Therapy': {
+            name: 'Dr. Amanda Foster, LCSW, PMH-C',
+            specialization: 'Postpartum Depression, Support Groups, Family Therapy',
+            email: 'amanda.foster@BeyondBabyBlues.com',
+            phone: '(123) 456-7895',
+            description: 'Licensed Clinical Social Worker with 8 years in perinatal mental health.'
+          },
+          '😰 Sarah Mitchell - Anxiety & OCD Therapy': {
+            name: 'Sarah Mitchell, LPC, PMH-C',
+            specialization: 'Anxiety Disorders, Postpartum OCD, Cognitive Behavioral Therapy',
+            email: 'sarah.mitchell@BeyondBabyBlues.com',
+            phone: '(123) 456-7896',
+            description: 'Licensed Professional Counselor with CBT certification.'
+          },
+          '🧪 Dr. Robert Kim - Psychological Testing': {
+            name: 'Dr. Robert Kim, PhD',
+            specialization: 'Psychological testing, Severe mental health disorders, Research',
+            email: 'dr.kim@BeyondBabyBlues.com',
+            phone: '(123) 456-7897',
+            description: 'Clinical Psychologist with 14 years in women\'s mental health.'
+          },
+          '🚨 Dr. Lisa Park - Crisis Emergency (24/7)': {
+            name: 'Dr. Lisa Park, MD',
+            specialization: 'Crisis Intervention, Emergency Psychiatry, 24/7 Support',
+            email: 'crisis@BeyondBabyBlues.com',
+            phone: '(123) 456-7999',
+            description: 'Crisis Psychiatrist available 24/7 for emergency situations.'
+          }
+        };
+        
+        return doctors[label] || {
+          name: 'Specialist Doctor',
+          specialization: 'General Consultation',
+          email: 'specialist@BeyondBabyBlues.com',
+          phone: '(123) 456-7890',
+          description: 'Available for consultation.'
+        };
+      }
+      
+      // Handle general consultation button clicks
+      function handleGeneralConsultationClick(label) {
+        console.log("General consultation button clicked:", label);
+        
+        // Add user's selection to history
+        history.push({ 
+          role: 'user', 
+          content: label, 
+          time: getCurrentTime(), 
+          buttons: [], 
+          links: [] 
+        });
+        
+        let responseContent = '';
+        let responseButtons = [];
+        
+        if (label.includes('Call General Consultation')) {
+          responseContent = `You can reach our general consultation line at:<br><br>
+                           <strong>📞 Phone:</strong> (123) 456-7890<br>
+                           <strong>📧 Email:</strong> specialist@BeyondBabyBlues.com<br>
+                           <strong>🌐 Online:</strong> portal.BeyondBabyBlues.com<br><br>
+                           Our consultation team is available Monday-Friday 9 AM-6 PM PST. For after-hours emergencies, please contact our crisis line at (123) 456-7999.`;
+          responseButtons = [
+            'I need crisis support now',
+            'Schedule a consultation',
+            'Back to specialist options'
+          ];
+        } else if (label.includes('Tell me more about specialists')) {
+          responseContent = `Our team includes 8 specialized doctors and therapists:<br><br>
+                           🧠 <strong>Mental Health:</strong> Dr. Rachel Chen, Dr. Priya Sharma<br>
+                           🩺 <strong>Trauma/PTSD:</strong> Dr. Michael Rodriguez<br>
+                           🤱 <strong>High-Risk Pregnancy:</strong> Dr. Jennifer Thompson<br>
+                           👥 <strong>Therapy/Counseling:</strong> Dr. Amanda Foster, Sarah Mitchell<br>
+                           🧪 <strong>Psychology:</strong> Dr. Robert Kim<br>
+                           🚨 <strong>Crisis Support:</strong> Dr. Lisa Park (24/7)<br><br>
+                           All consultations include secure, HIPAA-compliant transfer of your health records.`;
+          responseButtons = [
+            '🧠 Dr. Rachel Chen - Depression & Anxiety',
+            '💊 Dr. Priya Sharma - Medications & Bipolar',
+            '🩺 Dr. Michael Rodriguez - Trauma & PTSD',
+            '🚨 Dr. Lisa Park - Crisis Emergency (24/7)'
+          ];
+        }
+        
+        // Add assistant's response
+        history.push({
+          role: 'assistant',
+          content: responseContent,
+          time: getCurrentTime(),
+          buttons: responseButtons,
+          links: []
+        });
+        
+        // Update local storage and chat box
+        localStorage.setItem('chatHistory', JSON.stringify(history));
+        localStorage.setItem('chatHistoryTime', Date.now());
+        updateChatBox();
+      }
+    });
+</script>
+
+</body>
+</html>
