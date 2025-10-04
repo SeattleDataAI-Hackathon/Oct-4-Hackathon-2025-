@@ -1,0 +1,127 @@
+/* Habit Loop Plan Styles for SustainIQ */
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.plan-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.plan-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plan-title {
+    color: #667eea;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.title-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    margin: 20px auto 30px;
+    width: 60%;
+    border-radius: 2px;
+}
+
+.plan-content {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #667eea;
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.05em;
+}
+
+.plan-content h1 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.plan-content h2 {
+    color: #764ba2;
+    font-size: 1.4em;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.plan-content h3 {
+    color: #555;
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.plan-content p {
+    margin: 0.8em 0;
+}
+
+.plan-content ul, .plan-content ol {
+    margin: 0.8em 0;
+    padding-left: 2em;
+}
+
+.plan-content li {
+    margin: 0.5em 0;
+}
+
+.plan-content strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.plan-content em {
+    font-style: italic;
+    color: #555;
+}
+
+.plan-content code {
+    background: #e0e0e0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+}
+
+.plan-content blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 1em;
+    margin: 1em 0;
+    color: #555;
+    font-style: italic;
+}
+
+.next-steps {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    border-left: 5px solid #2196f3;
+}
+
+.next-steps p {
+    margin: 0;
+    color: #1976d2;
+    font-weight: 600;
+}

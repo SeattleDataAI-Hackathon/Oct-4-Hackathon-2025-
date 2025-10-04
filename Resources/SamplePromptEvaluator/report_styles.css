@@ -1,0 +1,319 @@
+/* SustainIQ Evaluation Report Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+.metadata {
+    background: #f8f9fa;
+    padding: 20px 30px;
+    border-bottom: 2px solid #e9ecef;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.metadata-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metadata-label {
+    font-size: 0.85em;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.metadata-value {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.content {
+    padding: 30px;
+}
+
+.category-section {
+    margin-bottom: 40px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.category-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.category-header:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #1f6391 100%);
+}
+
+.category-title {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.category-count {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.category-content {
+    display: block;
+}
+
+.result-card {
+    border-bottom: 1px solid #e9ecef;
+    padding: 20px;
+    transition: background 0.2s ease;
+}
+
+.result-card:last-child {
+    border-bottom: none;
+}
+
+.result-card:hover {
+    background: #f8f9fa;
+}
+
+.result-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: start;
+}
+
+.demographic-badge {
+    background: #e7f3ff;
+    color: #0366d6;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-failed {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.input-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border-left: 4px solid #6c757d;
+}
+
+.section-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-text {
+    color: #2c3e50;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.response-section {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.json-output {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.json-key {
+    color: #e06c75;
+}
+
+.json-string {
+    color: #98c379;
+}
+
+.json-number {
+    color: #d19a66;
+}
+
+.impact-indicator {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.impact-high {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.impact-medium {
+    background: #fff3cd;
+    color: #856404;
+    border: 2px solid #ffc107;
+}
+
+.impact-low {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+.suggestion-box {
+    background: #e7f3ff;
+    border-left: 4px solid #0366d6;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.rationale-box {
+    background: #f8f9fa;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.metrics-box {
+    background: #fff3cd;
+    border-left: 3px solid #ffc107;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+.metric-item {
+    margin: 5px 0;
+    color: #856404;
+}
+
+.metric-label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #dc3545;
+    margin-top: 10px;
+}
+
+.toggle-raw {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+}
+
+.toggle-raw:hover {
+    background: #5a6268;
+}
+
+.raw-response {
+    display: none;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    border: 1px solid #dee2e6;
+}

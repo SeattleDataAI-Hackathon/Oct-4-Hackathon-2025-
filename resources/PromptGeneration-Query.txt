@@ -1,0 +1,74 @@
+I want to build a sustainability coach application. Help me build a good LLM prompt the following scenario. 
+
+The goal of the prompt is to make a single suggestion to some user input involving an action - such as a "I am buying a coffee at Starbucks" or "I plan to purchase a plane ticket to New York for a business trip on Oct 5th" - and offer a single more sustainable action option to the user. 
+
+User input should be assumed to come from a wide variety of real life scenarios.
+
+When evaluating the user action, one should first estimate its sustainability impact. Then find an option that matches the action but is more sustainable. If there are multiple options available, the one that is choose should be balance user acceptance, easy of use, cost and sustainability impact. Choices that are more likely to be accepted by the user should be preferred.
+
+The prompt should include instructions to generate output for machine consumption.
+The output should contain: a summary of the original action, a suggestion for a more sustainable action, a rational for the sustainable action, a metric that illustrates the improvement in sustainability for both the original action and the more sustainable action that was suggested, an impact indicator "low", "medium", "high" for the sustainable choice. 
+
+The prompt should also handle edge cases:
+- If the action is unclear, ask for clarification.
+- If the action is already highly sustainable, acknowledge it and suggest minor improvements or confirm it's a good choice
+- If sustainability impact cannot be estimated, provide a qualitative assessment
+
+The prompt should instruct the output to include an indicator of the evaluation that can be used to identify edge cases or usable output. 
+
+
+--- Example ---
+
+User input: “I plan to purchase a plane ticket to New York for a business trip on Oct 5th.”
+
+{
+  "original_action": "Flying to New York for a business trip in business class",
+  "suggestion": "Book an economy class ticket and purchase a verified carbon offset",
+  "rationale": "Economy class reduces per-passenger emissions compared to business class, and carbon offsets help mitigate remaining impact.",
+  "metrics": {
+    "original_impact": "900 kg CO₂",
+    "suggested_impact": "600 kg CO₂ plus offset contribution"
+  },
+  "impact_indicator": "high"
+}
+
+User input: "I need to drive my car for work today."
+
+{
+  "original_action": "Driving alone to work",
+  "suggestion": "Carpool with a colleague or explore flexible remote work options",
+  "rationale": "Carpooling halves per-person emissions and can reduce costs. Remote work eliminates the commute entirely when feasible.",
+  "metrics": {
+    "original_impact": "4.6 kg CO₂ for 20 km round trip",
+    "suggested_impact": "2.3 kg CO₂ with carpooling"
+  },
+  "impact_indicator": "medium"
+}
+
+The JSON output must be:
+- Valid and parseable
+- Use UTF-8 encoding
+- Escape special characters properly
+- Include all required fields (no null values unless specified)
+
+The impact_indicator should be determined by:
+- "low": < 10% improvement in sustainability metrics
+- "medium": 10-40% improvement in sustainability metrics  
+- "high": > 40% improvement in sustainability metrics
+
+The suggestion and rationale should:
+- Use encouraging, non-judgmental language
+- Be concise (suggestion: 1-2 sentences, rationale: 2-3 sentences)
+- Avoid technical jargon unless necessary
+- Focus on benefits rather than criticizing the original action
+
+Metrics should:
+- Use standardized units (kg CO₂ for carbon, liters for water, etc.)
+- Be based on reasonable estimates with typical assumptions
+- Include the unit in the value string
+- Represent the most relevant sustainability dimension (carbon, water, waste, etc.)
+
+The prompt should consider:
+- Geographic context when available (e.g., availability of public transit)
+- Cultural appropriateness of suggestions
+- If location is unspecified, assume general Western urban context

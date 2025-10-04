@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainIQ Evaluation Results</title>
+    <style>
+        {{CSS_CONTENT}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌿 SustainIQ Evaluation Results</h1>
+            <div class="subtitle">AI Coach for a Greener You — Evaluation Report</div>
+        </div>
+        
+        <div class="metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Processed At</div>
+                <div class="metadata-value">{{PROCESSED_AT}}</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Model</div>
+                <div class="metadata-value">{{MODEL}}</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Categories</div>
+                <div class="metadata-value">{{TOTAL_CATEGORIES}}</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Evaluations</div>
+                <div class="metadata-value">{{TOTAL_EVALUATIONS}}</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            {{RESULTS_CONTENT}}
+        </div>
+    </div>
+    
+    <script>
+        function toggleCategory(header) {
+            const content = header.nextElementSibling;
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+        
+        function toggleRaw(button) {
+            const rawDiv = button.nextElementSibling;
+            if (rawDiv.style.display === 'none' || rawDiv.style.display === '') {
+                rawDiv.style.display = 'block';
+                button.textContent = button.textContent.replace('Show', 'Hide');
+            } else {
+                rawDiv.style.display = 'none';
+                button.textContent = button.textContent.replace('Hide', 'Show');
+            }
+        }
+    </script>
+</body>
+</html>
