@@ -1,0 +1,118 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Streamlit App",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/streamlit",
+      "args": [
+        "run",
+        "src/ui/app.py"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/pytest",
+      "args": [
+        "tests/",
+        "-v"
+      ],
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Run Tests with Coverage",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/pytest",
+      "args": [
+        "tests/",
+        "--cov=src",
+        "--cov-report=html",
+        "--cov-report=term"
+      ],
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Format Code (Black)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/black",
+      "args": [
+        "src/",
+        "tests/"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint Code (Flake8)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/flake8",
+      "args": [
+        "src/",
+        "tests/",
+        "--max-line-length=120"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Type Check (MyPy)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/mypy",
+      "args": [
+        "src/"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Database: Start",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "compose",
+        "up",
+        "-d",
+        "postgres"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Database: Stop",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "compose",
+        "down"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Database: Migrate",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/alembic",
+      "args": [
+        "upgrade",
+        "head"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Database: Seed",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "scripts/seed_home_remedies.py"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
