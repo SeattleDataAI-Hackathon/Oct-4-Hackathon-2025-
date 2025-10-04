@@ -3,7 +3,7 @@
 Team Member:
 Corneille Ngoy
 
-https://github.com/JCorneilleN/
+https://github.com/JCorneilleN/std-triage-bot
 
 > **Educational triage only — not medical advice.** This bot looks at a **WhatsApp‑sent photo** (via Twilio) and returns:
 >
