@@ -1,0 +1,19 @@
+{
+    "brand": "string",
+    "price": "number",
+    "category": "string",
+    "materials": "list[string]",
+    "material_percentage": "map[string, number]",
+    "blend_flag": "boolean[Set true if more than one material is listed]",
+    "weight": "number(if present use unrounded raw number, else approximate weight)",
+    "weight_unit": "string",
+    "dimensions": "map[string, number]",
+    "manufacturer": "string",
+    "imported": "boolean",
+    "asin": "string",
+    "sustainability_features_total": "number",
+    "sustainability_features": "list[string]",
+    "colors": "list[string]",
+    "number_of_variations": "number",
+    "ai_made_category": "one of: T-Shirt, Jeans, Jacket, Dress, Sweater, Shoes, Shorts, Socks, Hat, Suits, Activewear, Underwear"
+}
