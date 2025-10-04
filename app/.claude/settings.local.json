@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/lingyizhou/Documents/Personal Work/2025/10月Hackthon/Curaloop/Oct-4-Hackathon-2025-/**)",
+      "Read(//Users/lingyizhou/.railway/**)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

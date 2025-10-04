@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-expo-app:*)",
+      "Bash(npx expo start:*)",
+      "Bash(npx expo install:*)",
+      "Bash(npm run build:*)",
+      "Bash(vercel:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(npm install:*)",
+      "Bash(find:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Read(//var/folders/c5/rj7_8bf13bs4nfx67lnk1gxw0000gn/T/TemporaryItems/NSIRD_screencaptureui_gH55qr/**)",
+      "Read(//var/folders/c5/rj7_8bf13bs4nfx67lnk1gxw0000gn/T/TemporaryItems/NSIRD_screencaptureui_qZpMk2/**)",
+      "Read(//var/folders/c5/rj7_8bf13bs4nfx67lnk1gxw0000gn/T/TemporaryItems/NSIRD_screencaptureui_jW71sp/**)",
+      "Bash(uvicorn:*)",
+      "Bash(pip3 install:*)",
+      "Bash(cat:*)",
+      "Bash(git -C \"/Users/lingyizhou/Documents/Personal Work/2025/10月Hackthon/Curaloop/Oct-4-Hackathon-2025-\" remote -v)",
+      "Bash(git -C \"/Users/lingyizhou/Documents/Personal Work/2025/10月Hackthon/Curaloop/Oct-4-Hackathon-2025-\" branch)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

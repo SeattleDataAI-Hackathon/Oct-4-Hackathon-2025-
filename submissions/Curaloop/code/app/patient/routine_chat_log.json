@@ -1,0 +1,104 @@
+{
+  "session_id": "2865267958434868a5df812574988944",
+  "patient_id": 54321,
+  "chat_summary": {
+    "session_id": "2865267958434868a5df812574988944",
+    "chat_type": "daily_check_in",
+    "duration_minutes": 0.0,
+    "total_activities": 1,
+    "total_interactions": 6,
+    "sentiment_summary": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 6
+    },
+    "completed_activities": [
+      {
+        "title": "Review current medications for cognitive impact",
+        "completion_time": "2025-10-04T20:51:58.326915",
+        "metrics": {
+          "sentiment": "positive",
+          "engagement_level": "high",
+          "response_length": 34
+        }
+      }
+    ],
+    "overall_engagement": "low",
+    "recommendations": [
+      "Consider shorter, more frequent check-ins",
+      "Use more visual cues and simple language",
+      "Focus on fewer activities per session",
+      "Provide more encouragement and positive reinforcement"
+    ]
+  },
+  "interactions": [
+    {
+      "timestamp": "2025-10-04T20:51:58.324124",
+      "patient_message": "I'm feeling a bit confused today",
+      "chatbot_response": "Thank you for sharing. I want to help you with Review current medications for cognitive impact. Can you tell me about your current medication routine?",
+      "response_analysis": {
+        "activity_completed": false,
+        "sentiment": "neutral"
+      }
+    },
+    {
+      "timestamp": "2025-10-04T20:51:58.325634",
+      "patient_message": "I didn't sleep well last night, maybe 4 hours",
+      "chatbot_response": "I understand that Review current medications for cognitive impact has been challenging. Let's talk about what specific difficulties you're experiencing. Are you experiencing side effects, or is it difficult to remember?",
+      "response_analysis": {
+        "activity_completed": false,
+        "sentiment": "neutral"
+      }
+    },
+    {
+      "timestamp": "2025-10-04T20:51:58.326919",
+      "patient_message": "Yes, I took my morning medications",
+      "chatbot_response": "That's wonderful! I'm glad to hear about your progress with Review current medications for cognitive impact. Let me know if you need any help with the next step.",
+      "response_analysis": {
+        "activity_completed": true,
+        "sentiment": "neutral"
+      }
+    },
+    {
+      "timestamp": "2025-10-04T20:51:58.328111",
+      "patient_message": "My energy is very low, about a 3 out of 10",
+      "chatbot_response": "Thank you for sharing. I want to support you with Consider cholinesterase inhibitors if appropriate. What would you like to know?",
+      "response_analysis": {
+        "activity_completed": false,
+        "sentiment": "neutral"
+      }
+    },
+    {
+      "timestamp": "2025-10-04T20:51:58.329340",
+      "patient_message": "I forgot to eat breakfast again",
+      "chatbot_response": "Thank you for sharing. I want to support you with Consider cholinesterase inhibitors if appropriate. What would you like to know?",
+      "response_analysis": {
+        "activity_completed": false,
+        "sentiment": "neutral"
+      }
+    },
+    {
+      "timestamp": "2025-10-04T20:51:58.330579",
+      "patient_message": "I'm having trouble remembering what day it is",
+      "chatbot_response": "Thank you for sharing. I want to support you with Consider cholinesterase inhibitors if appropriate. What would you like to know?",
+      "response_analysis": {
+        "activity_completed": false,
+        "sentiment": "neutral"
+      }
+    }
+  ],
+  "completed_activities": [
+    "Review current medications for cognitive impact"
+  ],
+  "metrics": {
+    "session_duration_minutes": 0.0,
+    "total_activities_completed": 1,
+    "total_interactions": 6,
+    "engagement_score": "low",
+    "sentiment_distribution": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 6
+    }
+  }
+}

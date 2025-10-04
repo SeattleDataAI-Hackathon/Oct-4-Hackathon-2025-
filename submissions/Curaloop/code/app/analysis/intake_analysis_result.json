@@ -1,0 +1,1025 @@
+{
+  "patient_id": 54321,
+  "alzheimers_prediction": {
+    "diagnosis": 0,
+    "diagnosis_label": "No Alzheimer's Disease",
+    "probability_no_alzheimers": 0.6650390619210387,
+    "probability_alzheimers": 0.33496093807896143
+  },
+  "patient_portfolio": {
+    "demographics": {
+      "age": 72.0,
+      "gender": "Female",
+      "education_level": 2
+    },
+    "health_metrics": {
+      "bmi": 25.71,
+      "mmse_score": 21.0,
+      "adl_score": 78.0,
+      "functional_assessment": 72.0
+    },
+    "risk_factors": {
+      "family_history_alzheimers": true,
+      "cardiovascular_disease": false,
+      "diabetes": true,
+      "depression": true,
+      "hypertension": true,
+      "head_injury": false
+    },
+    "lifestyle_factors": {
+      "smoking": false,
+      "alcohol_consumption": 2.0,
+      "physical_activity": 5.0,
+      "diet_quality": 2.0,
+      "sleep_quality": 6.0
+    }
+  },
+  "diagnosis_analysis": {
+    "predicted_diagnosis": "No Alzheimer's Disease",
+    "risk_level": "Low",
+    "confidence_score": 0.6650390619210387,
+    "key_indicators": {
+      "cognitive_impairment": true,
+      "memory_complaints": true,
+      "behavioral_changes": false,
+      "confusion": true,
+      "disorientation": true,
+      "personality_changes": false,
+      "task_difficulty": true,
+      "forgetfulness": true
+    },
+    "severity_assessment": {
+      "mmse_severity": "Mild",
+      "functional_independence": "Moderate"
+    },
+    "clinical_insights": "Patient shows low risk for Alzheimer's disease based on ML prediction and clinical indicators.",
+    "differential_considerations": [
+      "Mild Cognitive Impairment",
+      "Vascular Dementia",
+      "Depression-related cognitive changes"
+    ],
+    "recommended_follow_up": [
+      "Neuropsychological evaluation",
+      "Neurology consultation",
+      "Cognitive monitoring"
+    ]
+  },
+  "treatment_plan": {
+    "immediate_actions": [
+      "Schedule comprehensive neuropsychological evaluation",
+      "Consult with neurologist for detailed assessment",
+      "Begin cognitive monitoring and tracking"
+    ],
+    "lifestyle_interventions": [
+      "Implement Mediterranean diet recommendations",
+      "Establish regular physical exercise routine",
+      "Optimize sleep hygiene and quality",
+      "Engage in cognitive stimulation activities"
+    ],
+    "medical_management": [
+      "Review current medications for cognitive impact",
+      "Consider cholinesterase inhibitors if appropriate",
+      "Monitor and manage cardiovascular risk factors",
+      "Address depression and anxiety if present",
+      "Address depression with appropriate therapy/medication"
+    ],
+    "support_services": [
+      "Connect with Alzheimer's Association resources",
+      "Establish caregiver support network",
+      "Plan for future care needs and legal considerations",
+      "Implement safety measures at home",
+      "Genetic counseling consideration"
+    ],
+    "monitoring_schedule": {
+      "cognitive_assessment": "Every 6 months",
+      "medical_follow_up": "Every 3 months",
+      "lifestyle_review": "Monthly",
+      "caregiver_check_in": "Weekly",
+      "check_in_frequency": "bi-weekly"
+    },
+    "personalized_recommendations": [
+      "Consider antidepressant therapy",
+      "Family education and support"
+    ],
+    "risk_specific_interventions": [],
+    "caregiver_guidance": [
+      "Education about Alzheimer's disease progression",
+      "Communication strategies for cognitive changes",
+      "Safety planning and home modifications",
+      "Respite care planning"
+    ]
+  },
+  "companion_chatbot_config": {
+    "personality": "Supportive, patient, and encouraging",
+    "communication_style": "Simple language with occasional repetition",
+    "treatment_execution": {
+      "immediate_actions": [
+        {
+          "id": "activity_1",
+          "title": "Schedule comprehensive neuropsychological evaluation",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Schedule comprehensive neuropsychological evaluation. How can I help you with this?",
+            "I want to support you with Schedule comprehensive neuropsychological evaluation. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "easy",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_2",
+          "title": "Consult with neurologist for detailed assessment",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Consult with neurologist for detailed assessment. How can I help you with this?",
+            "I want to support you with Consult with neurologist for detailed assessment. What would you like to know?"
+          ],
+          "frequency": "monthly",
+          "difficulty": "easy",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_3",
+          "title": "Begin cognitive monitoring and tracking",
+          "type": "cognitive",
+          "chat_prompts": [
+            "Let's talk about Begin cognitive monitoring and tracking. How are you feeling mentally today?",
+            "I want to help you with Begin cognitive monitoring and tracking. Would you like to try a memory exercise?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Memory performance",
+            "Attention span",
+            "Problem-solving"
+          ],
+          "follow_up_questions": [
+            "How did that exercise feel?",
+            "Was it too easy or too difficult?",
+            "Would you like to try something different?"
+          ]
+        }
+      ],
+      "lifestyle_interventions": [
+        {
+          "id": "activity_1",
+          "title": "Implement Mediterranean diet recommendations",
+          "type": "nutrition",
+          "chat_prompts": [
+            "Let's talk about Implement Mediterranean diet recommendations. How has your eating been lately?",
+            "I want to help you with Implement Mediterranean diet recommendations. What foods do you typically eat?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Meal quality",
+            "Hydration",
+            "Weight stability"
+          ],
+          "follow_up_questions": [
+            "How did the meal taste?",
+            "Are you feeling satisfied?",
+            "Would you like suggestions for similar healthy meals?"
+          ]
+        },
+        {
+          "id": "activity_2",
+          "title": "Establish regular physical exercise routine",
+          "type": "physical_activity",
+          "chat_prompts": [
+            "Let's discuss Establish regular physical exercise routine. How are you feeling about starting an exercise routine?",
+            "I'd like to help you with Establish regular physical exercise routine. What physical activities do you enjoy?"
+          ],
+          "frequency": "daily",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Activity duration",
+            "Frequency",
+            "Energy level"
+          ],
+          "follow_up_questions": [
+            "How did the exercise make you feel?",
+            "What was the most challenging part?",
+            "Would you like to try a different type of activity?"
+          ]
+        },
+        {
+          "id": "activity_3",
+          "title": "Optimize sleep hygiene and quality",
+          "type": "sleep",
+          "chat_prompts": [
+            "Let's discuss Optimize sleep hygiene and quality. How has your sleep been recently?",
+            "I'd like to help you with Optimize sleep hygiene and quality. What time do you usually go to bed?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Sleep duration",
+            "Sleep quality",
+            "Bedtime consistency"
+          ],
+          "follow_up_questions": [
+            "How did you sleep last night?",
+            "Do you feel rested?",
+            "Is there anything keeping you awake?"
+          ]
+        },
+        {
+          "id": "activity_4",
+          "title": "Engage in cognitive stimulation activities",
+          "type": "cognitive",
+          "chat_prompts": [
+            "Let's talk about Engage in cognitive stimulation activities. How are you feeling mentally today?",
+            "I want to help you with Engage in cognitive stimulation activities. Would you like to try a memory exercise?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Memory performance",
+            "Attention span",
+            "Problem-solving"
+          ],
+          "follow_up_questions": [
+            "How did that exercise feel?",
+            "Was it too easy or too difficult?",
+            "Would you like to try something different?"
+          ]
+        }
+      ],
+      "medical_management": [
+        {
+          "id": "activity_1",
+          "title": "Review current medications for cognitive impact",
+          "type": "medication",
+          "chat_prompts": [
+            "Let's talk about Review current medications for cognitive impact. Have you taken your medication today?",
+            "I want to help you with Review current medications for cognitive impact. Can you tell me about your current medication routine?"
+          ],
+          "frequency": "daily",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Adherence rate",
+            "Side effect monitoring",
+            "Timing consistency"
+          ],
+          "follow_up_questions": [
+            "How are you feeling after taking your medication?",
+            "Are you experiencing any side effects?",
+            "Do you need help remembering to take your medication?"
+          ]
+        },
+        {
+          "id": "activity_2",
+          "title": "Consider cholinesterase inhibitors if appropriate",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Consider cholinesterase inhibitors if appropriate. How can I help you with this?",
+            "I want to support you with Consider cholinesterase inhibitors if appropriate. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_3",
+          "title": "Monitor and manage cardiovascular risk factors",
+          "type": "safety",
+          "chat_prompts": [
+            "Let's discuss Monitor and manage cardiovascular risk factors. Do you feel safe at home?",
+            "I'd like to help you with Monitor and manage cardiovascular risk factors. Are there any safety concerns?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Safety incidents",
+            "Emergency preparedness",
+            "Risk awareness"
+          ],
+          "follow_up_questions": [
+            "Do you feel safe and secure?",
+            "Are there any concerns you'd like to discuss?",
+            "Do you need help with any safety measures?"
+          ]
+        },
+        {
+          "id": "activity_4",
+          "title": "Address depression and anxiety if present",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Address depression and anxiety if present. How can I help you with this?",
+            "I want to support you with Address depression and anxiety if present. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_5",
+          "title": "Address depression with appropriate therapy/medication",
+          "type": "medication",
+          "chat_prompts": [
+            "Let's talk about Address depression with appropriate therapy/medication. Have you taken your medication today?",
+            "I want to help you with Address depression with appropriate therapy/medication. Can you tell me about your current medication routine?"
+          ],
+          "frequency": "daily",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Adherence rate",
+            "Side effect monitoring",
+            "Timing consistency"
+          ],
+          "follow_up_questions": [
+            "How are you feeling after taking your medication?",
+            "Are you experiencing any side effects?",
+            "Do you need help remembering to take your medication?"
+          ]
+        }
+      ],
+      "support_services": [
+        {
+          "id": "activity_1",
+          "title": "Connect with Alzheimer's Association resources",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Connect with Alzheimer's Association resources. How can I help you with this?",
+            "I want to support you with Connect with Alzheimer's Association resources. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_2",
+          "title": "Establish caregiver support network",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Establish caregiver support network. How can I help you with this?",
+            "I want to support you with Establish caregiver support network. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_3",
+          "title": "Plan for future care needs and legal considerations",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Plan for future care needs and legal considerations. How can I help you with this?",
+            "I want to support you with Plan for future care needs and legal considerations. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_4",
+          "title": "Implement safety measures at home",
+          "type": "safety",
+          "chat_prompts": [
+            "Let's discuss Implement safety measures at home. Do you feel safe at home?",
+            "I'd like to help you with Implement safety measures at home. Are there any safety concerns?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Safety incidents",
+            "Emergency preparedness",
+            "Risk awareness"
+          ],
+          "follow_up_questions": [
+            "Do you feel safe and secure?",
+            "Are there any concerns you'd like to discuss?",
+            "Do you need help with any safety measures?"
+          ]
+        },
+        {
+          "id": "activity_5",
+          "title": "Genetic counseling consideration",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Genetic counseling consideration. How can I help you with this?",
+            "I want to support you with Genetic counseling consideration. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        }
+      ],
+      "personalized_recommendations": [
+        {
+          "id": "activity_1",
+          "title": "Consider antidepressant therapy",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Consider antidepressant therapy. How can I help you with this?",
+            "I want to support you with Consider antidepressant therapy. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_2",
+          "title": "Family education and support",
+          "type": "social",
+          "chat_prompts": [
+            "Let's discuss Family education and support. How are your relationships with family and friends?",
+            "I'd like to help you with Family education and support. Do you feel connected to others?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Social interactions",
+            "Mood improvement",
+            "Connection quality"
+          ],
+          "follow_up_questions": [
+            "How did the interaction go?",
+            "Do you feel more connected?",
+            "Would you like to plan more social activities?"
+          ]
+        }
+      ],
+      "risk_specific_interventions": [],
+      "caregiver_guidance": [
+        {
+          "id": "activity_1",
+          "title": "Education about Alzheimer's disease progression",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Education about Alzheimer's disease progression. How can I help you with this?",
+            "I want to support you with Education about Alzheimer's disease progression. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        },
+        {
+          "id": "activity_2",
+          "title": "Communication strategies for cognitive changes",
+          "type": "cognitive",
+          "chat_prompts": [
+            "Let's talk about Communication strategies for cognitive changes. How are you feeling mentally today?",
+            "I want to help you with Communication strategies for cognitive changes. Would you like to try a memory exercise?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Memory performance",
+            "Attention span",
+            "Problem-solving"
+          ],
+          "follow_up_questions": [
+            "How did that exercise feel?",
+            "Was it too easy or too difficult?",
+            "Would you like to try something different?"
+          ]
+        },
+        {
+          "id": "activity_3",
+          "title": "Safety planning and home modifications",
+          "type": "safety",
+          "chat_prompts": [
+            "Let's discuss Safety planning and home modifications. Do you feel safe at home?",
+            "I'd like to help you with Safety planning and home modifications. Are there any safety concerns?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Safety incidents",
+            "Emergency preparedness",
+            "Risk awareness"
+          ],
+          "follow_up_questions": [
+            "Do you feel safe and secure?",
+            "Are there any concerns you'd like to discuss?",
+            "Do you need help with any safety measures?"
+          ]
+        },
+        {
+          "id": "activity_4",
+          "title": "Respite care planning",
+          "type": "general",
+          "chat_prompts": [
+            "Let's talk about Respite care planning. How can I help you with this?",
+            "I want to support you with Respite care planning. What would you like to know?"
+          ],
+          "frequency": "weekly",
+          "difficulty": "medium",
+          "success_metrics": [
+            "Completion rate",
+            "Patient satisfaction",
+            "Goal achievement"
+          ],
+          "follow_up_questions": [
+            "How are you feeling about this?",
+            "Is there anything I can help you with?",
+            "Would you like to discuss this further?"
+          ]
+        }
+      ],
+      "intensity": "low"
+    },
+    "daily_activities": [
+      "Morning routine reminders",
+      "Medication reminders",
+      "Meal planning assistance",
+      "Exercise encouragement",
+      "Memory games and cognitive exercises",
+      "Moderate cognitive exercises",
+      "Social interaction prompts",
+      "Hobby and interest reminders"
+    ],
+    "safety_features": [
+      "Emergency contact integration",
+      "Location tracking for disorientation episodes",
+      "Medication adherence monitoring",
+      "Fall risk assessment"
+    ],
+    "personalization": {
+      "adapt_to_cognitive_level": true,
+      "use_visual_cues": true,
+      "provide_positive_reinforcement": true,
+      "maintain_routine_consistency": true
+    },
+    "conversation_flows": {
+      "daily_check_in": {
+        "purpose": "Daily wellness and treatment adherence check",
+        "frequency": "every_other_day",
+        "duration": "5-10 minutes",
+        "topics": [
+          "Mood and energy level",
+          "Medication adherence",
+          "Sleep quality",
+          "Physical activity",
+          "Safety concerns"
+        ],
+        "prompts": [
+          "Good morning! How are you feeling today?",
+          "Did you sleep well last night?",
+          "Have you taken your medications?",
+          "How is your energy level?",
+          "Is there anything you'd like to talk about?"
+        ]
+      },
+      "treatment_progress": {
+        "purpose": "Weekly treatment plan progress review",
+        "frequency": "weekly",
+        "duration": "15-20 minutes",
+        "topics": [
+          "Treatment adherence",
+          "Symptom changes",
+          "Lifestyle modifications",
+          "Challenges and successes",
+          "Goal adjustments"
+        ],
+        "prompts": [
+          "Let's review how your week went with your treatment plan.",
+          "What went well this week?",
+          "What challenges did you face?",
+          "How are you feeling about your progress?",
+          "Would you like to adjust any of your goals?"
+        ]
+      },
+      "crisis_support": {
+        "purpose": "Emergency support and crisis intervention",
+        "frequency": "as_needed",
+        "duration": "variable",
+        "topics": [
+          "Immediate safety concerns",
+          "Severe symptom changes",
+          "Emergency contacts",
+          "Caregiver notification",
+          "Medical intervention needs"
+        ],
+        "prompts": [
+          "I'm here to help. What's going on?",
+          "Are you safe right now?",
+          "Do you need to contact someone?",
+          "Would you like me to notify your caregiver?",
+          "Is this a medical emergency?"
+        ]
+      },
+      "cognitive_engagement": {
+        "purpose": "Cognitive stimulation and memory exercises",
+        "frequency": "every_other_day",
+        "duration": "10-15 minutes",
+        "topics": [
+          "Memory exercises",
+          "Orientation questions",
+          "Problem-solving activities",
+          "Reminiscence therapy",
+          "Attention training"
+        ],
+        "prompts": [
+          "Let's do a fun memory exercise together.",
+          "What day of the week is it today?",
+          "Can you tell me about a happy memory?",
+          "Let's work on a puzzle together.",
+          "How did you sleep last night?"
+        ]
+      }
+    },
+    "monitoring_schedule": {
+      "cognitive_assessment": "Every 6 months",
+      "medical_follow_up": "Every 3 months",
+      "lifestyle_review": "Monthly",
+      "caregiver_check_in": "Weekly",
+      "check_in_frequency": "bi-weekly"
+    },
+    "treatment_goals": [
+      {
+        "id": "goal_1",
+        "description": "Schedule comprehensive neuropsychological evaluation",
+        "category": "immediate_actions",
+        "status": "active",
+        "priority": "high",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_2",
+        "description": "Consult with neurologist for detailed assessment",
+        "category": "immediate_actions",
+        "status": "active",
+        "priority": "high",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_3",
+        "description": "Begin cognitive monitoring and tracking",
+        "category": "immediate_actions",
+        "status": "active",
+        "priority": "high",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Memory performance",
+          "Attention span",
+          "Problem-solving"
+        ]
+      },
+      {
+        "id": "goal_4",
+        "description": "Implement Mediterranean diet recommendations",
+        "category": "lifestyle_interventions",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Meal quality",
+          "Hydration",
+          "Weight stability"
+        ]
+      },
+      {
+        "id": "goal_5",
+        "description": "Establish regular physical exercise routine",
+        "category": "lifestyle_interventions",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Activity duration",
+          "Frequency",
+          "Energy level"
+        ]
+      },
+      {
+        "id": "goal_6",
+        "description": "Optimize sleep hygiene and quality",
+        "category": "lifestyle_interventions",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Sleep duration",
+          "Sleep quality",
+          "Bedtime consistency"
+        ]
+      },
+      {
+        "id": "goal_7",
+        "description": "Engage in cognitive stimulation activities",
+        "category": "lifestyle_interventions",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Memory performance",
+          "Attention span",
+          "Problem-solving"
+        ]
+      },
+      {
+        "id": "goal_8",
+        "description": "Review current medications for cognitive impact",
+        "category": "medical_management",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Adherence rate",
+          "Side effect monitoring",
+          "Timing consistency"
+        ]
+      },
+      {
+        "id": "goal_9",
+        "description": "Consider cholinesterase inhibitors if appropriate",
+        "category": "medical_management",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_10",
+        "description": "Monitor and manage cardiovascular risk factors",
+        "category": "medical_management",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Safety incidents",
+          "Emergency preparedness",
+          "Risk awareness"
+        ]
+      },
+      {
+        "id": "goal_11",
+        "description": "Address depression and anxiety if present",
+        "category": "medical_management",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_12",
+        "description": "Address depression with appropriate therapy/medication",
+        "category": "medical_management",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Adherence rate",
+          "Side effect monitoring",
+          "Timing consistency"
+        ]
+      },
+      {
+        "id": "goal_13",
+        "description": "Connect with Alzheimer's Association resources",
+        "category": "support_services",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_14",
+        "description": "Establish caregiver support network",
+        "category": "support_services",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_15",
+        "description": "Plan for future care needs and legal considerations",
+        "category": "support_services",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_16",
+        "description": "Implement safety measures at home",
+        "category": "support_services",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Safety incidents",
+          "Emergency preparedness",
+          "Risk awareness"
+        ]
+      },
+      {
+        "id": "goal_17",
+        "description": "Genetic counseling consideration",
+        "category": "support_services",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_18",
+        "description": "Consider antidepressant therapy",
+        "category": "personalized_recommendations",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_19",
+        "description": "Family education and support",
+        "category": "personalized_recommendations",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Social interactions",
+          "Mood improvement",
+          "Connection quality"
+        ]
+      },
+      {
+        "id": "goal_20",
+        "description": "Education about Alzheimer's disease progression",
+        "category": "caregiver_guidance",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      },
+      {
+        "id": "goal_21",
+        "description": "Communication strategies for cognitive changes",
+        "category": "caregiver_guidance",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Memory performance",
+          "Attention span",
+          "Problem-solving"
+        ]
+      },
+      {
+        "id": "goal_22",
+        "description": "Safety planning and home modifications",
+        "category": "caregiver_guidance",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Safety incidents",
+          "Emergency preparedness",
+          "Risk awareness"
+        ]
+      },
+      {
+        "id": "goal_23",
+        "description": "Respite care planning",
+        "category": "caregiver_guidance",
+        "status": "active",
+        "priority": "medium",
+        "target_date": "ongoing",
+        "success_criteria": [
+          "Completion rate",
+          "Patient satisfaction",
+          "Goal achievement"
+        ]
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-10-04T20:51:58.317624",
+  "analysis_method": "structured"
+}
