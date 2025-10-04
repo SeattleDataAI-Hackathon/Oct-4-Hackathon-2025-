@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Amazon Product Data Extractor</title>
+    <style>
+        body {
+            width: 320px;
+            min-height: 400px;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+        }
+        
+        body.expanded {
+            width: 500px;
+            min-height: 600px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF9900, #FF8000);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .status-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .status-dot.online {
+            background: #28a745;
+        }
+        
+        .status-dot.offline {
+            background: #dc3545;
+        }
+        
+        .extract-btn {
+            width: 100%;
+            background: #FF9900;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .extract-btn:hover {
+            background: #FF8000;
+        }
+        
+        .extract-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .report-btn {
+            width: 100%;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
+        
+        .report-btn:hover {
+            background: #218838;
+        }
+        
+        .report-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .recent-extractions {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .recent-extractions h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .extraction-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+        }
+        
+        .extraction-item:last-child {
+            border-bottom: none;
+        }
+        
+        .extraction-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .extraction-time {
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .footer {
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sustainability Analyzer</h1>
+    </div>
+    
+    <div class="content">
+        <div class="status-card">
+            <div class="status-indicator">
+                <div class="status-dot" id="status-dot"></div>
+                <span id="status-text">Checking connection...</span>
+            </div>
+            
+            <button class="extract-btn" id="extract-btn" disabled>
+                Extract Current Page
+            </button>
+            
+            <button class="report-btn" id="sustainability-btn" disabled>
+                📋 View Sustainability Report
+            </button>
+        </div>
+        
+        <div class="sustainability-report" id="sustainability-report" style="display: none;">
+            <h3>🌱 Sustainability Report</h3>
+            <div id="report-content" style="background: white; border-radius: 8px; padding: 15px; margin-top: 10px; font-size: 12px; line-height: 1.4; overflow-y: auto;">
+                <div style="color: #666; text-align: center; padding: 20px;">
+                    No report generated yet
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        v1.0 | <a href="#" id="view-data-link" style="color: #FF9900;">View Data Folder</a>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
