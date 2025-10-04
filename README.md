@@ -2,6 +2,8 @@
 
 This repository contains a Streamlit web app that predicts a user's risk category for chronic diseases based on a short questionnaire and then provides AI-generated lifestyle recommendations. The app also includes a small rule-based chatbot for quick health tips.
 
+Working Figma Prototype: https://www.figma.com/proto/6WYEfSgLrciKueygaTbeCf/freakquency?type=design&node-id=1-8950&t=Hj6XFSN527rUBWYw-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A8950
+
 ## What it does
 - Collects user inputs (age, gender, BMI, blood pressure, cholesterol, glucose, physical activity, smoking, alcohol intake, family history).
 - Uses a pre-trained machine learning model (`model.pkl`) and a pre-fitted scaler (`scaler.pkl`) to predict one of several disease categories (e.g., Healthy, Diabetes, Cardiovascular Disorder, Cancer, Multi-condition Cases).
@@ -76,3 +78,4 @@ This project was created for the Oct-4 Hackathon 2025. Check the project or team
 
 ---
 If you want, I can also add a brief CONTRIBUTING or LICENSE file, or update the README with screenshots and example inputs. What would you like next?
+
