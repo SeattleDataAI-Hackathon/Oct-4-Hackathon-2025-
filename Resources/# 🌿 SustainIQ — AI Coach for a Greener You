@@ -1,0 +1,120 @@
+# 🌿 SustainIQ — AI Coach for a Greener You
+
+> A personal AI sustainability coach that helps you understand, track, and improve the environmental impact of your daily choices — from your morning coffee to your commute.
+
+---
+
+## 🚀 Overview
+
+**SustainIQ** goes beyond measuring your carbon footprint — it *guides* you toward sustainable decisions using AI-powered coaching, habit tracking, and adaptive feedback.  
+
+It combines:
+- 🌍 **Real-time sustainability scoring**
+- 🤖 **AI habit coaching**
+- 💬 **Contextual suggestions**
+- ⭐ **User feedback loops**
+- 📊 **Cumulative impact dashboards**
+
+Think of it as **MyFitnessPal for sustainability** — where every choice, big or small, counts toward a greener lifestyle.
+
+---
+
+## 🧠 Core Concept: The AI Habit Loop
+
+Each user interaction forms a continuous feedback loop:
+
+> **Choice → Suggestion → Rating → Decision → Feedback → Reward**
+
+This loop allows the AI coach to understand your preferences and refine its recommendations over time — gently shaping sustainable habits through *positive reinforcement* instead of guilt.
+
+---
+
+## ⚙️ How It Works
+
+### 1. Choice Awareness
+You log or auto-sync your daily activities such as:
+- ☕ Beverages (coffee, tea)
+- 🚗 Commute (drive, EV, bus, walk)
+- 🛒 Purchases (via bank APIs)
+- 💡 Energy usage (via smart devices)
+
+AI classifies these into sustainability-impact categories and calculates metrics like:
+- **CO₂ footprint**
+- **Water use**
+- **Land impact**
+- **Ethical sourcing**
+
+---
+
+### 2. Smart Suggestions
+
+After each logged activity, SustainIQ offers a **contextual suggestion**:
+
+> “Try oat milk next time – saves 0.4 kg CO₂ per cup.”  
+> “Switch to loose-leaf tea – 70 % lower water footprint.”  
+
+Suggestions appear at **relevant times** and adapt based on your goals, preferences, and location.
+
+---
+
+### 3. Decision & Feedback Loop
+
+When you act on a suggestion, the app recognizes it and rewards you with:
+- Real-time visual feedback (impact saved)
+- Points, badges, or streaks
+- Updated sustainability score
+
+Example:
+> “👏 You switched to organic coffee! That’s 120 liters of water and 0.25 kg CO₂ saved.”
+
+---
+
+### 4. Cumulative Dashboard
+
+Track progress with:
+- **Daily & Weekly Scores**
+- **Top Sustainable Choices**
+- **Impact Equivalence:** “You’ve saved 70 kg CO₂ — equal to 4 trees planted 🌲”
+- **Category Insights:** Food, Travel, Energy, Shopping
+
+---
+
+### 5. Long-Term Coaching
+
+The AI coach adapts over time:
+- “You’ve made sustainable coffee choices 4 of 7 days this week — great job!”
+- “Let’s aim to reduce your commute footprint by 15 % next month.”
+- Celebrates streaks and milestones.
+
+---
+
+## ⭐ Suggestion Rating System
+
+The **Suggestion Rating System** helps SustainIQ learn from real-world feedback to refine future recommendations.
+
+### Step 1 – User Rates a Suggestion
+
+| Input | Options |
+|:------|:--------|
+| Quick Rating | 👍 / 👎 or ⭐ (1–5) |
+| Reason | “Too expensive”, “Hard to find”, “Taste”, “Time”, “Already do this”, “Other” |
+| Remind Later | ✅ Toggle to resurface similar suggestions |
+
+Example Prompt:
+> “Was this suggestion helpful?” 👍 👎  
+> “Why?” → Too expensive / Taste / Already doing it
+
+---
+
+### Step 2 – Data Model
+
+```json
+{
+  "user_id": "u_123",
+  "baseline_action": {"category": "beverage", "item": "latte", "context": "starbucks_8am"},
+  "suggestion": {"id": "s_oat_milk_swap", "version": "v3.2", "explore": false},
+  "rating": {"stars": 4, "thumbs": "up", "reason": "taste"},
+  "decision": {"accepted": true, "time_to_adopt_days": 1},
+  "impact": {"delta_co2_kg": 0.25, "delta_water_l": 80},
+  "meta": {"geo": "home", "device": "ios", "ts": "2025-10-04T10:15:00-07:00"}
+}
