@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Red Cell Optimizer — Human-AI Co-Tuning (Educational)</title>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#8B0000;
+    --card:#4B0000;
+    --accent:#7c3aed;
+    --accent2:#06b6d4;
+    --text:#e6eef8;
+    --muted:#98a4b3;
+    --glass: rgba(255,255,255,0.03);
+    --neon: 0 0 20px rgba(124,58,237,0.25), 0 0 40px rgba(6,182,212,0.08);
+  }
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#071021 0%, #081627 60%);font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  .wrap{max-width:1150px;margin:30px auto;padding:24px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:var(--neon);border:1px solid rgba(255,255,255,0.03);}
+  header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+  .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 30px rgba(124,58,237,0.2)}
+  h1{color:var(--text);margin:0;font-size:20px}
+  p.lead{color:var(--muted);margin:0;font-size:13px}
+  .grid{display:grid;grid-template-columns:360px 1fr;gap:18px;margin-top:18px}
+  .card{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+  .controls h3{margin:4px 0;color:var(--text);font-size:13px}
+  .control{margin:8px 0;padding:8px;background:var(--glass);border-radius:8px;display:flex;align-items:center;gap:10px}
+  .control input[type="range"]{flex:1}
+  .control .val{width:70px;text-align:right;color:var(--text);font-weight:600}
+  .small{font-size:12px;color:var(--muted)}
+  .chartWrap{padding:12px;display:flex;flex-direction:column;gap:10px}
+  #chart{height:320px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));border-radius:10px;padding:8px}
+  .aiBox{margin-top:10px;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.03));border:1px solid rgba(255,255,255,0.02)}
+  .aiHeader{display:flex;align-items:center;gap:10px}
+  .aiAvatar{width:36px;height:36px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+  .aiText{color:var(--text);font-weight:600}
+  .aiMsg{color:var(--text);margin-top:8px;font-size:13px;background:rgba(0,0,0,0.15);padding:10px;border-radius:8px}
+  .btn{display:inline-block;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:white;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(124,58,237,0.2)}
+  .btnGhost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+  .row{display:flex;gap:8px;align-items:center}
+  .footer{margin-top:14px;color:var(--muted);font-size:12px}
+  .rbc{display:inline-block;padding:6px 8px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));font-weight:700;color:var(--text)}
+  .topStats{display:flex;gap:12px;flex-wrap:wrap}
+  .stat{padding:8px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));font-weight:700;color:var(--text);min-width:120px}
+  .badge{font-size:12px;color:var(--muted)}
+  .applyBtn{margin-top:10px}
+  .controls .hint{font-size:12px;color:var(--muted);margin-top:6px}
+  .saveRow{display:flex;gap:8px;align-items:center;margin-top:8px}
+  .tiny{font-size:12px;color:var(--muted)}
+  /* flashy animated RBC */
+  .rbcStrip{height:42px;overflow:hidden;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));display:flex;align-items:center;padding:6px}
+  .rbcDot{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff6,#ff0000);box-shadow:0 6px 18px rgba(124,58,237,0.07);transform:translateX(-40px);animation:flow 4s linear infinite}
+  @keyframes flow{
+    0%{transform:translateX(-20px) scale(0.95)}
+    50%{transform:translateX(260px) scale(1.08)}
+    100%{transform:translateX(540px) scale(0.95)}
+  }
+  .explain{font-size:13px;color:var(--text);line-height:1.45}
+  a.link{color:var(--accent2);text-decoration:none}
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+  pre{background:rgba(255,255,255,0.02);padding:8px;border-radius:8px;color:var(--muted);overflow:auto;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">RBC</div>
+    <div>
+      <h1>Red Cell Optimizer — Human-AI Co-Tuning</h1>
+      <p class="lead">Interactive simulation of oxygen delivery. Educational / demo prototype. Human verifies AI suggestions.</p>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- left controls -->
+    <div class="card controls">
+      <h3>Parameters</h3>
+
+      <div class="control">
+        <div style="width:110px"><div class="small">RBC deformability</div><div class="tiny">(0.5 = stiff, 1.5 = very flexible)</div></div>
+        <input id="deform" type="range" min="0.5" max="1.5" step="0.01" value="1">
+        <div class="val" id="deformVal">1.00</div>
+      </div>
+
+      <div class="control">
+        <div style="width:110px"><div class="small">Hematocrit</div><div class="tiny">(% volume of RBCs)</div></div>
+        <input id="hct" type="range" min="20" max="60" step="1" value="42">
+        <div class="val" id="hctVal">42%</div>
+      </div>
+
+      <div class="control">
+        <div style="width:110px"><div class="small">pH</div><div class="tiny">(7.0 - 7.8; Bohr effect)</div></div>
+        <input id="ph" type="range" min="7.0" max="7.8" step="0.01" value="7.4">
+        <div class="val" id="phVal">7.40</div>
+      </div>
+
+      <div class="control">
+        <div style="width:110px"><div class="small">Temperature</div><div class="tiny">°C (35 - 41)</div></div>
+        <input id="temp" type="range" min="35" max="41" step="0.1" value="37">
+        <div class="val" id="tempVal">37.0°C</div>
+      </div>
+
+      <div class="control">
+        <div style="width:110px"><div class="small">Flow rate</div><div class="tiny">mL/min per 100g (microvascular)</div></div>
+        <input id="flow" type="range" min="10" max="200" step="1" value="60">
+        <div class="val" id="flowVal">60</div>
+      </div>
+
+      <div class="control">
+        <div style="width:110px"><div class="small">Tissue O₂ demand</div><div class="tiny">mL O₂/min per 100g</div></div>
+        <input id="demand" type="range" min="1" max="15" step="0.1" value="4.0">
+        <div class="val" id="demandVal">4.0</div>
+      </div>
+
+      <div class="controls">
+        <div class="saveRow">
+          <button class="btn" id="aiSuggest">Ask AI for suggestion</button>
+          <button class="btnGhost btn" id="applySuggestion">Apply suggestion</button>
+        </div>
+        <div class="hint">Tip: move sliders to see immediate effect. Use the AI suggestion as a starting point, then refine manually.</div>
+      </div>
+
+      <div style="margin-top:12px">
+        <div class="small">Scenario</div>
+        <input id="scName" placeholder="Scenario name" style="width:100%;padding:8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--text);margin-top:6px"/>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btnGhost btn" id="saveScenario">Save</button>
+          <button class="btnGhost btn" id="exportScenario">Export JSON</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="small">Model: simplified physiology. Educational only.</div>
+      </div>
+    </div>
+
+    <!-- right visualization -->
+    <div class="card chartWrap">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div class="topStats">
+            <div class="stat">O₂ supply <div style="font-size:14px;color:var(--muted)"><span id="supplyVal">—</span> mL/min/100g</div></div>
+            <div class="stat">O₂ demand <div style="font-size:14px;color:var(--muted)"><span id="demandView">4.0</span> mL/min/100g</div></div>
+            <div class="stat">Diff <div style="font-size:14px;color:var(--muted)"><span id="diffVal">—</span></div></div>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div class="badge">Human-in-the-loop prototype</div>
+          <div style="height:6px"></div>
+          <div class="rbcStrip"><div class="rbcDot" style="animation-duration:calc(4s / var(--speed,1))"></div></div>
+        </div>
+      </div>
+
+      <div id="chart"><canvas id="supplyChart"></canvas></div>
+
+      <div class="aiBox" id="aiBox">
+        <div class="aiHeader">
+          <div class="aiAvatar">AI</div>
+          <div>
+            <div class="aiText">Recommender</div>
+            <div class="tiny">Rule-based agent: transparent suggestions</div>
+          </div>
+        </div>
+        <div class="aiMsg" id="aiMsg">Click <strong>Ask AI for suggestion</strong> to get a human-readable recommendation and suggested parameter changes.</div>
+      </div>
+
+      <div style="margin-top:10px" class="card">
+        <div class="explain">
+          <strong>Model (transparent):</strong>
+          <p class="tiny">We approximate oxygen transport with a simplified formula:</p>
+          <pre>
+O₂ content (mL O₂ / dL blood) = Hb (g/dL) × 1.34 × SaO₂ + 0.003 × PaO₂
+
+Estimated SaO₂ depends on pH and temperature via a simple shift (Bohr effect approximation).
+Effective microvascular flow = flow × deformability_factor
+O₂ supply (mL/min/100g) = Effective flow (mL/min/100g) × (O₂ content in mL/mL blood)
+          </pre>
+          <p class="tiny">This is educational — parameters are approximations to make the system interactive and explainable.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Built for demos & education · Not clinical · Deploy to GitHub Pages by uploading this file as <code>index.html</code>.
+  </footer>
+</div>
+
+<script>
+/*
+  Red Cell Optimizer — client-side simulation + rule-based recommender
+  Author: ChatGPT (prototype for hackathon)
+  Notes: Educational only. No clinical use.
+*/
+
+const params = {
+  deform: 1.0, // 0.5 - 1.5
+  hct: 42,    // %
+  ph: 7.4,
+  temp: 37.0,
+  flow: 60,   // mL/min per 100g tissue
+  demand: 4.0 // mL O2/min per 100g
+};
+
+// utilities
+const el = id => document.getElementById(id);
+
+// UI wiring
+const sliders = [
+  {id:'deform', key:'deform', format:v=>parseFloat(v).toFixed(2)},
+  {id:'hct', key:'hct', format:v=>Math.round(v)+'%'},
+  {id:'ph', key:'ph', format:v=>parseFloat(v).toFixed(2)},
+  {id:'temp', key:'temp', format:v=>parseFloat(v).toFixed(1)+'°C'},
+  {id:'flow', key:'flow', format:v=>parseInt(v)},
+  {id:'demand', key:'demand', format:v=>parseFloat(v).toFixed(1)}
+];
+
+sliders.forEach(s=>{
+  const node = el(s.id);
+  const valNode = el(s.id+'Val');
+  node.addEventListener('input', ()=>{
+    params[s.key] = parseFloat(node.value);
+    valNode.innerText = s.format(node.value);
+    el('demandView').innerText = params.demand.toFixed(1);
+    update();
+  });
+});
+
+// initial display values
+sliders.forEach(s=>{
+  el(s.id+'Val').innerText = s.format(el(s.id).value);
+});
+
+// simple physiology model functions
+
+// Estimate Hemoglobin (g/dL) from hematocrit (rough approximation)
+function estimateHbFromHct(hct){
+  // widely used rough ratio: Hb (g/dL) ≈ Hct (%) / 3
+  return hct / 3.0;
+}
+
+// Estimate SaO2 from PaO2 via sigmoid and shifts for pH/temp
+function estimateSaO2(paO2, ph, temp){
+  // baseline sigmoid: SaO2 = 1 / (1 + exp(- (paO2 - 30)/8 ))
+  // apply Bohr effect and temperature shifts as small linear adjustments to apparent PaO2
+  const phShift = (ph - 7.4) * -10; // lower pH => shift right (lower SaO2)
+  const tempShift = (temp - 37.0) * -2; // higher temp reduces affinity slightly
+  const effective = paO2 + phShift + tempShift;
+  const s = 1.0 / (1 + Math.exp(-(effective - 30) / 8));
+  return Math.max(0, Math.min(1, s));
+}
+
+// Convert O2 content (mL per dL) to mL per mL
+function content_dL_to_mLpermL(content_dL){
+  return content_dL / 100.0;
+}
+
+// Main supply computation
+function computeSupply({deform,hct,ph,temp,flow}){
+  // 1) Hemoglobin estimate (g/dL)
+  const Hb = estimateHbFromHct(hct); // g/dL
+
+  // 2) Approximate arterial PaO2 based on flow & deformability (toy)
+  // Higher deformability -> better capillary perfusion -> higher effective PaO2
+  // We'll set base PaO2 at 90 mmHg under "normal" microconditions, scale with flow and deform.
+  const flowFactor = Math.max(0.2, Math.min(2.0, flow / 60)); // normalized
+  const deformFactor = Math.max(0.5, Math.min(1.5, deform)); // 0.5-1.5
+  // microvascular PaO2 approximation
+  const paO2 = 90 * flowFactor * Math.min(1.4, deformFactor); // not physiologic-accurate; toy model
+
+  // 3) SaO2 from paO2 with pH/temp shifts
+  const SaO2 = estimateSaO2(paO2, ph, temp); // 0-1
+
+  // 4) O2 content: Hb*1.34*SaO2 + 0.003*PaO2 (mL O2 per dL)
+  const content_dL = Hb * 1.34 * SaO2 + 0.003 * paO2;
+
+  // 5) Effective microvascular flow (mL/min/100g) scaled by deformability (more deformable lowers resistance)
+  // Deformability increases effective flow; we use a curve that shows diminishing returns
+  const effFlow = flow * (1 + (deform - 1) * 0.7);
+
+  // 6) Supply (mL O2 per min per 100g) = effFlow (mL/min/100g) * content (mL/dL => mL/mL)
+  const supply = effFlow * content_dL_to_mLpermL(content_dL);
+
+  return {
+    Hb, paO2, SaO2, content_dL, effFlow, supply
+  };
+}
+
+// Chart
+const ctx = document.getElementById('supplyChart').getContext('2d');
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: Array.from({length:60}, (_,i)=>i),
+    datasets: [
+      {label:'O₂ supply (mL/min/100g)', data: Array(60).fill(null), borderWidth:2, tension:0.3, fill:true},
+      {label:'O₂ demand (mL/min/100g)', data: Array(60).fill(null), borderWidth:1, borderDash:[6,4], tension:0.3}
+    ]
+  },
+  options: {
+    interaction:{mode:'index'},
+    stacked:false,
+    plugins:{legend:{labels:{color: 'white'}},tooltip:{enabled:true}},
+    scales:{
+      x:{display:false},
+      y:{ticks:{color:'white'}, beginAtZero:true}
+    }
+  }
+});
+
+function updateChartHistory(supply, demand){
+  // shift left and append new
+  chart.data.datasets[0].data.shift();
+  chart.data.datasets[0].data.push(parseFloat(supply.toFixed(3)));
+  chart.data.datasets[1].data.shift();
+  chart.data.datasets[1].data.push(parseFloat(demand.toFixed(3)));
+  chart.update();
+}
+
+// UI update + model run
+function update(){
+  // compute
+  const res = computeSupply(params);
+  // update numeric displays
+  el('supplyVal').innerText = res.supply.toFixed(3);
+  el('diffVal').innerText = (res.supply - params.demand).toFixed(3);
+  el('demandView').innerText = params.demand.toFixed(1);
+  // animate RBC speed (faster supply -> faster animation)
+  const speed = Math.max(0.2, Math.min(3.0, res.supply / 10));
+  document.documentElement.style.setProperty('--speed', speed.toFixed(3));
+  // chart
+  updateChartHistory(res.supply, params.demand);
+  // return res for other uses
+  return res;
+}
+
+// initial fill of chart with baseline run
+for(let i=0;i<60;i++){
+  const r = computeSupply(params);
+  chart.data.datasets[0].data[i] = r.supply;
+  chart.data.datasets[1].data[i] = params.demand;
+}
+chart.update();
+
+// Bind buttons and scenario functions
+el('aiSuggest').addEventListener('click', ()=>{ el('aiMsg').innerHTML = 'Thinking…'; setTimeout(()=>{aiSuggest();},400); });
+
+function aiSuggest(){
+  // rule-based recommender that generates a human-readable suggestion and a set of parameter deltas
+  const res = computeSupply(params);
+  const supply = res.supply;
+  const demand = params.demand;
+  const diff = supply - demand;
+  let msg = '';
+  let suggestion = {};
+  // If supply >= demand comfortably
+  if(diff > 0.8 * demand){
+    msg = `<strong>Good news:</strong> current supply (${supply.toFixed(3)}) comfortably exceeds demand (${demand.toFixed(3)}). To optimize efficiency, consider lowering hematocrit slightly or reducing flow to conserve energy.`;
+    suggestion = {hct: Math.max(20, params.hct - 2), flow: Math.max(10, params.flow - 8)};
+  } else if(diff >= 0 && diff <= 0.8*demand){
+    msg = `<strong>Supply meets demand but margin is small.</strong> Small improvements in deformability or flow will create a safer buffer. Options: increase deformability (+0.05) or increase flow (+10 mL/min/100g).`;
+    suggestion = {deform: Math.min(1.5, params.deform + 0.05), flow: Math.min(200, params.flow + 10)};
+  } else { // supply < demand
+    msg = `<strong>Warning:</strong> supply (${supply.toFixed(3)}) is below demand (${demand.toFixed(3)}). The fastest levers to increase supply in this model are: raise effective flow (increase flow rate) or increase RBC deformability. Lowering pH or raising temperature will reduce SaO₂ and worsen the gap.`;
+    // recommend best deltas calculated based on sensitivity heuristics
+    suggestion = {deform: Math.min(1.5, params.deform + 0.12), flow: Math.min(200, params.flow + 30), hct: Math.min(60, params.hct + 3)};
+  }
+
+  // create an explainable breakdown (short)
+  const breakdown = `
+    Model breakdown:
+    • Hb ≈ ${res.Hb.toFixed(2)} g/dL (from Hct ${params.hct}%)
+    • Estimated PaO₂ ≈ ${res.paO2.toFixed(1)} mmHg
+    • SaO₂ ≈ ${(res.SaO2*100).toFixed(1)}%
+    • O₂ content ≈ ${res.content_dL.toFixed(2)} mL/dL
+    • Effective flow ≈ ${res.effFlow.toFixed(1)} mL/min/100g
+    Resulting supply ≈ ${res.supply.toFixed(3)} mL/min/100g
+  `;
+
+  // Format message with suggestion and explicit recommended parameter values
+  const suggestionText = Object.entries(suggestion).map(([k,v])=>{
+    return `<div style="margin-top:6px"><strong>${k}</strong>: ${params[k]} → <strong>${typeof v==='number'? (k==='hct'? Math.round(v): (k==='ph'? v.toFixed(2): (k==='temp'? v.toFixed(1): (k==='deform'? v.toFixed(2): v)))) : v}</strong></div>`;
+  }).join('');
+
+  el('aiMsg').innerHTML = `<div class="explain">${msg}</div><details style="margin-top:8px"><summary style="cursor:pointer;color:var(--accent2)">Show model breakdown</summary><pre style="margin-top:8px">${breakdown}</pre></details><div style="margin-top:8px">${suggestionText}</div><div style="margin-top:10px"><button class="btn" id="applyNow">Apply suggested changes</button></div>`;
+
+  // attach apply handler
+  document.getElementById('applyNow').addEventListener('click', ()=>{
+    applySuggestion(suggestion);
+  });
+}
+
+function applySuggestion(sugg){
+  // update the params and slider UI
+  Object.entries(sugg).forEach(([k,v])=>{
+    if(k in params){
+      params[k] = Number(v);
+      const node = el(k);
+      if(node){
+        node.value = params[k];
+        el(k+'Val').innerText = (k==='hct'? Math.round(params[k])+'%': (k==='ph'? params[k].toFixed(2): (k==='temp'? params[k].toFixed(1)+'°C': (k==='deform'? params[k].toFixed(2): params[k]))));
+      }
+    }
+  });
+  // update demand view if changed
+  el('demandView').innerText = params.demand.toFixed(1);
+  update();
+}
+
+// "Apply suggestion" button (for last suggestion if present)
+el('applySuggestion').addEventListener('click', ()=>{
+  // attempt to parse last suggestions from aiMsg content (rudimentary)
+  // For reliability, call aiSuggest() then automatically apply the suggestion returned by its logic
+  const res = computeSupply(params);
+  let suggestion = {};
+  const diff = res.supply - params.demand;
+  if(diff > 0.8*params.demand){
+    suggestion = {hct: Math.max(20, params.hct - 2), flow: Math.max(10, params.flow - 8)};
+  } else if(diff >= 0 && diff <= 0.8*params.demand){
+    suggestion = {deform: Math.min(1.5, params.deform + 0.05), flow: Math.min(200, params.flow + 10)};
+  } else {
+    suggestion = {deform: Math.min(1.5, params.deform + 0.12), flow: Math.min(200, params.flow + 30), hct: Math.min(60, params.hct + 3)};
+  }
+  applySuggestion(suggestion);
+});
+
+// Scenario save/export
+const scenarios = {};
+el('saveScenario').addEventListener('click', ()=>{
+  const name = el('scName').value || ('scenario-'+(Object.keys(scenarios).length+1));
+  const snap = {...params, timestamp: new Date().toISOString()};
+  scenarios[name] = snap;
+  alert('Saved scenario: '+name);
+});
+el('exportScenario').addEventListener('click', ()=>{
+  const payload = JSON.stringify(scenarios, null, 2);
+  const blob = new Blob([payload], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'scenarios.json';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+// initialize update loop and hook demand change
+el('demand').addEventListener('input', ()=>{ params.demand = parseFloat(el('demand').value); el('demandVal').innerText = params.demand.toFixed(1); update(); });
+
+// initial run and continuous UI update
+update();
+
+// small convenience: allow clicking chart to jump to a "what if" timeline (not required, just fun)
+document.getElementById('supplyChart').addEventListener('click', ()=>{ el('aiSuggest').click(); });
+
+</script>
+</body>
+</html>
