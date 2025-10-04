@@ -9,6 +9,8 @@ _Theme: Human-in-the-Loop (HITL)_
 - **Abhishek Vishwakarma**
 - **Aaditya Bajpai**
 
+Github link - https://github.com/avrulesyou/Oct-4-Hackathon-2025-
+
 ## 🎯 Project Overview
 
 EcoWallet is an innovative AI-powered sustainability assistant that helps users make more environmentally conscious spending decisions. By analyzing receipt images using Google's Gemini AI, the application provides personalized sustainability scores, actionable eco-friendly alternatives, and potential savings estimates.
