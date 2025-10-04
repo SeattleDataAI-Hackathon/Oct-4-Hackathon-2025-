@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResQLink</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>ResQLink</h1>
+    <p class="tagline">Disaster Detection and Response System</p>
+</header>
+
+<section class="hero">
+    <p>ResQLink automatically detects potential disasters using APIs. A human verifier reviews each alert.</p>
+</section>
+
+<section class="alerts">
+    <h2>Recent Disaster Alerts</h2>
+    <button id="fetch-alerts">Fetch Alerts</button>
+    <ul id="alert-list"></ul>
+</section>
+
+<div id="result"></div>
+
+<script>
+document.getElementById('fetch-alerts').addEventListener('click', async () => {
+    try {
+        const res = await fetch(
+            'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson'
+        );
+        const data = await res.json();
+        const alerts = data.features;
+
+        const alertList = document.getElementById('alert-list');
+        alertList.innerHTML = '';
+
+        if (alerts.length === 0) {
+            alertList.innerHTML = '<li>No recent alerts</li>';
+            return;
+        }
+
+        alerts.forEach(alert => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div class="alert-content">
+                    <strong>${alert.properties.place}</strong> - Magnitude: ${alert.properties.mag} 
+                    - Time: ${new Date(alert.properties.time).toLocaleString()}
+                    <a href="${alert.properties.url}" target="_blank">More info</a>
+                </div>
+                <button class="review-btn">Mark as Reviewed</button>
+            `;
+            alertList.appendChild(li);
+        });
+
+        // Add review button functionality
+        document.querySelectorAll('.review-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const li = button.parentElement;
+                li.classList.add('reviewed');
+                button.disabled = true;
+                button.textContent = 'Reviewed';
+            });
+        });
+
+    } catch (error) {
+        console.error('Error fetching alerts:', error);
+    }
+});
+</script>
+    <script src="test.js"></script>
+
+</body>
+</html>

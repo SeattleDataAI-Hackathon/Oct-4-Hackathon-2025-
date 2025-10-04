@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: maroon;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+header .tagline {
+    font-size: 1.3em;
+    margin: 0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Alerts Section */
+.alerts {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.alerts h2 {
+    color: maroon;
+    margin-bottom: 20px;
+}
+
+#fetch-alerts {
+    padding: 10px 20px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+#fetch-alerts:hover {
+    background-color: #a00000;
+}
+
+/* Alert List */
+.alerts ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.alerts li {
+    background-color: #f8f8f8;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-content {
+    max-width: 75%;
+}
+
+.alert-content a {
+    color: maroon;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.alert-content a:hover {
+    text-decoration: underline;
+}
+
+/* Review Button */
+.review-btn {
+    padding: 6px 12px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.review-btn:hover {
+    background-color: #a00000;
+}
+
+/* Reviewed Alert */
+.alerts li.reviewed {
+    background-color: #e0e0e0;
+    color: #777;
+    text-decoration: line-through;
+}
+
