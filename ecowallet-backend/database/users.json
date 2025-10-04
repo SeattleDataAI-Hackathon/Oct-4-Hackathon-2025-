@@ -1,0 +1,95 @@
+{
+  "Abhishek": {
+    "history": [
+      {
+        "sustainabilityScore": 45,
+        "potentialMonthlySavings": 20,
+        "summary": "This spending includes a mix of fresh produce, but also significant fast fashion items and a highly processed dairy dessert.",
+        "suggestions": [
+          {
+            "original": "ANDE LSHLX SLEEP PANT & ESSENTIAL TEE (Fast Fashion)",
+            "alternative": "Invest in durable, ethically sourced clothing made from natural fibers, or explore second-hand options.",
+            "reasoning": "Fast fashion has immense environmental and social costs due to rapid production, material use, and disposal. Choosing quality, sustainable brands or pre-owned items significantly reduces textile waste, water pollution, and carbon footprint."
+          },
+          {
+            "original": "Fresh Blackberries - 12 OZ Clamshell & Fresh Moon Drops Seedless Black Grapes in Bag",
+            "alternative": "Buy loose, seasonal berries and grapes from bulk sections or farmer's markets, or choose frozen options in recyclable packaging.",
+            "reasoning": "Plastic clamshells and bags contribute to plastic pollution. Opting for loose, seasonal produce reduces unnecessary packaging waste and supports local, lower-emission agriculture."
+          },
+          {
+            "original": "Haagen Dazs\u00ae Coffee Almond Toffee Crunch Ice Cream Bars",
+            "alternative": "Choose plant-based ice cream alternatives (e.g., oat, almond, coconut milk based) or try making your own frozen treats.",
+            "reasoning": "Dairy production is resource-intensive, contributing significantly to greenhouse gas emissions and land/water use. Plant-based options typically have a lower environmental footprint, and homemade treats reduce processing and packaging waste."
+          }
+        ]
+      },
+      {
+        "sustainabilityScore": 25,
+        "potentialMonthlySavings": 25.0,
+        "summary": "The purchase consists solely of dairy-based ice cream bars, which are a discretionary item with a notable environmental footprint from dairy production and packaging.",
+        "suggestions": [
+          {
+            "original": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars",
+            "alternative": "Plant-based ice cream bars or pints (e.g., almond milk, oat milk based)",
+            "reasoning": "Switching to plant-based alternatives significantly reduces the environmental impact associated with dairy farming, including greenhouse gas emissions, land use, and water consumption. Many brands offer delicious non-dairy options."
+          },
+          {
+            "original": "Individually wrapped ice cream bars",
+            "alternative": "Making homemade 'nice cream' (blended frozen bananas with flavorings) or purchasing a large tub of ice cream (dairy or plant-based)",
+            "reasoning": "Homemade desserts offer full control over ingredients, reduce packaging waste, and are often more cost-effective. Choosing a large tub over individual wrappers also lessens packaging waste."
+          },
+          {
+            "original": "Processed ice cream dessert",
+            "alternative": "Fresh, seasonal fruit or homemade fruit pops",
+            "reasoning": "Opting for whole, unprocessed fruits significantly reduces the carbon footprint associated with manufacturing, complex supply chains, and long-distance transport of highly processed items. It's also a healthier and often cheaper alternative."
+          }
+        ]
+      },
+      {
+        "sustainabilityScore": 31,
+        "potentialMonthlySavings": 9.0,
+        "summary": "This shopping trip includes a mix of fresh produce and fast fashion items, with packaged berries and a dairy-based frozen dessert adding to the environmental footprint.",
+        "suggestions": [
+          {
+            "original": "ANDE LSHLX SLEEP PANT / ESSENTIAL TEE FSH POP HIT",
+            "alternative": "Opt for durable, sustainably sourced clothing from brands with ethical practices, or explore second-hand options.",
+            "reasoning": "Fast fashion items have a significant environmental footprint due to resource-intensive production, use of synthetic materials, and a short lifespan leading to waste."
+          },
+          {
+            "original": "Fresh Blackberries - 12 OZ Clamshell / Fresh Moon Drops Seedless Black Grapes in Bag",
+            "alternative": "Choose unpackaged berries and grapes, buy in bulk, or select local, in-season produce from farmers' markets to reduce plastic waste.",
+            "reasoning": "Single-use plastic clamshells and bags contribute to plastic pollution and environmental degradation."
+          },
+          {
+            "original": "Haagen Dazs\u00ae Coffee Almond Toffee Crunch Ice Cream Bars",
+            "alternative": "Consider plant-based ice cream alternatives or prepare homemade fruit-based desserts like smoothies or fruit pops.",
+            "reasoning": "Dairy production is resource-intensive and contributes significantly to greenhouse gas emissions. Processed frozen desserts also require considerable energy for manufacturing and refrigeration."
+          }
+        ]
+      },
+      {
+        "sustainabilityScore": 35,
+        "potentialMonthlySavings": 30.0,
+        "summary": "This purchase was for multiple units of dairy-based, chocolate and almond flavored ice cream bars, a discretionary treat.",
+        "suggestions": [
+          {
+            "original": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars",
+            "alternative": "Plant-based ice cream bars (e.g., made with almond, oat, or coconut milk)",
+            "reasoning": "Dairy production contributes significantly to greenhouse gas emissions, land use, and water consumption. Switching to plant-based alternatives can drastically reduce your environmental footprint."
+          },
+          {
+            "original": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars",
+            "alternative": "Homemade frozen fruit pops or 'nice cream' (blended frozen bananas)",
+            "reasoning": "Making treats at home eliminates packaging waste associated with single-serving items, reduces energy consumption from industrial processing and transport, and allows you to control ingredients, potentially choosing local and seasonal options."
+          },
+          {
+            "original": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars",
+            "alternative": "Responsibly sourced ice cream or chocolate products",
+            "reasoning": "If choosing dairy or chocolate, look for brands that prioritize sustainable farming practices, animal welfare, and fair trade for ingredients like cocoa and almonds to mitigate environmental and social impacts."
+          }
+        ]
+      }
+    ],
+    "latestScore": 35
+  }
+}
