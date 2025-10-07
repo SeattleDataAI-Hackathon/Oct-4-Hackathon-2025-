@@ -1,0 +1,13 @@
+flask
+flask-cors
+anthropic
+openai
+pillow
+pillow-heif
+spacy
+scikit-learn
+numpy
+fastapi
+uvicorn
+python-multipart
+python-dotenv

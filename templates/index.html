@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAC Communication Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .column {
+            background: #1f1f1f;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+
+        .column h2 {
+            color: #14b8a6;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #14b8a6;
+            padding-bottom: 10px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            background: #f8f9ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .upload-area:hover {
+            background: #f0f2ff;
+            border-color: #764ba2;
+        }
+
+        .upload-area.dragover {
+            background: #e8ebff;
+            border-color: #764ba2;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+        .word-btn {
+            background: #f0f2ff;
+            border: 2px solid #667eea;
+            color: #333;
+            padding: 15px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .word-btn:hover {
+            background: #e8ebff;
+            transform: scale(1.05);
+        }
+
+        .word-btn.selected {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            border-color: #0d9488;
+        }
+
+        .selected-words {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff8f0;
+            border-radius: 8px;
+            min-height: 60px;
+        }
+
+        .selected-words h3 {
+            font-size: 1em;
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .selected-word-tag {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        .selected-word-tag:hover {
+            background: #5a3780;
+        }
+
+        .sentences-list {
+            margin-top: 15px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .sentence-item {
+            background: #f8f9ff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sentence-item:hover {
+            background: #e8ebff;
+            transform: translateX(5px);
+        }
+
+        .sentence-item.selected {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left-color: #764ba2;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #999;
+            padding: 40px 20px;
+            font-style: italic;
+        }
+
+        .camera-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .camera-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗣️ AAC Communication Tool</h1>
+        <p>Upload an image, select words, and generate sentences</p>
+    </div>
+
+    <div class="container">
+        <!-- Column 1: Image Upload -->
+        <div class="column">
+            <h2>📷 Image Upload</h2>
+
+            <div class="empty-state" id="imageEmptyState" style="margin-bottom: 20px; padding: 10px 20px;">
+                Upload an image to generate words
+            </div>
+
+            <div class="upload-area" id="uploadArea">
+                <div style="font-size: 3em; margin-bottom: 15px;">📁</div>
+                <p style="font-size: 1.1em; color: #333; margin-bottom: 10px;">
+                    <strong>Drop your image here</strong>
+                </p>
+                <p style="color: #666;">or</p>
+                <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                    <button class="btn" onclick="document.getElementById('fileInput').click()" style="flex: 1; max-width: 150px;">
+                        📁 Browse
+                    </button>
+                    <button class="btn" onclick="openCamera()" style="flex: 1; max-width: 150px; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        📷 Camera
+                    </button>
+                </div>
+            </div>
+
+            <input type="file" id="fileInput" accept="image/*">
+
+            <!-- Upload Status Message -->
+            <div id="uploadStatus" style="display: none; margin-top: 15px; padding: 10px; border-radius: 8px; text-align: center;"></div>
+
+            <!-- Analyze Button -->
+            <button class="btn" id="analyzeBtn" onclick="analyzeImage()" style="margin-top: 15px; display: none;">
+                🔍 Analyze Image
+            </button>
+
+            <!-- Camera Modal -->
+            <div class="camera-modal" id="cameraModal">
+                <div class="camera-container">
+                    <h2 style="color: #333; margin-bottom: 20px;">📷 Take a Photo</h2>
+                    <video id="cameraVideo" autoplay style="width: 100%; max-width: 640px; border-radius: 10px; margin: 20px 0;"></video>
+                    <canvas id="cameraCanvas" style="display: none;"></canvas>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <button class="btn" onclick="capturePhoto()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            📸 Capture
+                        </button>
+                        <button class="btn" onclick="closeCamera()" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                            ❌ Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" id="imageLoading">
+                <div class="spinner"></div>
+                <p style="margin-top: 15px; color: #667eea;">Analyzing image...</p>
+            </div>
+        </div>
+
+        <!-- Column 2: Word Selection -->
+        <div class="column">
+            <h2>📝 Select Words</h2>
+
+            <div class="empty-state" id="wordsEmptyState" style="margin-bottom: 20px; padding: 10px 20px;">
+                Select words to generate sentences
+            </div>
+
+            <div class="loading" id="wordsLoading">
+                <div class="spinner"></div>
+                <p style="margin-top: 15px; color: #667eea;">Generating words...</p>
+            </div>
+
+            <div class="words-grid" id="wordsGrid">
+            </div>
+
+            <div class="selected-words" id="selectedWordsArea" style="display: none;">
+                <h3>Selected Words:</h3>
+                <div id="selectedWordsList"></div>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button class="btn" id="generateSentencesBtn" onclick="generateSentences()" style="flex: 1;">
+                        Generate Sentences
+                    </button>
+                    <button class="btn" onclick="deselectAllWords()" style="flex: 1; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                        Deselect All
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 3: Sentence Predictions -->
+        <div class="column">
+            <h2>💬 Sentence Predictions</h2>
+
+            <div class="empty-state" id="sentencesEmptyState" style="margin-bottom: 20px; padding: 10px 20px;">
+                Select sentence that you want to speak
+            </div>
+
+            <div class="loading" id="sentencesLoading">
+                <div class="spinner"></div>
+                <p style="margin-top: 15px; color: #667eea;">Generating sentences...</p>
+            </div>
+
+            <div class="sentences-list" id="sentencesList">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedFile = null;
+        let imageDescription = null;
+        let availableWords = [];
+        let selectedWords = [];
+
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+
+        // Drag and drop handlers
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            }, false);
+        });
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => {
+                uploadArea.classList.add('dragover');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => {
+                uploadArea.classList.remove('dragover');
+            }, false);
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        }, false);
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file) {
+                showUploadStatus('No file selected', false);
+                return;
+            }
+
+            // Check if it's a valid image file
+            if (!file.type.startsWith('image/')) {
+                showUploadStatus('Please select a valid image file', false);
+                return;
+            }
+
+            console.log('Handling file:', file.name, file.type);
+            selectedFile = file;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                console.log('File loaded successfully');
+                showUploadStatus(`✓ Image uploaded: ${file.name}`, true);
+
+                // Hide empty state and show analyze button
+                const emptyState = document.getElementById('imageEmptyState');
+                if (emptyState) {
+                    emptyState.style.display = 'none';
+                }
+                if (analyzeBtn) {
+                    analyzeBtn.style.display = 'block';
+                }
+            };
+
+            reader.onerror = (error) => {
+                console.error('Error reading file:', error);
+                showUploadStatus('✗ Error loading image. Please try again.', false);
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function showUploadStatus(message, success) {
+            uploadStatus.textContent = message;
+            uploadStatus.style.display = 'block';
+            uploadStatus.style.background = success ? '#d4edda' : '#f8d7da';
+            uploadStatus.style.color = success ? '#155724' : '#721c24';
+            uploadStatus.style.border = success ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+        }
+
+        async function analyzeImage() {
+            if (!selectedFile) {
+                showUploadStatus('Please upload an image first', false);
+                return;
+            }
+
+            const imageLoading = document.getElementById('imageLoading');
+            analyzeBtn.disabled = true;
+            uploadStatus.style.display = 'none';
+            imageLoading.style.display = 'block';
+
+            const formData = new FormData();
+            formData.append('image', selectedFile);
+
+            try {
+                // Analyze image
+                const response = await fetch('/analyze-image', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    imageDescription = data.description;
+                    console.log('Image description (backend only):', data.description);
+
+                    // Automatically generate words
+                    await generateWords();
+                } else {
+                    alert('Error: ' + (data.error || 'Failed to analyze image'));
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                imageLoading.style.display = 'none';
+                analyzeBtn.disabled = false;
+            }
+        }
+
+        async function generateWords() {
+            if (!imageDescription) return;
+
+            const wordsLoading = document.getElementById('wordsLoading');
+            const wordsGrid = document.getElementById('wordsGrid');
+
+            wordsLoading.style.display = 'block';
+            wordsGrid.innerHTML = '';
+
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        context: imageDescription
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    availableWords = data.terms;
+                    displayWords();
+                } else {
+                    alert('Error: ' + (data.error || 'Failed to generate words'));
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                wordsLoading.style.display = 'none';
+            }
+        }
+
+        function displayWords() {
+            const wordsGrid = document.getElementById('wordsGrid');
+            const wordsEmptyState = document.getElementById('wordsEmptyState');
+            wordsGrid.innerHTML = '';
+
+            availableWords.forEach(word => {
+                const btn = document.createElement('button');
+                btn.className = 'word-btn';
+                btn.textContent = word;
+                btn.onclick = () => toggleWord(word, btn);
+                wordsGrid.appendChild(btn);
+            });
+
+            // Show the empty state text when words are available
+            if (availableWords.length > 0) {
+                wordsEmptyState.style.display = 'block';
+            }
+        }
+
+        function toggleWord(word, btn) {
+            const index = selectedWords.indexOf(word);
+
+            if (index > -1) {
+                selectedWords.splice(index, 1);
+                btn.classList.remove('selected');
+            } else {
+                selectedWords.push(word);
+                btn.classList.add('selected');
+            }
+
+            updateSelectedWords();
+        }
+
+        function updateSelectedWords() {
+            const selectedWordsArea = document.getElementById('selectedWordsArea');
+            const selectedWordsList = document.getElementById('selectedWordsList');
+            const wordsEmptyState = document.getElementById('wordsEmptyState');
+
+            if (selectedWords.length > 0) {
+                selectedWordsArea.style.display = 'block';
+                wordsEmptyState.style.display = 'none';
+                selectedWordsList.innerHTML = selectedWords.map(word =>
+                    `<span class="selected-word-tag" onclick="removeWord('${word}')">${word} ×</span>`
+                ).join('');
+            } else {
+                selectedWordsArea.style.display = 'none';
+                wordsEmptyState.style.display = 'block';
+            }
+        }
+
+        function removeWord(word) {
+            const index = selectedWords.indexOf(word);
+            if (index > -1) {
+                selectedWords.splice(index, 1);
+                updateSelectedWords();
+
+                // Update button state
+                const buttons = document.querySelectorAll('.word-btn');
+                buttons.forEach(btn => {
+                    if (btn.textContent === word) {
+                        btn.classList.remove('selected');
+                    }
+                });
+            }
+        }
+
+        function deselectAllWords() {
+            selectedWords = [];
+            updateSelectedWords();
+
+            // Remove selected state from all word buttons
+            const buttons = document.querySelectorAll('.word-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('selected');
+            });
+        }
+
+        async function generateSentences() {
+            if (selectedWords.length === 0) {
+                alert('Please select at least one word');
+                return;
+            }
+
+            const sentencesLoading = document.getElementById('sentencesLoading');
+            const sentencesList = document.getElementById('sentencesList');
+
+            sentencesLoading.style.display = 'block';
+            sentencesList.innerHTML = '';
+
+            try {
+                const response = await fetch('/generate-sentences', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        words: selectedWords
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    displaySentences(data.sentences);
+                } else {
+                    alert('Error: ' + (data.error || 'Failed to generate sentences'));
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                sentencesLoading.style.display = 'none';
+            }
+        }
+
+        function displaySentences(sentences) {
+            const sentencesList = document.getElementById('sentencesList');
+            const sentencesEmptyState = document.getElementById('sentencesEmptyState');
+            sentencesList.innerHTML = '';
+
+            if (sentences.length === 0) {
+                sentencesList.innerHTML = '<div class="empty-state">No sentences generated</div>';
+                return;
+            }
+
+            // Hide the empty state text when sentences are displayed
+            sentencesEmptyState.style.display = 'none';
+
+            sentences.forEach(sentence => {
+                const item = document.createElement('div');
+                item.className = 'sentence-item';
+                item.style.display = 'flex';
+                item.style.justifyContent = 'space-between';
+                item.style.alignItems = 'center';
+
+                const textSpan = document.createElement('span');
+                textSpan.textContent = sentence;
+                textSpan.style.flex = '1';
+                textSpan.onclick = () => selectSentence(item, sentence);
+
+                const speakBtn = document.createElement('button');
+                speakBtn.innerHTML = '🔊';
+                speakBtn.style.background = 'none';
+                speakBtn.style.border = 'none';
+                speakBtn.style.fontSize = '1.5em';
+                speakBtn.style.cursor = 'pointer';
+                speakBtn.style.padding = '5px 10px';
+                speakBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    speakSentence(sentence, speakBtn);
+                };
+
+                item.appendChild(textSpan);
+                item.appendChild(speakBtn);
+                sentencesList.appendChild(item);
+            });
+        }
+
+        async function speakSentence(sentence, button) {
+            // Disable button during playback
+            button.disabled = true;
+            button.innerHTML = '⏸️';
+
+            try {
+                // Try OpenAI TTS first
+                const response = await fetch('/text-to-speech', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: sentence })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Play audio from base64
+                    const audio = new Audio(`data:audio/mp3;base64,${data.audio}`);
+                    audio.onended = () => {
+                        button.disabled = false;
+                        button.innerHTML = '🔊';
+                    };
+                    audio.onerror = () => {
+                        button.disabled = false;
+                        button.innerHTML = '🔊';
+                        // Fallback to browser TTS
+                        useBrowserTTS(sentence);
+                    };
+                    await audio.play();
+                } else {
+                    // Fallback to browser TTS
+                    button.disabled = false;
+                    button.innerHTML = '🔊';
+                    useBrowserTTS(sentence);
+                }
+            } catch (error) {
+                console.error('TTS error:', error);
+                button.disabled = false;
+                button.innerHTML = '🔊';
+                // Fallback to browser TTS
+                useBrowserTTS(sentence);
+            }
+        }
+
+        function useBrowserTTS(sentence) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(sentence);
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function selectSentence(element, sentence) {
+            // Remove previous selection
+            document.querySelectorAll('.sentence-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+
+            // Select current
+            element.classList.add('selected');
+        }
+
+        // Camera functionality
+        let cameraStream = null;
+        const cameraModal = document.getElementById('cameraModal');
+        const cameraVideo = document.getElementById('cameraVideo');
+        const cameraCanvas = document.getElementById('cameraCanvas');
+
+        async function openCamera() {
+            try {
+                cameraStream = await navigator.mediaDevices.getUserMedia({
+                    video: {
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    }
+                });
+                cameraVideo.srcObject = cameraStream;
+                cameraModal.style.display = 'flex';
+            } catch (error) {
+                console.error('Camera error:', error);
+                showUploadStatus('✗ Error accessing camera: ' + error.message, false);
+            }
+        }
+
+        function closeCamera() {
+            if (cameraStream) {
+                cameraStream.getTracks().forEach(track => track.stop());
+                cameraStream = null;
+            }
+            cameraModal.style.display = 'none';
+        }
+
+        function capturePhoto() {
+            try {
+                // Set canvas size to match video
+                cameraCanvas.width = cameraVideo.videoWidth;
+                cameraCanvas.height = cameraVideo.videoHeight;
+
+                // Check if video is ready
+                if (cameraCanvas.width === 0 || cameraCanvas.height === 0) {
+                    showUploadStatus('✗ Camera not ready. Please wait and try again.', false);
+                    return;
+                }
+
+                // Draw video frame to canvas
+                const context = cameraCanvas.getContext('2d');
+                context.drawImage(cameraVideo, 0, 0);
+
+                // Convert canvas to blob
+                cameraCanvas.toBlob((blob) => {
+                    if (!blob) {
+                        showUploadStatus('✗ Failed to capture photo. Please try again.', false);
+                        return;
+                    }
+
+                    // Create a file from the blob
+                    const file = new File([blob], 'camera-photo.jpg', { type: 'image/jpeg' });
+
+                    // Use the existing handleFile function
+                    handleFile(file);
+
+                    // Close camera
+                    closeCamera();
+                }, 'image/jpeg', 0.95);
+            } catch (error) {
+                console.error('Photo capture error:', error);
+                showUploadStatus('✗ Error capturing photo: ' + error.message, false);
+            }
+        }
+    </script>
+</body>
+</html>
