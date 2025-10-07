@@ -112,8 +112,10 @@ def get_llm_response(user_action: str):
         return {"error": f"API call failed: {str(e)}"}
 
 def log_feedback(user_input, suggestion, impact_saved, feedback):
+    # Round impact_saved to 2 decimal places before saving
+    impact_saved_rounded = round(impact_saved, 2)
     c.execute("INSERT INTO feedback (user_input, suggestion, impact_saved, feedback, timestamp) VALUES (?, ?, ?, ?, ?)",
-              (user_input, suggestion, impact_saved, feedback, datetime.datetime.now().isoformat()))
+              (user_input, suggestion, impact_saved_rounded, feedback, datetime.datetime.now().isoformat()))
     conn.commit()
 
 def compute_total_score():
@@ -143,102 +145,117 @@ if st.button("🔍 Analyze Sustainability Impact", type="primary", use_container
         with st.spinner("🤖 Analyzing sustainability impact..."):
             output = get_llm_response(user_action)
         
-        # Display Results in Enhanced UI
-        if "error" not in output:
-            # User Input Display
-            st.markdown("---")
-            st.markdown("### 👤 **USER INPUT**")
-            st.info(f"💭 {user_action}")
-            
-            # AI Response Display
-            st.markdown("### 🤖 **AI RESPONSE**")
-            
-            # Suggestion Box
-            if "suggestion" in output:
-                st.markdown("**💡 Suggestion:**")
-                st.success(output["suggestion"])
-            
-            # Rationale
-            if "rationale" in output:
-                st.markdown("**❓ Why?**")
-                st.write(output["rationale"])
-            
-            # Impact Comparison
-            if "metrics" in output and isinstance(output["metrics"], dict):
-                st.markdown("### 📊 **Impact Comparison**")
-                
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.markdown("**🔴 Current Impact:**")
-                    st.error(output["metrics"].get("original_impact", "Unable to estimate"))
-                
-                with col2:
-                    st.markdown("**🟢 Suggested Impact:**")
-                    st.success(output["metrics"].get("suggested_impact", "Unable to estimate"))
-            
-            # Impact Indicator
-            if "impact_indicator" in output:
-                impact_level = output["impact_indicator"]
-                if impact_level == "high":
-                    st.markdown("**🎯 Impact: HIGH**")
-                    st.error("High Impact Change")
-                elif impact_level == "medium":
-                    st.markdown("**🎯 Impact: MEDIUM**")
-                    st.warning("Medium Impact Change")
-                else:
-                    st.markdown("**🎯 Impact: LOW**")
-                    st.info("Low Impact Change")
-            
-            # Evaluation Status
-            if "evaluation_status" in output:
-                status = output["evaluation_status"]
-                if status == "needs_clarification":
-                    st.warning("⚠️ Needs more information")
-                elif status == "already_sustainable":
-                    st.success("✅ Already sustainable!")
-                elif status == "qualitative_only":
-                    st.info("ℹ️ Qualitative assessment only")
-            
-            # Feedback Section
-            st.markdown("---")
-            st.markdown("### 💬 **Was this suggestion helpful?**")
-            
-            col1, col2 = st.columns(2)
-            with col1:
-                if st.button("✅ Yes, I'll go for it", use_container_width=True):
-                    # Calculate impact saved
-                    if "metrics" in output and isinstance(output["metrics"], dict):
-                        try:
-                            orig = output["metrics"].get("original_impact", "0").split()[0]
-                            sug = output["metrics"].get("suggested_impact", "0").split()[0]
-                            impact_saved = float(orig) - float(sug)
-                        except:
-                            impact_saved = 0.0
-                    else:
-                        impact_saved = 0.0
-                    
-                    log_feedback(user_action, output.get("suggestion", ""), impact_saved, "yes")
-                    st.success("🌿 Feedback saved! Thank you for making a sustainable choice.")
-                    st.rerun()
-            
-            with col2:
-                if st.button("❌ No, not for me", use_container_width=True):
-                    log_feedback(user_action, output.get("suggestion", ""), 0.0, "no")
-                    st.info("🌍 Feedback noted! Maybe next time.")
-                    st.rerun()
-            
-            # JSON Toggle
-            with st.expander("🔧 View Full JSON Response", expanded=False):
-                st.json(output, expanded=True)
+        # Store the output in session state
+        st.session_state['analysis_output'] = output
+        st.session_state['user_action'] = user_action
+
+# Display Results if analysis exists
+if 'analysis_output' in st.session_state and 'error' not in st.session_state['analysis_output']:
+    output = st.session_state['analysis_output']
+    user_action = st.session_state['user_action']
+    
+    # User Input Display
+    st.markdown("---")
+    st.markdown("### 👤 **USER INPUT**")
+    st.info(f"💭 {user_action}")
+    
+    # AI Response Display
+    st.markdown("### 🤖 **AI RESPONSE**")
+    
+    # Suggestion Box
+    if "suggestion" in output:
+        st.markdown("**💡 Suggestion:**")
+        st.success(output["suggestion"])
+    
+    # Rationale
+    if "rationale" in output:
+        st.markdown("**❓ Why?**")
+        st.write(output["rationale"])
+    
+    # Impact Comparison
+    if "metrics" in output and isinstance(output["metrics"], dict):
+        st.markdown("### 📊 **Impact Comparison**")
         
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("**🔴 Current Impact:**")
+            st.error(output["metrics"].get("original_impact", "Unable to estimate"))
+        
+        with col2:
+            st.markdown("**🟢 Suggested Impact:**")
+            st.success(output["metrics"].get("suggested_impact", "Unable to estimate"))
+    
+    # Impact Indicator
+    if "impact_indicator" in output:
+        impact_level = output["impact_indicator"]
+        if impact_level == "high":
+            st.markdown("**🎯 Impact: HIGH**")
+            st.error("High Impact Change")
+        elif impact_level == "medium":
+            st.markdown("**🎯 Impact: MEDIUM**")
+            st.warning("Medium Impact Change")
         else:
-            st.error(f"❌ Error: {output.get('error', 'Unknown error occurred')}")
-            if "raw_output" in output:
-                st.text("Raw output:")
-                st.code(output["raw_output"])
-            if "cleaned_output" in output:
-                st.text("Cleaned output:")
-                st.code(output["cleaned_output"])
+            st.markdown("**🎯 Impact: LOW**")
+            st.info("Low Impact Change")
+    
+    # Evaluation Status
+    if "evaluation_status" in output:
+        status = output["evaluation_status"]
+        if status == "needs_clarification":
+            st.warning("⚠️ Needs more information")
+        elif status == "already_sustainable":
+            st.success("✅ Already sustainable!")
+        elif status == "qualitative_only":
+            st.info("ℹ️ Qualitative assessment only")
+    
+    # Feedback Section
+    st.markdown("---")
+    st.markdown("### 💬 **Was this suggestion helpful?**")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("✅ Yes, I'll go for it", use_container_width=True, key="yes_feedback"):
+            # Calculate impact saved
+            if "metrics" in output and isinstance(output["metrics"], dict):
+                try:
+                    orig = output["metrics"].get("original_impact", "0").split()[0]
+                    sug = output["metrics"].get("suggested_impact", "0").split()[0]
+                    impact_saved = round(float(orig) - float(sug), 2)
+                except:
+                    impact_saved = 0.0
+            else:
+                impact_saved = 0.0
+            
+            log_feedback(user_action, output.get("suggestion", ""), impact_saved, "yes")
+            st.success("🌿 Feedback saved! Thank you for making a sustainable choice.")
+            # Clear session state to show updated dashboard
+            if 'analysis_output' in st.session_state:
+                del st.session_state['analysis_output']
+            st.rerun()
+    
+    with col2:
+        if st.button("❌ No, not for me", use_container_width=True, key="no_feedback"):
+            log_feedback(user_action, output.get("suggestion", ""), 0.0, "no")
+            st.info("🌍 Feedback noted! Maybe next time.")
+            # Clear session state to show updated dashboard
+            if 'analysis_output' in st.session_state:
+                del st.session_state['analysis_output']
+            st.rerun()
+    
+    # JSON Toggle
+    with st.expander("🔧 View Full JSON Response", expanded=False):
+        st.json(output, expanded=True)
+
+# Display error if exists
+elif 'analysis_output' in st.session_state and 'error' in st.session_state['analysis_output']:
+    output = st.session_state['analysis_output']
+    st.error(f"❌ Error: {output.get('error', 'Unknown error occurred')}")
+    if "raw_output" in output:
+        st.text("Raw output:")
+        st.code(output["raw_output"])
+    if "cleaned_output" in output:
+        st.text("Cleaned output:")
+        st.code(output["cleaned_output"])
 
 # --- DASHBOARD ---
 st.markdown("---")
@@ -266,7 +283,7 @@ if recent:
         st.markdown(f"""
         **{feedback_icon} Action:** {r[1]}  
         **💡 Suggestion:** {r[2]}  
-        **💾 Saved:** {r[3]} kg CO₂  
+        **💾 Saved:** {r[3]:.2f} kg CO₂  
         ---
         """)
 else:
