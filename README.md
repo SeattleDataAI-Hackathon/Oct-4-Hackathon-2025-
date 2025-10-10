@@ -132,9 +132,4 @@ SELECT * FROM predictions LIMIT 5;
 
 MIT License © 2025 SustAIn Project
 
-```
-
 ---
-
-Would you like me to add a **“Sample API Request/Response”** section too, showing how to call the model via `curl` or Python?
-```
