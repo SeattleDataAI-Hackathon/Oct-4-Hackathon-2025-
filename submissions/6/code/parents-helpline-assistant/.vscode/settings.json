@@ -1,0 +1,80 @@
+{
+  // Python Interpreter - Use local venv
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+
+  // Terminal - Activate venv automatically
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // Linting
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=120",
+    "--ignore=E203,W503"
+  ],
+  "python.linting.pylintEnabled": false,
+
+  // Formatting
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length=120"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // Type Checking
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+
+  // Testing
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+
+  // Auto-completion
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "workspace",
+
+  // Environment
+  "python.envFile": "${workspaceFolder}/.env",
+
+  // Files to exclude from explorer
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/*.egg-info": true
+  },
+
+  // Files to exclude from search
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/.pytest_cache": true,
+    "**/htmlcov": true,
+    "**/.mypy_cache": true
+  },
+
+  // Editor settings
+  "editor.rulers": [120],
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // Git
+  "git.ignoreLimitWarning": true
+}
